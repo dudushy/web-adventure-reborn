@@ -19,6 +19,8 @@ header {
   }
 
   #title {
+    display: flex;
+    align-items: center;
     color: $color-warning;
     font-weight: bolder;
     font-size: calc(#{$responsive-unit} * 20);
@@ -30,6 +32,11 @@ header {
 
     &:active {
       color: color.adjust($color-warning, $lightness: 50%);
+    }
+
+    img {
+      height: calc(#{$responsive-unit} * 20);
+      margin-right: calc(#{$responsive-unit} * 5);
     }
   }
 
