@@ -3,9 +3,7 @@
 <ul>
   @for (adventure of adventures; track adventure.slug) {
   <li>
-    <a [routerLink]="adventure.path">
-      {{ adventure.title }} - {{ adventure.category }}
-    </a>
+    <a [routerLink]="adventure.path"> {{ adventure.title }} - {{ adventure.category }} </a>
   </li>
   }
 </ul>
