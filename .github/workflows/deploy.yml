@@ -1,0 +1,66 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Build da showcase (PR - apenas validação)
+        if: github.event_name == 'pull_request'
+        run: npm run build
+
+      - name: Build da showcase (push/manual - com base href para gh-pages)
+        if: github.event_name != 'pull_request'
+        run: npm run build -- --base-href /${{ github.event.repository.name }}/
+
+      - name: Setup Pages
+        if: github.event_name != 'pull_request'
+        uses: actions/configure-pages@v5
+
+      - name: Copiar index.html como 404.html (SPA fallback)
+        if: github.event_name != 'pull_request'
+        run: cp ./dist/${{ github.event.repository.name }}/browser/index.html ./dist/${{ github.event.repository.name }}/browser/404.html
+
+      - name: Upload artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist/${{ github.event.repository.name }}/browser
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy no GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

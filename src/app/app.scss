@@ -1,0 +1,95 @@
+@use '@shyland-dev/ui/styles' as *;
+@use '../styles.scss' as *;
+@use 'sass:color';
+
+header,
+footer {
+  box-shadow: 0 0 calc(#{$responsive-unit} * 5) calc(#{$responsive-unit} * 1) $color-black;
+}
+
+header {
+  height: $header-height;
+  width: $dynamic-width;
+  display: flex;
+  align-items: center;
+  padding-inline: calc(#{$content-padding} + #{$content-inset-padding});
+
+  a {
+    text-decoration: none;
+  }
+
+  #title {
+    color: $color-warning;
+    font-weight: bolder;
+    font-size: calc(#{$responsive-unit} * 20);
+    margin-right: auto;
+
+    &:hover {
+      color: color.adjust($color-warning, $lightness: 25%);
+    }
+
+    &:active {
+      color: color.adjust($color-warning, $lightness: 50%);
+    }
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: calc(#{$responsive-unit} * 10);
+
+    a {
+      background-color: $color-warning;
+      padding: calc(#{$responsive-unit} * 5);
+      border-radius: calc(#{$responsive-unit} * 5);
+      font-size: calc(#{$responsive-unit} * 8);
+      text-transform: capitalize;
+      color: $color-dark;
+      font-weight: bold;
+
+      &:hover {
+        background-color: color.adjust($color-warning, $lightness: 25%);
+      }
+
+      &:active {
+        background-color: color.adjust($color-warning, $lightness: -25%);
+      }
+    }
+  }
+}
+
+main {
+  height: $content-height;
+  width: $dynamic-width;
+  padding: $content-padding;
+  background-color: $color-dark;
+}
+
+footer {
+  height: $footer-height;
+  width: $dynamic-width;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h2 {
+    font-size: calc(#{$responsive-unit} * 9);
+
+    #heart {
+      color: $color-danger;
+    }
+
+    a {
+      color: $color-warning;
+
+      &:hover {
+        color: color.adjust($color-warning, $lightness: 25%);
+      }
+
+      &:active {
+        color: color.adjust($color-warning, $lightness: 50%);
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@use '@shyland-dev/ui/styles' as *;
+@use '../../../../../styles.scss' as *;
+
+:host {
+  display: block;
+  min-height: $content-inset-height;
+  padding: $content-inset-padding;
+  border-radius: $content-inset-border-radius;
+  background-color: $color-white;
+  color: $color-black;
+}
