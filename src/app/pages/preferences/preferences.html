@@ -1,0 +1,11 @@
+<h4>Language</h4>
+
+<select name="language" id="language" [(ngModel)]="selectedLanguage" (change)="updateLanguage()">
+  @for (language of languages; track $index) {
+    <option [value]="language.code" [selected]="language.code === selectedLanguage">{{ language.name }}</option>
+  }
+</select>
+
+<!-- <h4>Theme</h4>
+
+<input type="checkbox" name="dark-theme" id="dark-theme" [checked]="isDarkTheme" /> -->

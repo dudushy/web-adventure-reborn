@@ -4,7 +4,10 @@ import { IconComponent, SnackbarComponent, SnackbarService } from '@shyland-dev/
 
 @Component({
   selector: 'app-home',
-  imports: [IconComponent, SnackbarComponent],
+  imports: [
+    IconComponent,
+    SnackbarComponent
+  ],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })

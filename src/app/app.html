@@ -1,12 +1,12 @@
 <header>
   <a id="title" href="https://github.com/dudushy/web-adventure-reborn" target="_blank">
-    <img src="assets/imgs/logo.svg" alt="Web Adventure Reborn Logo">
+    <img src="assets/imgs/logo.svg" alt="Web Adventure Reborn Logo" />
     WAR
   </a>
 
   <nav>
     @for (route of navRoutes; track $index) {
-      <a [routerLink]="route.path" routerLinkActive="active">{{ route.path }}</a>
+      <a [routerLink]="route.path" routerLinkActive="active">{{ route.path + '.title' | translate }}</a>
     }
   </nav>
 </header>

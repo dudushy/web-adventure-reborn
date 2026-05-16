@@ -54,6 +54,9 @@ header {
       text-transform: capitalize;
       color: $color-dark;
       font-weight: bold;
+      border-width: calc(#{$responsive-unit} * 1);
+      border-style: solid;
+      border-color: $color-warning;
 
       &:hover {
         background-color: color.adjust($color-warning, $lightness: 25%);
@@ -61,6 +64,11 @@ header {
 
       &:active {
         background-color: color.adjust($color-warning, $lightness: -25%);
+      }
+
+      &.active {
+        background-color: $color-black;
+        color: $color-warning;
       }
     }
   }

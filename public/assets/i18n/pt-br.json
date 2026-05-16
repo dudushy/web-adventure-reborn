@@ -1,0 +1,16 @@
+{
+  "app": {
+    "footer_message": "Feito com {{heart}} por {{author}}"
+  },
+  "home": {
+    "title": "Início"
+  },
+  "adventures": {
+    "title": "Aventuras"
+  },
+  "preferences": {
+    "title": "Preferências",
+    "language": "Idioma",
+    "theme": "Tema"
+  }
+}
