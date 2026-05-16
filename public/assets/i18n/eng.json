@@ -1,6 +1,7 @@
 {
   "app": {
-    "footer_message": "Made with {{heart}} by {{author}}"
+    "footer_made_with": "Made with",
+    "footer_by": "by"
   },
   "home": {
     "title": "Home"
