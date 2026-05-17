@@ -4,15 +4,18 @@ import { DebugService } from '@shyland-dev/utils';
 import { routes } from './app.routes';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { StorageService, ThemeService } from './services';
+import { IconComponent } from '@shyland-dev/ui';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, TranslateModule],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, TranslateModule, IconComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
 export class App implements OnInit {
   readonly navRoutes = routes.filter((r) => r.path && r.path !== '**');
+
+  isOpenSideMenu = false;
 
   constructor(
     private debugService: DebugService,
@@ -34,5 +37,11 @@ export class App implements OnInit {
     }
 
     this.themeService.init();
+  }
+
+  setSideMenu(open: boolean): void {
+    this.debugService.log(this, 'open', open);
+
+    this.isOpenSideMenu = open;
   }
 }

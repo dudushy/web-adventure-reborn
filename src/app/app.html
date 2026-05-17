@@ -10,6 +10,8 @@
       <a [routerLink]="route.path" routerLinkActive="active">{{ route.path + '.title' | translate }}</a>
     }
   </nav>
+
+  <shy-icon (click)="setSideMenu(true)">list</shy-icon>
 </header>
 
 <main>
@@ -27,3 +29,15 @@
     <a href="https://github.com/dudushy" target="_blank">dudushy</a>
   </h2>
 </footer>
+
+<div class="side-menu" [class.open]="isOpenSideMenu" (click)="setSideMenu(false)">
+  <nav (click)="$event.stopPropagation()">
+    <shy-icon (click)="setSideMenu(false)">x-lg</shy-icon>
+
+    <div class="divider"></div>
+
+    @for (route of navRoutes; track $index) {
+      <a (click)="setSideMenu(false)" [routerLink]="route.path" routerLinkActive="active">{{ route.path + '.title' | translate }}</a>
+    }
+  </nav>
+</div>
