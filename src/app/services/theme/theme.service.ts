@@ -7,7 +7,7 @@ import { StorageService } from '../../services';
 export class ThemeService {
   constructor(
     private debugService: DebugService,
-    private storageService: StorageService
+    private storageService: StorageService,
   ) {
     this.debugService.log(this);
   }

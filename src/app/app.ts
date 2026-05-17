@@ -18,7 +18,7 @@ export class App implements OnInit {
     private debugService: DebugService,
     private storageService: StorageService,
     private translateService: TranslateService,
-    private themeService: ThemeService
+    private themeService: ThemeService,
   ) {
     this.debugService.log(this);
   }

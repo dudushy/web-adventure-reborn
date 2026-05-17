@@ -32,7 +32,7 @@ export class Preferences implements OnInit, OnDestroy {
     private debugService: DebugService,
     private translateService: TranslateService,
     private storageService: StorageService,
-    private themeService: ThemeService
+    private themeService: ThemeService,
   ) {
     this.debugService.log(this);
   }
