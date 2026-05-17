@@ -22,8 +22,10 @@ export class ThemeService {
 
     const foundTheme = THEMES.find((t) => t.code === theme);
     if (foundTheme) {
+      document.documentElement.style.setProperty('--theme', foundTheme.code);
       document.documentElement.style.setProperty('--theme-background', foundTheme.background);
       document.documentElement.style.setProperty('--theme-color', foundTheme.color);
+      document.documentElement.setAttribute('data-theme', foundTheme.code);
       this.storageService.set('theme', theme);
     }
   }

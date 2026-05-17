@@ -59,3 +59,9 @@ app-root {
   margin: 0;
   padding: 0;
 }
+
+@mixin theme($name) {
+  :host-context([data-theme='#{$name}']) & {
+    @content;
+  }
+}
