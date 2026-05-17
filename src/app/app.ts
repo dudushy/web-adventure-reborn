@@ -7,12 +7,7 @@ import { StorageService } from './services';
 
 @Component({
   selector: 'app-root',
-  imports: [
-    RouterOutlet,
-    RouterLink,
-    RouterLinkActive,
-    TranslateModule
-  ],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, TranslateModule],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
@@ -22,7 +17,7 @@ export class App implements OnInit {
   constructor(
     private debugService: DebugService,
     private storageService: StorageService,
-    private translateService: TranslateService
+    private translateService: TranslateService,
   ) {
     this.debugService.log(this);
   }

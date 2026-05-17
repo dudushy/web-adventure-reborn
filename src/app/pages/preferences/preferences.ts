@@ -7,10 +7,7 @@ import { StorageService } from '../../services';
 
 @Component({
   selector: 'app-preferences',
-  imports: [
-    FormsModule,
-    TranslateModule
-  ],
+  imports: [FormsModule, TranslateModule],
   templateUrl: './preferences.html',
   styleUrl: './preferences.scss',
 })
@@ -23,7 +20,7 @@ export class Preferences implements OnInit, OnDestroy {
   constructor(
     private debugService: DebugService,
     private translateService: TranslateService,
-    private storageService: StorageService
+    private storageService: StorageService,
   ) {
     this.debugService.log(this);
   }

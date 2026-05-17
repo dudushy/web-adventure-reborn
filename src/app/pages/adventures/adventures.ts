@@ -5,9 +5,7 @@ import { adventures } from './adventures.registry';
 
 @Component({
   selector: 'app-adventures',
-  imports: [
-    RouterLink
-  ],
+  imports: [RouterLink],
   templateUrl: './adventures.html',
   styleUrl: './adventures.scss',
 })

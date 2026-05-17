@@ -21,6 +21,7 @@ npm start
 ```
 
 ## TODOs
+
 - [ ] Add more adventures
 - [ ] Add more languages
 - [ ] Add dark / light theme

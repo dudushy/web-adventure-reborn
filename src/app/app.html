@@ -7,7 +7,7 @@
 
   <nav>
     @for (route of navRoutes; track $index) {
-    <a [routerLink]="route.path" routerLinkActive="active">{{ route.path + '.title' | translate }}</a>
+      <a [routerLink]="route.path" routerLinkActive="active">{{ route.path + '.title' | translate }}</a>
     }
   </nav>
 </header>
