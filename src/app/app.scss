@@ -4,7 +4,7 @@
 
 header,
 footer {
-  box-shadow: 0 0 calc(#{$responsive-unit} * 5) calc(#{$responsive-unit} * 1) $color-black;
+  box-shadow: 0 0 calc(#{$responsive-unit} * 5) calc(#{$responsive-unit} * 1) $theme-background;
 }
 
 header {
@@ -52,7 +52,7 @@ header {
       border-radius: calc(#{$responsive-unit} * 5);
       font-size: calc(#{$responsive-unit} * 8);
       text-transform: capitalize;
-      color: $color-dark;
+      color: $theme-background;
       font-weight: bold;
       border-width: calc(#{$responsive-unit} * 1);
       border-style: solid;
@@ -67,7 +67,7 @@ header {
       }
 
       &.active {
-        background-color: $color-black;
+        background-color: $theme-background;
         color: $color-warning;
       }
     }
@@ -78,7 +78,7 @@ main {
   height: $content-height;
   width: $dynamic-width;
   padding: $content-padding;
-  background-color: $color-dark;
+  background-color: $theme-background;
 }
 
 footer {

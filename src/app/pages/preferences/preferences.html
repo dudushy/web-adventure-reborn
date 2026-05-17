@@ -1,10 +1,14 @@
-<h4>Language</h4>
+<div class="preferences-wrapper">
+  <h2>{{ 'preferences.language' | translate }}</h2>
 
-<select name="language" id="language" [(ngModel)]="selectedLanguage" (change)="updateLanguage()">
-  @for (language of languages; track $index) {
-    <option [value]="language.code" [selected]="language.code === selectedLanguage">{{ language.name }}</option>
-  }
-</select>
+  <shy-select [selectOptions]="languageArray" (onSelectionChange)="updateLanguage($event)" [selectIcon]="'check'" [dropdownIcon]="'chevron-down'" [selectedOption]="selectedLanguage">{{ 'preferences.language' | translate }}</shy-select>
+</div>
+
+<div class="preferences-wrapper">
+  <h2>{{ 'preferences.theme' | translate }}</h2>
+
+  <shy-select [selectOptions]="themeArray" (onSelectionChange)="updateTheme($event)" [selectIcon]="'check'" [dropdownIcon]="'chevron-down'" [selectedOption]="selectedTheme">{{ 'preferences.theme' | translate }}</shy-select>
+</div>
 
 <!-- <h4>Theme</h4>
 

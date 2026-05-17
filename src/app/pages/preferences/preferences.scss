@@ -6,6 +6,34 @@
   min-height: $content-inset-height;
   padding: $content-inset-padding;
   border-radius: $content-inset-border-radius;
-  background-color: $color-white;
-  color: $color-black;
+  background-color: $theme-color;
+  color: $theme-background;
+}
+
+.preferences-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(#{$responsive-unit} * 5);
+  margin-bottom: calc(#{$responsive-unit} * 5);
+
+  h2 {
+    font-size: calc(#{$responsive-unit} * 8);
+  }
+}
+
+shy-select {
+  --shySelectHeight: calc(#{$responsive-unit} * 20);
+  --shySelectWidth: calc(#{$responsive-unit} * 110);
+  --shySelectBorderRadius: calc(#{$responsive-unit} * 4);
+  --shySelectBackground: #{$theme-background};
+  --shySelectDropdownBackground: #{$theme-background};
+  --shySelectColor: #{$theme-color};
+  --shySelectOptionHoverBackground: #{$color-warning};
+  --shySelectOptionHoverColor: #{$theme-background};
+  --shySelectOptionImgBorderRadius: 50%;
+  --shySelectSelectedColor: #{$color-warning};
+  --shySelectFontFamily: monospace;
+  --shySelectFontSize: calc(#{$responsive-unit} * 6);
+  --shySelectIconSize: calc(#{$responsive-unit} * 8);
 }

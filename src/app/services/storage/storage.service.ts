@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { DebugService } from '@shyland-dev/utils';
-import { StorageType } from '../../types/storage.type';
+import { StorageType } from '../../types';
 
 @Injectable({ providedIn: 'root' })
 export class StorageService {
@@ -10,6 +10,7 @@ export class StorageService {
 
   private _getStorage(type: StorageType): Storage {
     this.debugService.log(this, 'type', type);
+
     return type === 'session' ? sessionStorage : localStorage;
   }
 

@@ -3,7 +3,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { DebugService } from '@shyland-dev/utils';
 import { routes } from './app.routes';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { StorageService } from './services';
+import { StorageService, ThemeService } from './services';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +18,7 @@ export class App implements OnInit {
     private debugService: DebugService,
     private storageService: StorageService,
     private translateService: TranslateService,
+    private themeService: ThemeService
   ) {
     this.debugService.log(this);
   }
@@ -31,5 +32,7 @@ export class App implements OnInit {
     if (language) {
       this.translateService.use(language);
     }
+
+    this.themeService.init();
   }
 }

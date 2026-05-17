@@ -11,7 +11,7 @@
   },
   "preferences": {
     "title": "Preferências",
-    "language": "Idioma",
-    "theme": "Tema"
+    "language": "Selecione um idioma",
+    "theme": "Selecione um tema"
   }
 }
