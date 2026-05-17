@@ -13,5 +13,9 @@
     "title": "Preferences",
     "language": "Select a language",
     "theme": "Select a theme"
+  },
+  "themes": {
+    "light": "Light",
+    "dark": "Dark"
   }
 }

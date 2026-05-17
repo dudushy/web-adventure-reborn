@@ -13,5 +13,9 @@
     "title": "Preferências",
     "language": "Selecione um idioma",
     "theme": "Selecione um tema"
+  },
+  "themes": {
+    "light": "Claro",
+    "dark": "Escuro"
   }
 }

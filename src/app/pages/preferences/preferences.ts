@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { DebugService } from '@shyland-dev/utils';
 import { LANGUAGES, THEMES } from '../../consts';
 import { FormsModule } from '@angular/forms';
@@ -21,12 +22,10 @@ export class Preferences implements OnInit, OnDestroy {
   }));
   selectedLanguage: string | null = null;
 
-  themeArray: SelectOption[] = THEMES.map((theme, index) => ({
-    id: index,
-    label: theme.name,
-    value: theme.code,
-  }));
+  themeArray: SelectOption[] = [];
   selectedTheme: string | null = null;
+
+  private langChangeSub!: Subscription;
 
   constructor(
     private debugService: DebugService,
@@ -45,10 +44,22 @@ export class Preferences implements OnInit, OnDestroy {
 
     this.selectedTheme = this.themeService.getCurrentTheme();
     this.debugService.log(this, 'this.selectedTheme', this.selectedTheme);
+
+    this.buildThemeArray();
+    this.langChangeSub = this.translateService.onLangChange.subscribe(() => this.buildThemeArray());
   }
 
   ngOnDestroy(): void {
     this.debugService.log(this);
+    this.langChangeSub?.unsubscribe();
+  }
+
+  private buildThemeArray(): void {
+    this.themeArray = THEMES.map((theme, index) => ({
+      id: index,
+      label: this.translateService.instant(`themes.${theme.code}`),
+      value: theme.code,
+    }));
   }
 
   updateLanguage(event: SelectionChangeEvent): void {
