@@ -2,11 +2,6 @@
 @use '../styles.scss' as *;
 @use 'sass:color';
 
-header,
-footer {
-  box-shadow: 0 0 calc(#{$responsive-unit} * 5) calc(#{$responsive-unit} * 1) $theme-background;
-}
-
 header {
   height: $header-height;
   width: $dynamic-width;

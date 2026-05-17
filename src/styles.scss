@@ -6,6 +6,7 @@ $content-height: calc(#{$dynamic-height} - #{$header-height} - #{$footer-height}
 $content-padding: calc(#{$responsive-unit} * 8);
 $content-inset-height: calc(#{$content-height} - #{$content-padding} * 2);
 $content-inset-border-radius: calc(#{$responsive-unit} * 10);
+$content-inset-border-width: calc(#{$responsive-unit} * 1);
 $content-inset-padding: calc(#{$responsive-unit} * 10);
 
 $theme-background: var(--theme-background, $color-black);

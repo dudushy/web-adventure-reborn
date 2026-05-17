@@ -6,8 +6,11 @@
   min-height: $content-inset-height;
   padding: $content-inset-padding;
   border-radius: $content-inset-border-radius;
-  background-color: $theme-color;
-  color: $theme-background;
+  border-color: $theme-color;
+  border-width: $content-inset-border-width;
+  border-style: solid;
+  background-color: $theme-background;
+  color: $theme-color;
 }
 
 button {
