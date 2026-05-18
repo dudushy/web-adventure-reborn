@@ -4,7 +4,43 @@
     "footer_by": "by"
   },
   "home": {
-    "title": "Home"
+    "title": "Home",
+    "main": {
+      "title": "Web Adventure Reborn",
+      "description": "A front-end adventure in Angular"
+    },
+    "about": {
+      "title": "About the project",
+      "description": "A personal front-end lab built to study, explore and practice Angular, TypeScript and CSS in a hands-on and limitless way."
+    },
+    "topics": {
+      "title": "What you'll find here",
+      "clones": {
+        "title": "Clones",
+        "description": "Recreating elements and behaviors from real websites"
+      },
+      "components": {
+        "title": "Components",
+        "description": "Experimenting with interactive and dynamic components"
+      },
+      "games": {
+        "title": "Games",
+        "description": "Creating game experiences directly in the browser"
+      },
+      "random": {
+        "title": "Random",
+        "description": "Crazy, useful, and creative things without a defined category"
+      },
+      "forms": {
+        "title": "Forms",
+        "description": "Exploring validations, masks, and form UX"
+      },
+      "loader": {
+        "title": "Loader",
+        "description": "Animations, skeletons, and loading states"
+      }
+    },
+    "philosophy": "Simplicity, best practices, and a lot of curiosity — that's how adventures are created."
   },
   "adventures": {
     "title": "Adventures"

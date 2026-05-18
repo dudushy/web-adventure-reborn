@@ -1,19 +1,23 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DebugService } from '@shyland-dev/utils';
-import { IconComponent, SnackbarComponent, SnackbarService } from '@shyland-dev/ui';
+import { IconComponent } from '@shyland-dev/ui';
+import { TranslateModule } from '@ngx-translate/core';
+import { TOPICS } from '../../consts';
 
 @Component({
   selector: 'app-home',
-  imports: [IconComponent, SnackbarComponent],
+  imports: [
+    IconComponent,
+    TranslateModule,
+  ],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
 export class Home implements OnInit, OnDestroy {
-  @ViewChild('snackbar') snackbar!: SnackbarComponent;
+  readonly topics = TOPICS;
 
   constructor(
-    private debugService: DebugService,
-    private snackbarService: SnackbarService,
+    private debugService: DebugService
   ) {
     this.debugService.log(this);
   }
@@ -24,13 +28,5 @@ export class Home implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.debugService.log(this);
-  }
-
-  showSnackbar(): void {
-    this.snackbarService.show({
-      element: this.snackbar,
-      text: 'Olá, eu sou um Snackbar!',
-      delay: 3000,
-    });
   }
 }

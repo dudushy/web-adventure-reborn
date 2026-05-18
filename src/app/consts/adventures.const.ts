@@ -1,4 +1,6 @@
-export const adventures = [
+import { AdventuresType } from '../types';
+
+export const ADVENTURES: AdventuresType[] = [
   {
     title: 'Temp Clone',
     slug: 'temp-clone',

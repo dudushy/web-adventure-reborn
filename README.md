@@ -24,5 +24,5 @@ npm start
 
 - [ ] Add more adventures
 - [ ] Add more languages
-- [ ] Add dark / light theme
-- [ ] Make portrait mode
+- [x] Add dark / light theme
+- [x] Make portrait mode

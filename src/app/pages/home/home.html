@@ -1,11 +1,51 @@
-<shy-snackbar #snackbar position="bottom"></shy-snackbar>
+<div class="container">
+  <section class="main">
+    <h1>
+      <shy-icon [hoverFill]="true">rocket-takeoff</shy-icon>
 
-<button (click)="showSnackbar()">Mostrar Snackbar</button>
+      {{ 'home.main.title' | translate }}
+    </h1>
 
-<shy-icon>heart</shy-icon>
+    <p>{{ 'home.main.description' | translate }}</p>
+  </section>
 
-<shy-icon>heart-fill</shy-icon>
+  <section class="about">
+    <h1>
+      <shy-icon [hoverFill]="true">info-circle</shy-icon>
 
-<shy-icon [hoverFill]="true">heart</shy-icon>
+      {{ 'home.about.title' | translate }}
+    </h1>
 
-<shy-icon [hoverFill]="true" [hoverFillDelay]="300">heart</shy-icon>
+    <p>{{ 'home.about.description' | translate }}</p>
+  </section>
+
+  <section class="topics">
+    <h1>
+      <shy-icon [hoverFill]="true">grid</shy-icon>
+
+      {{ 'home.topics.title' | translate }}
+    </h1>
+
+    <div class="topics-container">
+      @for (topic of topics; track $index) {
+        <div class="topic-item">
+          <h2>
+            <shy-icon>{{ topic.icon }}</shy-icon>
+
+            {{ topic.title | translate }}
+          </h2>
+
+          <p>{{ topic.description | translate }}</p>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="philosophy">
+    <p>
+      <shy-icon>quote</shy-icon>
+
+      {{ 'home.philosophy' | translate }}
+    </p>
+  </section>
+</div>

@@ -12,7 +12,7 @@ $content-inset-padding: calc(#{$responsive-unit} * 10);
 $theme-background: var(--theme-background, $color-black);
 $theme-color: var(--theme-color, $color-white);
 
-$scrollbar-width: calc(#{$responsive-unit} * 5);
+$scrollbar-width: calc(#{$responsive-unit} * 2.5);
 $scrollbar-color-track: $theme-background;
 $scrollbar-color-thumb: $theme-color;
 $scrollbar-color-thumb-hover: $color-medium;

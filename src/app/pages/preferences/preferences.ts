@@ -9,7 +9,12 @@ import { SelectComponent, SelectOption, SelectionChangeEvent } from '@shyland-de
 
 @Component({
   selector: 'app-preferences',
-  imports: [FormsModule, TranslateModule, SelectComponent, TranslateModule],
+  imports: [
+    FormsModule,
+    TranslateModule,
+    SelectComponent,
+    TranslateModule
+  ],
   templateUrl: './preferences.html',
   styleUrl: './preferences.scss',
 })
