@@ -35,8 +35,8 @@
         "title": "Forms",
         "description": "Exploring validations, masks, and form UX"
       },
-      "loader": {
-        "title": "Loader",
+      "loaders": {
+        "title": "Loaders",
         "description": "Animations, skeletons, and loading states"
       }
     },

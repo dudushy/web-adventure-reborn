@@ -6,19 +6,14 @@ import { TOPICS } from '../../consts';
 
 @Component({
   selector: 'app-home',
-  imports: [
-    IconComponent,
-    TranslateModule,
-  ],
+  imports: [IconComponent, TranslateModule],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
 export class Home implements OnInit, OnDestroy {
   readonly topics = TOPICS;
 
-  constructor(
-    private debugService: DebugService
-  ) {
+  constructor(private debugService: DebugService) {
     this.debugService.log(this);
   }
 

@@ -35,8 +35,8 @@
         "title": "Formulários",
         "description": "Explorando validações, máscaras e UX de formulários"
       },
-      "loader": {
-        "title": "Loader",
+      "loaders": {
+        "title": "Loaders",
         "description": "Animações, skeletons e estados de carregamento"
       }
     },
