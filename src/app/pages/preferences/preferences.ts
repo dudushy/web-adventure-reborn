@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { StorageService, ThemeService } from '../../services';
 import { SelectComponent, SelectOption, SelectionChangeEvent } from '@shyland-dev/ui';
+import { TitleService } from '../../services';
 
 @Component({
   selector: 'app-preferences',
@@ -32,12 +33,15 @@ export class Preferences implements OnInit, OnDestroy {
     private translateService: TranslateService,
     private storageService: StorageService,
     private themeService: ThemeService,
+    private titleService: TitleService,
   ) {
     this.debugService.log(this);
   }
 
   ngOnInit(): void {
     this.debugService.log(this);
+
+    this.titleService.setTitle(this);
 
     this.selectedLanguage = this.storageService.get('language') || this.translateService.getCurrentLang();
     this.debugService.log(this, 'this.selectedLanguage', this.selectedLanguage);

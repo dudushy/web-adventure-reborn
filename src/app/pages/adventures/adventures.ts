@@ -5,6 +5,7 @@ import { ADVENTURES } from '../../consts';
 import { TranslateModule } from '@ngx-translate/core';
 import { IconComponent } from '@shyland-dev/ui';
 import { AdventuresStatusType } from '../../types';
+import { TitleService } from '../../services';
 
 @Component({
   selector: 'app-adventures',
@@ -15,12 +16,17 @@ import { AdventuresStatusType } from '../../types';
 export class Adventures implements OnInit, OnDestroy {
   readonly adventures = ADVENTURES;
 
-  constructor(private debugService: DebugService) {
+  constructor(
+    private debugService: DebugService,
+    private titleService: TitleService,
+  ) {
     this.debugService.log(this);
   }
 
   ngOnInit(): void {
     this.debugService.log(this);
+
+    this.titleService.setTitle(this);
   }
 
   ngOnDestroy(): void {
