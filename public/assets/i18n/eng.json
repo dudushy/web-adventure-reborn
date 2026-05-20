@@ -1,7 +1,9 @@
 {
   "app": {
-    "footer_made_with": "Made with",
-    "footer_by": "by"
+    "footer": {
+      "made_with": "Made with",
+      "by": "by"
+    }
   },
   "home": {
     "title": "Home",
@@ -43,7 +45,43 @@
     "philosophy": "Simplicity, best practices, and a lot of curiosity — that's how adventures are created."
   },
   "adventures": {
-    "title": "Adventures"
+    "title": "Adventures",
+    "clone": {
+      "temp": {
+        "title": "Temporary Clone",
+        "description": "This is a temporary clone adventure."
+      }
+    },
+    "form": {
+      "temp": {
+        "title": "Temporary Form",
+        "description": "This is a temporary form adventure."
+      }
+    },
+    "game": {
+      "temp": {
+        "title": "Temporary Game",
+        "description": "This is a temporary game adventure."
+      }
+    },
+    "interactive": {
+      "temp": {
+        "title": "Temporary Interactive",
+        "description": "This is a temporary interactive adventure."
+      }
+    },
+    "loader": {
+      "temp": {
+        "title": "Temporary Loader",
+        "description": "This is a temporary loader adventure."
+      }
+    },
+    "random": {
+      "temp": {
+        "title": "Temporary Random",
+        "description": "This is a temporary random adventure."
+      }
+    }
   },
   "preferences": {
     "title": "Preferences",

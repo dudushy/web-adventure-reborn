@@ -1,11 +1,13 @@
-<div class="preferences-wrapper">
-  <h2>{{ 'preferences.language' | translate }}</h2>
+<div class="container">
+  <div class="preferences-wrapper">
+    <h2>{{ 'preferences.language' | translate }}</h2>
 
-  <shy-select [selectOptions]="languageArray" (onSelectionChange)="updateLanguage($event)" [selectIcon]="'check'" [dropdownIcon]="'chevron-down'" [selectedOption]="selectedLanguage">{{ 'preferences.language' | translate }}</shy-select>
-</div>
+    <shy-select [selectOptions]="languageArray" (onSelectionChange)="updateLanguage($event)" [selectIcon]="'check'" [dropdownIcon]="'chevron-down'" [selectedOption]="selectedLanguage">{{ 'preferences.language' | translate }}</shy-select>
+  </div>
 
-<div class="preferences-wrapper">
-  <h2>{{ 'preferences.theme' | translate }}</h2>
+  <div class="preferences-wrapper">
+    <h2>{{ 'preferences.theme' | translate }}</h2>
 
-  <shy-select [selectOptions]="themeArray" (onSelectionChange)="updateTheme($event)" [selectIcon]="'check'" [dropdownIcon]="'chevron-down'" [selectedOption]="selectedTheme">{{ 'preferences.theme' | translate }}</shy-select>
+    <shy-select [selectOptions]="themeArray" (onSelectionChange)="updateTheme($event)" [selectIcon]="'check'" [dropdownIcon]="'chevron-down'" [selectedOption]="selectedTheme">{{ 'preferences.theme' | translate }}</shy-select>
+  </div>
 </div>

@@ -1,9 +1,10 @@
 export type AdventuresType = {
-  title: string;
+  titleKey: string;
   slug: string;
   category: AdventuresCategoriesType;
+  status: AdventuresStatusType;
+  descriptionKey: string;
   path: string;
-  status?: AdventuresStatusType;
 };
 
 export type AdventuresCategoriesType = 'clone' | 'form' | 'game' | 'interactive' | 'loader' | 'random';

@@ -33,6 +33,10 @@
     margin-bottom: calc(#{$responsive-unit} * 10);
     padding-inline: calc(#{$responsive-unit} * 10);
 
+    @include portrait {
+      padding-inline: calc(#{$responsive-unit} * 5);
+    }
+
     &:last-child {
       align-items: center;
     }

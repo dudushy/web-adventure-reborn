@@ -1,9 +1,23 @@
-<h1>Adventures</h1>
+<div class="container">
+  <div class="adventures">
+    @for (adventure of adventures; track $index) {
+      <a class="adventure" [routerLink]="adventure.path">
+        <div class="slug-and-id">
+          <span class="slug">{{ adventure.slug }}</span>
 
-<ul>
-  @for (adventure of adventures; track adventure.slug) {
-    <li>
-      <a [routerLink]="adventure.path"> {{ adventure.title }} - {{ adventure.category }} </a>
-    </li>
-  }
-</ul>
+          <span class="id">#{{ $index }}</span>
+        </div>
+
+        <div class="description">
+          <p>{{ adventure.descriptionKey | translate }}</p>
+        </div>
+
+        <div class="status-and-category">
+          <shy-icon class="status" [class.status]="adventure.status">{{ getStatusIcon(adventure.status) }}</shy-icon>
+
+          <span class="category">{{ adventure.category }}</span>
+        </div>
+      </a>
+    }
+  </div>
+</div>

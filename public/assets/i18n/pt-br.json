@@ -1,7 +1,9 @@
 {
   "app": {
-    "footer_made_with": "Feito com",
-    "footer_by": "por"
+    "footer": {
+      "made_with": "Feito com",
+      "by": "por"
+    }
   },
   "home": {
     "title": "Início",
@@ -43,7 +45,43 @@
     "philosophy": "Simplicidade, boas práticas e muita curiosidade — é assim que aventuras são criadas."
   },
   "adventures": {
-    "title": "Aventuras"
+    "title": "Aventuras",
+    "clone": {
+      "temp": {
+        "title": "Clone Temporário",
+        "description": "Esta é uma aventura de clone temporária."
+      }
+    },
+    "form": {
+      "temp": {
+        "title": "Formulário Temporário",
+        "description": "Esta é uma aventura de formulário temporária."
+      }
+    },
+    "game": {
+      "temp": {
+        "title": "Jogo Temporário",
+        "description": "Esta é uma aventura de jogo temporária."
+      }
+    },
+    "interactive": {
+      "temp": {
+        "title": "Interativo Temporário",
+        "description": "Esta é uma aventura interativa temporária."
+      }
+    },
+    "loader": {
+      "temp": {
+        "title": "Loader Temporário",
+        "description": "Esta é uma aventura de loader temporária."
+      }
+    },
+    "random": {
+      "temp": {
+        "title": "Aleatório Temporário",
+        "description": "Esta é uma aventura aleatória temporária."
+      }
+    }
   },
   "preferences": {
     "title": "Preferências",
