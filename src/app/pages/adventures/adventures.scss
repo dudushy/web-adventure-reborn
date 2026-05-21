@@ -29,6 +29,7 @@
   display: flex;
   flex-wrap: wrap;
   padding: calc(#{$responsive-unit} * 10);
+  width: 100%;
 
   @include portrait {
     padding: calc(#{$responsive-unit} * 5);
@@ -64,24 +65,24 @@
       margin-bottom: calc(#{$responsive-unit} * 4);
     }
 
-    &.clone {
-      --adventure-category-color: #{$clone-color};
+    &.clones {
+      --adventure-category-color: #{$clones-color};
     }
 
-    &.form {
-      --adventure-category-color: #{$form-color};
+    &.forms {
+      --adventure-category-color: #{$forms-color};
     }
 
-    &.game {
-      --adventure-category-color: #{$game-color};
+    &.games {
+      --adventure-category-color: #{$games-color};
     }
 
-    &.interactive {
-      --adventure-category-color: #{$interactive-color};
+    &.interactives {
+      --adventure-category-color: #{$interactives-color};
     }
 
-    &.loader {
-      --adventure-category-color: #{$loader-color};
+    &.loaders {
+      --adventure-category-color: #{$loaders-color};
     }
 
     &.random {

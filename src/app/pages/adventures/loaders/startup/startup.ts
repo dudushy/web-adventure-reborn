@@ -2,12 +2,12 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DebugService } from '@shyland-dev/utils';
 
 @Component({
-  selector: 'app-adventure-random-temp',
+  selector: 'app-adventure-loader-startup',
   imports: [],
-  templateUrl: './temp.html',
-  styleUrl: './temp.scss',
+  templateUrl: './startup.html',
+  styleUrl: './startup.scss',
 })
-export class Temp implements OnInit, OnDestroy {
+export class Startup implements OnInit, OnDestroy {
   constructor(private debugService: DebugService) {
     this.debugService.log(this);
   }

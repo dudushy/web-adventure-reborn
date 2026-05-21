@@ -21,9 +21,9 @@
         "title": "Clones",
         "description": "Recriando elementos e comportamentos de sites reais"
       },
-      "components": {
-        "title": "Componentes",
-        "description": "Experimentando componentes interativos e dinâmicos"
+      "interactives": {
+        "title": "Interativos",
+        "description": "Experimentando com componentes interativos e dinâmicos"
       },
       "games": {
         "title": "Jogos",
@@ -46,41 +46,20 @@
   },
   "adventures": {
     "title": "Aventuras",
-    "clone": {
-      "temp": {
-        "title": "Clone Temporário",
-        "description": "Esta é uma aventura de clone temporária."
-      }
+    "clones": {
     },
-    "form": {
-      "temp": {
-        "title": "Formulário Temporário",
-        "description": "Esta é uma aventura de formulário temporária."
-      }
+    "forms": {
     },
-    "game": {
-      "temp": {
-        "title": "Jogo Temporário",
-        "description": "Esta é uma aventura de jogo temporária."
-      }
+    "games": {
     },
-    "interactive": {
-      "temp": {
-        "title": "Interativo Temporário",
-        "description": "Esta é uma aventura interativa temporária."
-      }
+    "interactives": {
     },
-    "loader": {
-      "temp": {
-        "title": "Loader Temporário",
-        "description": "Esta é uma aventura de loader temporária."
+    "loaders": {
+      "startup": {
+        "description": "O loader inicial, simples e elegante."
       }
     },
     "random": {
-      "temp": {
-        "title": "Aleatório Temporário",
-        "description": "Esta é uma aventura aleatória temporária."
-      }
     }
   },
   "preferences": {

@@ -1,5 +1,4 @@
 export type AdventuresType = {
-  titleKey: string;
   slug: string;
   category: AdventuresCategoriesType;
   status: AdventuresStatusType;
@@ -7,6 +6,6 @@ export type AdventuresType = {
   path: string;
 };
 
-export type AdventuresCategoriesType = 'clone' | 'form' | 'game' | 'interactive' | 'loader' | 'random';
+export type AdventuresCategoriesType = 'clones' | 'forms' | 'games' | 'interactives' | 'loaders' | 'random';
 
 export type AdventuresStatusType = 'wip' | 'done' | 'rework';
