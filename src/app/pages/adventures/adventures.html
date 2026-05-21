@@ -1,7 +1,7 @@
 <div class="container">
   <div class="adventures">
     @for (adventure of adventures; track $index) {
-      <a class="adventure" [routerLink]="adventure.path">
+      <a class="adventure" [routerLink]="adventure.path" [ngClass]="adventure.category">
         <div class="slug-and-id">
           <span class="slug">{{ adventure.slug }}</span>
 
@@ -13,7 +13,7 @@
         </div>
 
         <div class="status-and-category">
-          <shy-icon class="status" [class.status]="adventure.status">{{ getStatusIcon(adventure.status) }}</shy-icon>
+          <shy-icon class="status" [ngClass]="adventure.status">{{ getStatusIcon(adventure.status) }}</shy-icon>
 
           <span class="category">{{ adventure.category }}</span>
         </div>

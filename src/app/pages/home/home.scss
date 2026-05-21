@@ -21,6 +21,7 @@
   align-items: center;
   height: 100%;
   gap: calc(#{$responsive-unit} * 10);
+  overflow: hidden;
   overflow-y: scroll;
 
   section {
@@ -48,37 +49,57 @@
       color: $color-warning;
       margin-bottom: calc(#{$responsive-unit} * 5);
 
+      @include portrait {
+        font-size: calc(#{$responsive-unit} * 10);
+      }
+
       shy-icon {
         --shyIconSize: calc(#{$responsive-unit} * 16);
 
         margin-right: calc(#{$responsive-unit} * 5);
+
+        @include portrait {
+          --shyIconSize: calc(#{$responsive-unit} * 12);
+
+          margin-right: calc(#{$responsive-unit} * 5);
+        }
       }
     }
 
     p {
       font-size: calc(#{$responsive-unit} * 8);
       color: $theme-color;
+
+      @include portrait {
+        font-size: calc(#{$responsive-unit} * 7);
+      }
     }
 
     .topics-container {
       display: flex;
-      justify-content: space-between;
-      gap: calc(#{$responsive-unit} * 10);
       flex-wrap: wrap;
 
       .topic-item {
         --topic-item-per-row: 3;
-        --topic-item-padding: calc(#{$responsive-unit} * 5);
+        --topic-item-margin-inline: calc(#{$responsive-unit} * 5);
 
         border-width: calc(#{$responsive-unit} * 1);
         border-color: $theme-color;
         border-style: solid;
         border-radius: calc(#{$responsive-unit} * 4);
-        padding: var(--topic-item-padding);
-        width: calc(100% / var(--topic-item-per-row) - var(--topic-item-padding) * 2);
+        padding: calc(#{$responsive-unit} * 5);
+        width: calc(100% / var(--topic-item-per-row) - var(--topic-item-margin-inline) * 2);
+        margin-inline: var(--topic-item-margin-inline);
+        margin-bottom: calc(#{$responsive-unit} * 8);
 
         @include portrait {
           --topic-item-per-row: 1;
+          --topic-item-margin-inline: calc(#{$responsive-unit} * 2);
+
+          padding: calc(#{$responsive-unit} * 4);
+          border-width: calc(#{$responsive-unit} * 0.5);
+          border-radius: calc(#{$responsive-unit} * 3);
+          margin-bottom: calc(#{$responsive-unit} * 8);
         }
 
         h2 {
@@ -88,16 +109,31 @@
           color: $color-warning;
           margin-bottom: calc(#{$responsive-unit} * 3);
 
+          @include portrait {
+            font-size: calc(#{$responsive-unit} * 7);
+            margin-bottom: calc(#{$responsive-unit} * 2);
+          }
+
           shy-icon {
             --shyIconSize: calc(#{$responsive-unit} * 12);
 
             margin-right: calc(#{$responsive-unit} * 5);
+
+            @include portrait {
+              --shyIconSize: calc(#{$responsive-unit} * 10);
+
+              margin-right: calc(#{$responsive-unit} * 5);
+            }
           }
         }
 
         p {
           font-size: calc(#{$responsive-unit} * 7);
           color: $theme-color;
+
+          @include portrait {
+            font-size: calc(#{$responsive-unit} * 6);
+          }
         }
       }
     }

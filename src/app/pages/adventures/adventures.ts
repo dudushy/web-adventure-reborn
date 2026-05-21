@@ -6,10 +6,11 @@ import { TranslateModule } from '@ngx-translate/core';
 import { IconComponent } from '@shyland-dev/ui';
 import { AdventuresStatusType } from '../../types';
 import { TitleService } from '../../services';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-adventures',
-  imports: [RouterLink, TranslateModule, IconComponent],
+  imports: [RouterLink, TranslateModule, IconComponent, NgClass],
   templateUrl: './adventures.html',
   styleUrl: './adventures.scss',
 })
@@ -40,7 +41,7 @@ export class Adventures implements OnInit, OnDestroy {
       case 'done':
         return 'check';
       case 'rework':
-        return 'refresh';
+        return 'wrench';
       default:
         return '';
     }

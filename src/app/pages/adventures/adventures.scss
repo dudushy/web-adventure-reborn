@@ -21,35 +21,76 @@
   align-items: center;
   height: 100%;
   gap: calc(#{$responsive-unit} * 10);
+  overflow: hidden;
   overflow-y: scroll;
 }
 
 .adventures {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  padding-inline: calc(#{$responsive-unit} * 10);
+  padding: calc(#{$responsive-unit} * 10);
 
   @include portrait {
-    padding-inline: calc(#{$responsive-unit} * 5);
+    padding: calc(#{$responsive-unit} * 5);
   }
 
   .adventure {
     --adventure-per-row: 5;
-    --adventure-padding: calc(#{$responsive-unit} * 5);
+    --adventure-margin-inline: calc(#{$responsive-unit} * 5);
 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     border-width: calc(#{$responsive-unit} * 1);
-    border-color: $theme-color;
+    border-color: var(--adventure-category-color, $theme-color);
     border-style: solid;
     border-radius: calc(#{$responsive-unit} * 4);
-    padding: var(--adventure-padding);
-    width: calc(100% / var(--adventure-per-row) - var(--adventure-padding) * 2);
+    padding: calc(#{$responsive-unit} * 5);
+    margin-inline: var(--adventure-margin-inline);
+    width: calc(100% / var(--adventure-per-row) - var(--adventure-margin-inline) * 2);
     margin-bottom: calc(#{$responsive-unit} * 8);
     text-decoration: none;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
 
     @include portrait {
       --adventure-per-row: 2;
-      --adventure-padding: calc(#{$responsive-unit} * 2);
+      --adventure-margin-inline: calc(#{$responsive-unit} * 2);
+
+      padding: calc(#{$responsive-unit} * 2);
+      border-width: calc(#{$responsive-unit} * 0.5);
+      border-radius: calc(#{$responsive-unit} * 2);
+      margin-bottom: calc(#{$responsive-unit} * 4);
+    }
+
+    &.clone {
+      --adventure-category-color: #{$clone-color};
+    }
+
+    &.form {
+      --adventure-category-color: #{$form-color};
+    }
+
+    &.game {
+      --adventure-category-color: #{$game-color};
+    }
+
+    &.interactive {
+      --adventure-category-color: #{$interactive-color};
+    }
+
+    &.loader {
+      --adventure-category-color: #{$loader-color};
+    }
+
+    &.random {
+      --adventure-category-color: #{$random-color};
+    }
+
+    &:hover,
+    &:active {
+      transform: scale(1.1);
     }
 
     .slug-and-id {
@@ -91,13 +132,21 @@
       justify-content: center;
       padding-block: calc(#{$responsive-unit} * 10);
 
+      @include portrait {
+        padding-block: calc(#{$responsive-unit} * 5);
+      }
+
       p {
         font-size: calc(#{$responsive-unit} * 6);
         color: $theme-color;
         text-align: center;
+        overflow: hidden;
+        max-width: calc(#{$responsive-unit} * 130);
+        @include allVendors(line-clamp, 3);
 
         @include portrait {
           font-size: calc(#{$responsive-unit} * 5);
+          max-width: calc(#{$responsive-unit} * 80);
         }
       }
     }
@@ -117,6 +166,21 @@
 
         @include portrait {
           --shyIconSize: calc(#{$responsive-unit} * 8);
+
+          padding: calc(#{$responsive-unit} * 1);
+          border-radius: calc(#{$responsive-unit} * 1);
+        }
+
+        &.wip {
+          background-color: $color-danger;
+        }
+
+        &.rework {
+          background-color: $color-primary;
+        }
+
+        &.done {
+          background-color: $color-success;
         }
       }
 
@@ -125,11 +189,13 @@
         color: $theme-background;
         padding: calc(#{$responsive-unit} * 2);
         border-radius: calc(#{$responsive-unit} * 2);
-        background-color: $theme-color;
+        background-color: var(--adventure-category-color, $theme-color);
         font-weight: bolder;
 
         @include portrait {
           font-size: calc(#{$responsive-unit} * 6);
+          border-radius: calc(#{$responsive-unit} * 1);
+          padding: calc(#{$responsive-unit} * 1);
         }
       }
     }

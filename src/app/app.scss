@@ -23,6 +23,10 @@ header {
     font-size: calc(#{$responsive-unit} * 20);
     margin-right: auto;
 
+    @include portrait {
+      font-size: calc(#{$responsive-unit} * 15);
+    }
+
     &:hover {
       color: color.adjust($color-warning, $lightness: 25%);
     }
@@ -34,6 +38,11 @@ header {
     img {
       height: calc(#{$responsive-unit} * 20);
       margin-right: calc(#{$responsive-unit} * 5);
+
+      @include portrait {
+        height: calc(#{$responsive-unit} * 15);
+        margin-right: calc(#{$responsive-unit} * 5);
+      }
     }
   }
 
@@ -117,6 +126,10 @@ footer {
 
   h2 {
     font-size: calc(#{$responsive-unit} * 9);
+
+    @include portrait {
+      font-size: calc(#{$responsive-unit} * 7);
+    }
 
     #heart {
       color: $color-danger;

@@ -1,18 +1,47 @@
 @use '@shyland-dev/ui/styles' as *;
 
-$header-height: calc(#{$responsive-unit} * 35);
-$footer-height: calc(#{$responsive-unit} * 25);
-$content-height: calc(#{$dynamic-height} - #{$header-height} - #{$footer-height});
-$content-padding: calc(#{$responsive-unit} * 8);
-$content-inset-height: calc(#{$content-height} - #{$content-padding} * 2);
-$content-inset-border-radius: calc(#{$responsive-unit} * 10);
-$content-inset-border-width: calc(#{$responsive-unit} * 1);
-$content-inset-padding: calc(#{$responsive-unit} * 10);
+$clone-color: #ff6e75;
+$form-color: #6eff8c;
+$game-color: #6ec9ff;
+$interactive-color: #ff6ed9;
+$loader-color: #ffb86e;
+$random-color: #d96eff;
+
+:root {
+  --header-height: calc(#{$responsive-unit} * 35);
+  --footer-height: calc(#{$responsive-unit} * 25);
+  --content-padding: calc(#{$responsive-unit} * 8);
+  --content-inset-border-radius: calc(#{$responsive-unit} * 10);
+  --content-inset-border-width: calc(#{$responsive-unit} * 1);
+  --content-inset-padding: calc(#{$responsive-unit} * 10);
+  --content-height: calc(#{$dynamic-height} - var(--header-height) - var(--footer-height));
+  --content-inset-height: calc(var(--content-height) - var(--content-padding) * 2);
+  --scrollbar-width: calc(#{$responsive-unit} * 2.5);
+
+  @include portrait {
+    --header-height: calc(#{$responsive-unit} * 30);
+    --footer-height: calc(#{$responsive-unit} * 20);
+    --content-padding: calc(#{$responsive-unit} * 5);
+    --content-inset-border-radius: calc(#{$responsive-unit} * 5);
+    --content-inset-border-width: calc(#{$responsive-unit} * 0.5);
+    --content-inset-padding: calc(#{$responsive-unit} * 5);
+    --scrollbar-width: calc(#{$responsive-unit} * 1.5);
+  }
+}
+
+$header-height: var(--header-height);
+$footer-height: var(--footer-height);
+$content-height: var(--content-height);
+$content-padding: var(--content-padding);
+$content-inset-height: var(--content-inset-height);
+$content-inset-border-radius: var(--content-inset-border-radius);
+$content-inset-border-width: var(--content-inset-border-width);
+$content-inset-padding: var(--content-inset-padding);
 
 $theme-background: var(--theme-background, $color-black);
 $theme-color: var(--theme-color, $color-white);
 
-$scrollbar-width: calc(#{$responsive-unit} * 2.5);
+$scrollbar-width: var(--scrollbar-width);
 $scrollbar-color-track: $theme-background;
 $scrollbar-color-thumb: $theme-color;
 $scrollbar-color-thumb-hover: $color-medium;
@@ -58,10 +87,4 @@ app-root {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-@mixin theme($name) {
-  :host-context([data-theme='#{$name}']) & {
-    @content;
-  }
 }
