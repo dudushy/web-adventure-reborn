@@ -15,6 +15,8 @@ import { TitleService } from '../../services';
   styleUrl: './preferences.scss',
 })
 export class Preferences implements OnInit, OnDestroy {
+  readonly title = 'Preferences';
+
   languageArray: SelectOption[] = LANGUAGES.map((language, index) => ({
     id: index,
     label: language.name,
@@ -41,7 +43,7 @@ export class Preferences implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.debugService.log(this);
 
-    this.titleService.setTitle(this);
+    this.titleService.setTitle(this.title);
 
     this.selectedLanguage = this.storageService.get('language') || this.translateService.getCurrentLang();
     this.debugService.log(this, 'this.selectedLanguage', this.selectedLanguage);

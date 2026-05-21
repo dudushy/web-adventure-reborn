@@ -8,10 +8,7 @@ export class TitleService {
     this.debugService.log(this);
   }
 
-  setTitle(instance: object): void {
-    this.debugService.log(this, 'instance', instance);
-
-    const title = instance.constructor.name.replace('_', '');
+  setTitle(title: string): void {
     this.debugService.log(this, 'title', title);
 
     const documentTitle = `${TITLE_PREFIX}${title}`;

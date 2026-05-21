@@ -15,6 +15,7 @@ import { NgClass } from '@angular/common';
   styleUrl: './adventures.scss',
 })
 export class Adventures implements OnInit, OnDestroy {
+  readonly title = 'Adventures';
   readonly adventures = ADVENTURES;
 
   constructor(
@@ -27,7 +28,7 @@ export class Adventures implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.debugService.log(this);
 
-    this.titleService.setTitle(this);
+    this.titleService.setTitle(this.title);
   }
 
   ngOnDestroy(): void {

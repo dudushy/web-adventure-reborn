@@ -12,6 +12,7 @@ import { TitleService } from '../../services';
   styleUrl: './home.scss',
 })
 export class Home implements OnInit, OnDestroy {
+  readonly title = 'Home';
   readonly topics = TOPICS;
 
   constructor(
@@ -24,7 +25,7 @@ export class Home implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.debugService.log(this);
 
-    this.titleService.setTitle(this);
+    this.titleService.setTitle(this.title);
   }
 
   ngOnDestroy(): void {
