@@ -21,13 +21,27 @@ export class ThemeService {
     this.debugService.log(this, 'theme', theme);
 
     const foundTheme = THEMES.find((t) => t.code === theme);
-    if (foundTheme) {
-      document.documentElement.style.setProperty('--theme', foundTheme.code);
+    if (!foundTheme) return;
+
+    document.documentElement.style.setProperty('--theme', foundTheme.code);
+    document.documentElement.setAttribute('data-theme', foundTheme.code);
+
+    if (foundTheme.code === 'custom') {
+      const customBackground = this.storageService.get('customThemeBackground') as string | null;
+      const customColor = this.storageService.get('customThemeColor') as string | null;
+
+      if (customBackground) {
+        document.documentElement.style.setProperty('--theme-background', customBackground);
+      }
+      if (customColor) {
+        document.documentElement.style.setProperty('--theme-color', customColor);
+      }
+    } else {
       document.documentElement.style.setProperty('--theme-background', foundTheme.background);
       document.documentElement.style.setProperty('--theme-color', foundTheme.color);
-      document.documentElement.setAttribute('data-theme', foundTheme.code);
-      this.storageService.set('theme', theme);
     }
+
+    this.storageService.set('theme', theme);
   }
 
   getCurrentTheme(): string | null {
@@ -47,5 +61,19 @@ export class ThemeService {
     }
 
     return defaultTheme ? defaultTheme.code : null;
+  }
+
+  setCustomThemeBackground(color: string): void {
+    this.debugService.log(this, 'color', color);
+
+    document.documentElement.style.setProperty('--theme-background', color);
+    this.storageService.set('customThemeBackground', color);
+  }
+
+  setCustomThemeColor(color: string): void {
+    this.debugService.log(this, 'color', color);
+
+    document.documentElement.style.setProperty('--theme-color', color);
+    this.storageService.set('customThemeColor', color);
   }
 }

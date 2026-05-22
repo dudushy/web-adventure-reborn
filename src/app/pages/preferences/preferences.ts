@@ -27,6 +27,8 @@ export class Preferences implements OnInit, OnDestroy {
 
   themeArray: SelectOption[] = [];
   selectedTheme: string | null = null;
+  customThemeBackground: string = '';
+  customThemeColor: string = '';
 
   private langChangeSub!: Subscription;
 
@@ -51,6 +53,9 @@ export class Preferences implements OnInit, OnDestroy {
     this.selectedTheme = this.themeService.getCurrentTheme();
     this.debugService.log(this, 'this.selectedTheme', this.selectedTheme);
 
+    this.customThemeBackground = this.storageService.get('customThemeBackground') || '';
+    this.customThemeColor = this.storageService.get('customThemeColor') || '';
+
     this.buildThemeArray();
     this.langChangeSub = this.translateService.onLangChange.subscribe(() => this.buildThemeArray());
   }
@@ -63,7 +68,7 @@ export class Preferences implements OnInit, OnDestroy {
   private buildThemeArray(): void {
     this.themeArray = THEMES.map((theme, index) => ({
       id: index,
-      label: this.translateService.instant(`themes.${theme.code}`),
+      label: this.translateService.instant(theme.nameKey),
       value: theme.code,
     }));
   }
@@ -93,5 +98,15 @@ export class Preferences implements OnInit, OnDestroy {
     if (this.selectedTheme) {
       this.themeService.setTheme(this.selectedTheme);
     }
+  }
+
+  updateCustomThemeBackground(event: any): void {
+    this.customThemeBackground = event.target.value;
+    this.themeService.setCustomThemeBackground(this.customThemeBackground);
+  }
+
+  updateCustomThemeColor(event: any): void {
+    this.customThemeColor = event.target.value;
+    this.themeService.setCustomThemeColor(this.customThemeColor);
   }
 }

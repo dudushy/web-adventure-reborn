@@ -10,4 +10,18 @@
 
     <shy-select [selectOptions]="themeArray" (onSelectionChange)="updateTheme($event)" [selectIcon]="'check'" [dropdownIcon]="'chevron-down'" [selectedOption]="selectedTheme">{{ 'preferences.theme' | translate }}</shy-select>
   </div>
+
+  @if (selectedTheme == 'custom') {
+  <div class="preferences-wrapper">
+    <h2>{{ 'preferences.theme-custom.background' | translate }}</h2>
+
+    <input class="color-picker" type="color" [value]="customThemeBackground" (input)="updateCustomThemeBackground($event)" />
+  </div>
+
+  <div class="preferences-wrapper">
+    <h2>{{ 'preferences.theme-custom.color' | translate }}</h2>
+
+    <input class="color-picker" type="color" [value]="customThemeColor" (input)="updateCustomThemeColor($event)" />
+  </div>
+  }
 </div>

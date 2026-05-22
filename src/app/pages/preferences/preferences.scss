@@ -43,6 +43,21 @@
       font-size: calc(#{$responsive-unit} * 6);
     }
   }
+
+  .color-picker {
+    appearance: none;
+    width: calc(#{$responsive-unit} * 110);
+    height: calc(#{$responsive-unit} * 20);
+    border-color: $theme-color;
+    border-width: calc(#{$responsive-unit} * 1);
+    border-style: solid;
+    background-color: $theme-background;
+    cursor: pointer;
+
+    @include portrait {
+      width: calc(#{$responsive-unit} * 85);
+    }
+  }
 }
 
 shy-select {

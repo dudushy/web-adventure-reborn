@@ -1,6 +1,7 @@
 import { ThemesType } from '../types';
 
 export const THEMES: ThemesType[] = [
-  { code: 'light', name: 'Light', background: '#ffffff', color: '#000000' },
-  { code: 'dark', name: 'Dark', background: '#000000', color: '#ffffff', isDefault: true },
+  { code: 'light', nameKey: 'themes.light', background: '#ffffff', color: '#000000' },
+  { code: 'dark', nameKey: 'themes.dark', background: '#000000', color: '#ffffff', isDefault: true },
+  { code: 'custom', nameKey: 'themes.custom', background: '#000000', color: '#ffffff' },
 ];

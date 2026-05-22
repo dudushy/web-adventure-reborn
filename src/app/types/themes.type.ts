@@ -1,6 +1,6 @@
 export type ThemesType = {
   code: string;
-  name: string;
+  nameKey: string;
   background: string;
   color: string;
   isDefault?: boolean;

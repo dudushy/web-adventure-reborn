@@ -60,10 +60,15 @@
   "preferences": {
     "title": "Preferences",
     "language": "Select a language",
-    "theme": "Select a theme"
+    "theme": "Select a theme",
+    "theme-custom": {
+      "background": "Background color",
+      "color": "Text color"
+    }
   },
   "themes": {
     "light": "Light",
-    "dark": "Dark"
+    "dark": "Dark",
+    "custom": "Custom"
   }
 }
