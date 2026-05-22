@@ -46,21 +46,16 @@
   },
   "adventures": {
     "title": "Adventures",
-    "clones": {
-    },
-    "forms": {
-    },
-    "games": {
-    },
-    "interactives": {
-    },
+    "clones": {},
+    "forms": {},
+    "games": {},
+    "interactives": {},
     "loaders": {
       "startup": {
         "description": "The initial loader, simple and elegant."
       }
     },
-    "random": {
-    }
+    "random": {}
   },
   "preferences": {
     "title": "Preferences",
