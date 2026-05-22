@@ -1,8 +1,13 @@
 @use '@shyland-dev/ui/styles' as *;
 @use '../../../../../styles.scss' as *;
 
+$animation-duration: 4s;
+$filler-width: 25%;
+
 :host {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: $content-inset-height;
   padding: $content-inset-padding;
   border-radius: $content-inset-border-radius;
@@ -11,4 +16,49 @@
   border-style: solid;
   background-color: $theme-background;
   color: $theme-color;
+}
+
+.bar {
+  width: 100%;
+  margin-inline: calc(#{$responsive-unit} * 50);
+  height: calc(#{$responsive-unit} * 10);
+  border-radius: calc(#{$responsive-unit} * 4);
+  background-color: $theme-background;
+  border-width: calc(#{$responsive-unit} * 1);
+  border-color: $theme-color;
+  border-style: solid;
+  overflow: hidden;
+  position: relative;
+
+  .filler {
+    position: absolute;
+    top: 0;
+    left: -#{$filler-width};
+    width: $filler-width;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 0%, #{$theme-color} 20%, #{$theme-color} 80%, transparent 100%);
+    animation-name: move-right-and-stretch;
+    animation-duration: $animation-duration;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+
+    &.filler-2 {
+      animation-delay: calc(#{$animation-duration} / 3);
+    }
+
+    &.filler-3 {
+      animation-delay: calc(#{$animation-duration} / 3 * 2);
+    }
+  }
+}
+
+@keyframes move-right-and-stretch {
+  0% {
+    left: -#{$filler-width};
+    width: $filler-width;
+  }
+  100% {
+    left: calc(100% + #{$filler-width});
+    width: calc(#{$filler-width} * 2);
+  }
 }
