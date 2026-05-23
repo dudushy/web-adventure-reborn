@@ -55,7 +55,11 @@
         "description": "O loader inicial, simples e elegante."
       }
     },
-    "random": {}
+    "random": {
+      "tongue": {
+        "description": "Uma língua que conecta dois pontos."
+      }
+    }
   },
   "preferences": {
     "title": "Preferências",

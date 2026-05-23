@@ -8,4 +8,11 @@ export const ADVENTURES: AdventuresType[] = [
     descriptionKey: 'adventures.loaders.startup.description',
     path: '/adventures/loaders/startup',
   },
+  {
+    slug: 'tongue',
+    category: 'random',
+    status: 'wip',
+    descriptionKey: 'adventures.random.tongue.description',
+    path: '/adventures/random/tongue',
+  },
 ];
