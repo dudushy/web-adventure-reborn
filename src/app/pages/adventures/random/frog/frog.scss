@@ -1,0 +1,330 @@
+@use '@shyland-dev/ui/styles' as *;
+@use '../../../../../styles.scss' as *;
+
+$canvas-size: calc(#{$responsive-unit} * 180);
+$art-size: calc(#{$responsive-unit} * 100);
+$fly-size: $art-size;
+$frog-size: $art-size;
+$frog-skin-color: #09ff00;
+$frog-eye-skin-color: #07dc00;
+$frog-eye-ball-color: #ffffff;
+$frog-eye-pupil-color: #000000;
+$frog-tongue-color: #ff0000;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: $content-inset-height;
+  padding: $content-inset-padding;
+  border-radius: $content-inset-border-radius;
+  border-color: $theme-color;
+  border-width: $content-inset-border-width;
+  border-style: solid;
+  background-color: $theme-background;
+  color: $theme-color;
+}
+
+button {
+  background-color: $theme-color;
+  color: $theme-background;
+  border: none;
+  padding-block: calc(#{$responsive-unit} * 4);
+  padding-inline: calc(#{$responsive-unit} * 8);
+  border-radius: calc(#{$responsive-unit} * 2);
+  font-size: calc(#{$responsive-unit} * 8);
+  cursor: pointer;
+}
+
+.canvas {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include square($canvas-size);
+  border-radius: 50%;
+  border-color: $theme-color;
+  border-width: $content-inset-border-width;
+  border-style: solid;
+  margin: calc(#{$responsive-unit} * 10);
+  overflow: hidden;
+
+  .frog {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $frog-size;
+    width: calc(#{$frog-size} * 0.9);
+
+    .head {
+      position: absolute;
+      top: 5%;
+      @include square(calc(#{$frog-size} * 0.4));
+      border-radius: 30% 70% 60% 40% / 30% 40% 60% 70%;
+      transform: rotate(45deg);
+      background-color: $frog-skin-color;
+      z-index: 1;
+    }
+
+    .tongue {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: -20%;
+      height: calc(#{$frog-size} * 0.3);
+      width: calc(#{$frog-size} * 0.05);
+      border-radius: 50%;
+      background-color: $frog-tongue-color;
+      z-index: 0;
+
+      .tongue-tip {
+        position: absolute;
+        top: -10%;
+        @include square(calc(#{$frog-size} * 0.1));
+        border-radius: 50%;
+        background-color: $frog-tongue-color;
+      }
+    }
+
+    .eye {
+      position: absolute;
+      top: 7%;
+      @include square(calc(#{$frog-size} * 0.125));
+      border-radius: 50%;
+      background-color: $frog-skin-color;
+      z-index: 2;
+
+      &.left {
+        left: 55%;
+      }
+
+      &.right {
+        right: 55%;
+      }
+
+      .eye-ball {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include square(100%);
+        border-radius: 50%;
+        background-color: $frog-eye-ball-color;
+        border-bottom-width: calc(#{$frog-size} * 0.07);
+        border-bottom-color: $frog-eye-skin-color;
+        border-bottom-style: solid;
+
+        .eye-pupil {
+          position: absolute;
+          top: 20%;
+          @include square(40%);
+          border-radius: 50%;
+          background-color: $frog-eye-pupil-color;
+        }
+      }
+    }
+
+    .body {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 20%;
+      height: calc(#{$frog-size} * 0.7);
+      width: calc(#{$frog-size} * 0.4);
+      border-radius: 50%;
+      background-color: $frog-skin-color;
+
+      .arm {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 5%;
+        height: calc(#{$frog-size} * 0.3);
+        width: calc(#{$frog-size} * 0.1);
+        border-radius: 50%;
+        background-color: $frog-skin-color;
+
+        &.left {
+          left: -30%;
+          transform: rotate(135deg);
+
+          .section {
+            transform: translateX(-70%) rotate(55deg);
+
+            .finger {
+              &.finger-1 {
+                transform: translateX(100%) rotate(-30deg);
+              }
+
+              &.finger-3 {
+                transform: translateX(-100%) rotate(30deg);
+              }
+            }
+          }
+        }
+
+        &.right {
+          right: -30%;
+          transform: rotate(-135deg);
+
+          .section {
+            transform: translateX(70%) rotate(-55deg);
+
+            .finger {
+              &.finger-1 {
+                transform: translateX(100%) rotate(-30deg);
+              }
+
+              &.finger-3 {
+                transform: translateX(-100%) rotate(30deg);
+              }
+            }
+          }
+        }
+
+        .section {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          top: 70%;
+          height: calc(#{$frog-size} * 0.2);
+          width: calc(#{$frog-size} * 0.07);
+          border-radius: 50%;
+          background-color: $frog-skin-color;
+
+          .finger {
+            position: absolute;
+            top: 90%;
+            height: calc(#{$frog-size} * 0.1);
+            width: calc(#{$frog-size} * 0.03);
+            border-radius: 50%;
+            background-color: $frog-skin-color;
+
+            .finger-tip {
+              position: absolute;
+              top: 90%;
+              @include square(calc(#{$frog-size} * 0.04));
+              border-radius: 50%;
+              background-color: $frog-eye-skin-color;
+            }
+          }
+        }
+      }
+
+      .leg {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        bottom: 5%;
+        height: calc(#{$frog-size} * 0.3);
+        width: calc(#{$frog-size} * 0.1);
+        border-radius: 50%;
+        background-color: $frog-skin-color;
+
+        &.left {
+          left: -15%;
+          transform: rotate(135deg);
+
+          .section {
+            &.section-1 {
+              transform: translateX(50%) rotate(-150deg);
+            }
+
+            &.section-2 {
+              transform: translateX(-50%) rotate(155deg);
+            }
+
+            .finger {
+              &.finger-1 {
+                transform: translateX(100%) rotate(-30deg);
+              }
+
+              &.finger-3 {
+                transform: translateX(-100%) rotate(30deg);
+              }
+            }
+          }
+        }
+
+        &.right {
+          right: -15%;
+          transform: rotate(-135deg);
+
+          .section {
+            &.section-1 {
+              transform: translateX(-50%) rotate(150deg);
+            }
+
+            &.section-2 {
+              transform: translateX(50%) rotate(-155deg);
+            }
+
+            .finger {
+              &.finger-1 {
+                transform: translateX(100%) rotate(-30deg);
+              }
+
+              &.finger-3 {
+                transform: translateX(-100%) rotate(30deg);
+              }
+            }
+          }
+        }
+
+        .section {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          border-radius: 50%;
+          background-color: $frog-skin-color;
+
+          &.section-1 {
+            top: 40%;
+            height: calc(#{$frog-size} * 0.2);
+            width: calc(#{$frog-size} * 0.07);
+          }
+
+          &.section-2 {
+            top: 5%;
+            height: calc(#{$frog-size} * 0.2);
+            width: calc(#{$frog-size} * 0.07);
+          }
+
+          .finger {
+            position: absolute;
+            top: 90%;
+            height: calc(#{$frog-size} * 0.1);
+            width: calc(#{$frog-size} * 0.03);
+            border-radius: 50%;
+            background-color: $frog-skin-color;
+
+            .finger-tip {
+              position: absolute;
+              top: 90%;
+              @include square(calc(#{$frog-size} * 0.04));
+              border-radius: 50%;
+              background-color: $frog-eye-skin-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .fly {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    @include square(calc(#{$frog-size} * 0.1));
+    border-radius: 50%;
+    background-color: black;
+  }
+}

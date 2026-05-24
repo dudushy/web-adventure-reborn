@@ -59,6 +59,10 @@
       "tongue": {
         "description": "Uma língua que conecta dois pontos.",
         "toggle": "Alternar língua"
+      },
+      "frog": {
+        "description": "Um sapo que pega a mosca com a língua.",
+        "toggle": "Alternar língua do sapo"
       }
     }
   },
