@@ -57,7 +57,8 @@
     },
     "random": {
       "tongue": {
-        "description": "Uma língua que conecta dois pontos."
+        "description": "Uma língua que conecta dois pontos.",
+        "toggle": "Alternar língua"
       }
     }
   },

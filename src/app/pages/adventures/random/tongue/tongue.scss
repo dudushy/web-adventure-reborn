@@ -1,8 +1,20 @@
 @use '@shyland-dev/ui/styles' as *;
 @use '../../../../../styles.scss' as *;
 
+$canvas-size: calc(#{$responsive-unit} * 180);
+$mouth-color: #09ff00;
+$tongue-color: #ff0000;
+$point-color: #000000;
+$mouth-size: calc(#{$responsive-unit} * 10);
+$tongue-length: calc(#{$mouth-size} * 4);
+$tongue-thickness: calc(#{$mouth-size} * 0.6);
+$point-size: calc(#{$tongue-thickness} * 1.2);
+$animation-duration: 1s;
+$animation-delay-ratio: 0.65;
+
 :host {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: $content-inset-height;
@@ -13,4 +25,147 @@
   border-style: solid;
   background-color: $theme-background;
   color: $theme-color;
+}
+
+.canvas {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include square($canvas-size);
+  border-radius: 50%;
+  border-color: $theme-color;
+  border-width: $content-inset-border-width;
+  border-style: solid;
+  margin: calc(#{$responsive-unit} * 10);
+  overflow: hidden;
+
+  .mouth {
+    position: absolute;
+    @include square($mouth-size);
+    background-color: $mouth-color;
+    border-radius: 50%;
+
+    &.open {
+      .tongue {
+        &.tongue-1 {
+          animation-name: fill-in-horizontal-background-color;
+        }
+
+        &.tongue-2 {
+          animation-name: fill-in-vertical-background-color;
+          animation-delay: calc(#{$animation-duration} * #{$animation-delay-ratio});
+        }
+
+        &.tongue-3 {
+          animation-delay: calc(#{$animation-duration} * #{$animation-delay-ratio} * 2);
+          animation-name: fill-in-horizontal-background-color;
+        }
+      }
+    }
+
+    &.closed {
+      .tongue {
+        &.tongue-1 {
+          animation-name: fill-out-horizontal-background-color;
+          animation-delay: calc(#{$animation-duration} * #{$animation-delay-ratio} * 2);
+          width: $tongue-length;
+        }
+
+        &.tongue-2 {
+          animation-name: fill-out-vertical-background-color;
+          animation-delay: calc(#{$animation-duration} * #{$animation-delay-ratio});
+          height: $tongue-length;
+        }
+
+        &.tongue-3 {
+          animation-name: fill-out-horizontal-background-color;
+          width: $tongue-length;
+        }
+      }
+    }
+
+    .tongue {
+      position: absolute;
+      border-radius: calc(#{$responsive-unit} * 2);
+      background-color: $tongue-color;
+      animation-duration: $animation-duration;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+
+      &.tongue-1 {
+        height: $tongue-thickness;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%);
+      }
+
+      &.tongue-2 {
+        width: $tongue-thickness;
+        right: 0;
+      }
+
+      &.tongue-3 {
+        height: $tongue-thickness;
+        bottom: 0;
+      }
+    }
+  }
+
+  .point {
+    position: absolute;
+    background-color: $point-color;
+    border-radius: 50%;
+    @include square($point-size);
+    transform: translateY(calc(#{$tongue-length} * 1 - #{$point-size} * 0.9)) translateX(calc(#{$tongue-length} * 2 - #{$point-size} * 0.9));
+  }
+}
+
+button {
+  background-color: $theme-color;
+  color: $theme-background;
+  border: none;
+  padding: calc(#{$responsive-unit} * 2) calc(#{$responsive-unit} * 4);
+  border-radius: calc(#{$responsive-unit} * 2);
+  cursor: pointer;
+}
+
+@keyframes fill-in-horizontal-background-color {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: $tongue-length;
+  }
+}
+
+@keyframes fill-in-vertical-background-color {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: $tongue-length;
+  }
+}
+
+@keyframes fill-out-horizontal-background-color {
+  from {
+    width: $tongue-length;
+  }
+
+  to {
+    width: 0;
+  }
+}
+
+@keyframes fill-out-vertical-background-color {
+  from {
+    height: $tongue-length;
+  }
+
+  to {
+    height: 0;
+  }
 }

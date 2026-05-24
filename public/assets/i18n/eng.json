@@ -57,7 +57,8 @@
     },
     "random": {
       "tongue": {
-        "description": "A tongue that connects two points."
+        "description": "A tongue that connects two points.",
+        "toggle": "Toggle tongue"
       }
     }
   },

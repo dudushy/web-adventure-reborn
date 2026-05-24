@@ -1,1 +1,14 @@
-tongue
+<button (click)="toggleMouth()">{{ 'adventures.random.tongue.toggle' | translate }}</button>
+
+<div class="canvas">
+  <div class="mouth" [class.open]="isOpen" [class.closed]="isOpen === false">
+    <div class="tongue tongue-1">
+      <div class="tongue tongue-2">
+        <div class="tongue tongue-3">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="point"></div>
+</div>
