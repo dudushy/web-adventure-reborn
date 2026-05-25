@@ -12,10 +12,12 @@ $frog-eye-pupil-color: #000000;
 $frog-tongue-color: #ff0000;
 
 $fly-size: calc(#{$art-size} * 0.1);
-$fly-animation-duration: 3s;
+$fly-vertical-area: clamp(5%, var(--fly-vertical-position), 20%);
+$fly-horizontal-area: clamp(30%, var(--fly-horizontal-position), 70%);
+$fly-animation-duration: 2s;
 $fly-body-color: #000000;
 $fly-wing-color: #808080;
-$fly-wing-animation-duration: 0.3s;
+$fly-wing-animation-duration: 0.1s;
 
 :host {
   display: flex;
@@ -129,6 +131,10 @@ button {
           @include square(40%);
           border-radius: 50%;
           background-color: $frog-eye-pupil-color;
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-iteration-count: infinite;
+          animation-duration: $fly-animation-duration;
+          animation-name: fly-around-horizontally;
         }
       }
     }
@@ -330,9 +336,7 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 50%;
-    left: 50%;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     animation-iteration-count: infinite;
     animation-duration: $fly-animation-duration;
     animation-name: fly-around;
@@ -373,23 +377,49 @@ button {
 
 @keyframes fly-around {
   0% {
-    top: 20%;
-    left: 20%;
+    top: 5%;
+    left: 40%;
   }
+
   25% {
-    top: 30%;
-    left: 30%;
+    top: 10%;
+    left: 56%;
   }
+
   50% {
     top: 20%;
     left: 60%;
   }
+
   75% {
-    top: 17.5%;
-    left: 75%;
+    top: 15%;
+    left: 45%;
   }
+
   100% {
-    top: 20%;
+    top: 5%;
+    left: 40%;
+  }
+}
+
+@keyframes fly-around-horizontally {
+  0% {
+    left: 20%;
+  }
+
+  25% {
+    left: 36%;
+  }
+
+  50% {
+    left: 40%;
+  }
+
+  75% {
+    left: 25%;
+  }
+
+  100% {
     left: 20%;
   }
 }
