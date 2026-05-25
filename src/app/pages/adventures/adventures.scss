@@ -69,6 +69,10 @@
       --adventure-category-color: #{$clones-color};
     }
 
+    &.components {
+      --adventure-category-color: #{$components-color};
+    }
+
     &.forms {
       --adventure-category-color: #{$forms-color};
     }
@@ -77,8 +81,8 @@
       --adventure-category-color: #{$games-color};
     }
 
-    &.interactives {
-      --adventure-category-color: #{$interactives-color};
+    &.interactive {
+      --adventure-category-color: #{$interactive-color};
     }
 
     &.loaders {

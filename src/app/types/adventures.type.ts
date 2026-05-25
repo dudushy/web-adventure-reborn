@@ -6,6 +6,6 @@ export type AdventuresType = {
   path: string;
 };
 
-export type AdventuresCategoriesType = 'clones' | 'forms' | 'games' | 'interactives' | 'loaders' | 'random';
+export type AdventuresCategoriesType = 'clones' | 'components' | 'forms' | 'games' | 'interactive' | 'loaders' | 'random';
 
 export type AdventuresStatusType = 'wip' | 'done' | 'rework';

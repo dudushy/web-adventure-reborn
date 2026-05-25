@@ -1,11 +1,12 @@
 @use '@shyland-dev/ui/styles' as *;
 
-$clones-color: #ff6e75;
-$forms-color: #6eff8c;
-$games-color: #6ec9ff;
-$interactives-color: #ff6ed9;
-$loaders-color: #ffb86e;
-$random-color: #d96eff;
+$clones-color: #cacaca;
+$components-color: #17c5ae;
+$forms-color: #8517c5;
+$games-color: #31c517;
+$interactive-color: #c5178e;
+$loaders-color: #c55a17;
+$random-color: #1734c5;
 
 :root {
   --header-height: calc(#{$responsive-unit} * 35);

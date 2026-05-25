@@ -21,25 +21,29 @@
         "title": "Clones",
         "description": "Recreating elements and behaviors from real websites"
       },
-      "interactives": {
-        "title": "Interactives",
-        "description": "Experimenting with interactive and dynamic components"
-      },
-      "games": {
-        "title": "Games",
-        "description": "Creating game experiences directly in the browser"
-      },
-      "random": {
-        "title": "Random",
-        "description": "Crazy, useful, and creative things without a defined category"
+      "components": {
+        "title": "Components",
+        "description": "Building reusable and customizable UI components"
       },
       "forms": {
         "title": "Forms",
         "description": "Exploring validations, masks, and form UX"
       },
+      "games": {
+        "title": "Games",
+        "description": "Creating game experiences directly in the browser"
+      },
+      "interactive": {
+        "title": "Interactive",
+        "description": "Experimenting with interactive and dynamic components"
+      },
       "loaders": {
         "title": "Loaders",
         "description": "Animations, skeletons, and loading states"
+      },
+      "random": {
+        "title": "Random",
+        "description": "Crazy, useful, and creative things without a defined category"
       }
     },
     "philosophy": "Simplicity, best practices, and a lot of curiosity — that's how adventures are created."
@@ -47,9 +51,10 @@
   "adventures": {
     "title": "Adventures",
     "clones": {},
+    "components": {},
     "forms": {},
     "games": {},
-    "interactives": {},
+    "interactive": {},
     "loaders": {
       "startup": {
         "description": "The initial loader, simple and elegant."
