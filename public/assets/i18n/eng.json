@@ -62,7 +62,7 @@
       },
       "frog": {
         "description": "A frog that catches the fly with its tongue.",
-        "toggle": "Toggle frog tongue"
+        "toggle": "Catch fly"
       }
     }
   },

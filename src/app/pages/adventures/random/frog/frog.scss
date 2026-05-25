@@ -3,13 +3,19 @@
 
 $canvas-size: calc(#{$responsive-unit} * 180);
 $art-size: calc(#{$responsive-unit} * 100);
-$fly-size: $art-size;
+
 $frog-size: $art-size;
 $frog-skin-color: #09ff00;
 $frog-eye-skin-color: #07dc00;
 $frog-eye-ball-color: #ffffff;
 $frog-eye-pupil-color: #000000;
 $frog-tongue-color: #ff0000;
+
+$fly-size: calc(#{$art-size} * 0.1);
+$fly-animation-duration: 3s;
+$fly-body-color: #000000;
+$fly-wing-color: #808080;
+$fly-wing-animation-duration: 0.3s;
 
 :host {
   display: flex;
@@ -83,7 +89,7 @@ button {
       .tongue-tip {
         position: absolute;
         top: -10%;
-        @include square(calc(#{$frog-size} * 0.1));
+        @include square($fly-size);
         border-radius: 50%;
         background-color: $frog-tongue-color;
       }
@@ -321,10 +327,97 @@ button {
 
   .fly {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: $fly-animation-duration;
+    animation-name: fly-around;
+    z-index: 3;
+
+    .body {
+      position: absolute;
+      @include square(calc(#{$fly-size} * 0.6));
+      border-radius: 50%;
+      background-color: $fly-body-color;
+    }
+
+    .wing {
+      position: absolute;
+      height: calc(#{$fly-size} * 0.4);
+      width: calc(#{$fly-size} * 0.2);
+      border-radius: 50%;
+      bottom: 0;
+      background-color: $fly-wing-color;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-duration: $fly-wing-animation-duration;
+
+      &.left {
+        animation-name: flip-left-wing;
+        transform: translateX(15%) translateY(-50%) rotate(30deg);
+        left: 0;
+      }
+
+      &.right {
+        animation-name: flip-right-wing;
+        transform: translateX(-15%) translateY(-50%) rotate(-30deg);
+        right: 0;
+      }
+    }
+  }
+}
+
+@keyframes fly-around {
+  0% {
     top: 20%;
     left: 20%;
-    @include square(calc(#{$frog-size} * 0.1));
-    border-radius: 50%;
-    background-color: black;
+  }
+  25% {
+    top: 30%;
+    left: 30%;
+  }
+  50% {
+    top: 20%;
+    left: 60%;
+  }
+  75% {
+    top: 17.5%;
+    left: 75%;
+  }
+  100% {
+    top: 20%;
+    left: 20%;
+  }
+}
+
+@keyframes flip-left-wing {
+  0% {
+    transform: translateX(15%) translateY(-50%) rotate(30deg);
+  }
+
+  50% {
+    transform: translateX(60%) translateY(-35%) rotate(60deg);
+  }
+
+  100% {
+    transform: translateX(15%) translateY(-50%) rotate(30deg);
+  }
+}
+
+@keyframes flip-right-wing {
+  0% {
+    transform: translateX(-15%) translateY(-50%) rotate(-30deg);
+  }
+
+  50% {
+    transform: translateX(-60%) translateY(-35%) rotate(-60deg);
+  }
+
+  100% {
+    transform: translateX(-15%) translateY(-50%) rotate(-30deg);
   }
 }
