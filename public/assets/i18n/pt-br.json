@@ -77,7 +77,8 @@
     "theme": "Selecione um tema",
     "theme-custom": {
       "background": "Cor de fundo",
-      "color": "Cor do texto"
+      "color": "Cor do texto",
+      "highlight": "Cor do destaque"
     }
   },
   "themes": {

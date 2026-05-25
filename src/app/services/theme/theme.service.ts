@@ -29,6 +29,7 @@ export class ThemeService {
     if (foundTheme.code === 'custom') {
       const customBackground = this.storageService.get('customThemeBackground') as string | null;
       const customColor = this.storageService.get('customThemeColor') as string | null;
+      const customHighlight = this.storageService.get('customThemeHighlight') as string | null;
 
       if (customBackground) {
         document.documentElement.style.setProperty('--theme-background', customBackground);
@@ -36,9 +37,13 @@ export class ThemeService {
       if (customColor) {
         document.documentElement.style.setProperty('--theme-color', customColor);
       }
+      if (customHighlight) {
+        document.documentElement.style.setProperty('--theme-highlight', customHighlight);
+      }
     } else {
       document.documentElement.style.setProperty('--theme-background', foundTheme.background);
       document.documentElement.style.setProperty('--theme-color', foundTheme.color);
+      document.documentElement.style.setProperty('--theme-highlight', foundTheme.highlight);
     }
 
     this.storageService.set('theme', theme);
@@ -75,5 +80,12 @@ export class ThemeService {
 
     document.documentElement.style.setProperty('--theme-color', color);
     this.storageService.set('customThemeColor', color);
+  }
+
+  setCustomThemeHighlight(color: string): void {
+    this.debugService.log(this, 'color', color);
+
+    document.documentElement.style.setProperty('--theme-highlight', color);
+    this.storageService.set('customThemeHighlight', color);
   }
 }

@@ -46,7 +46,7 @@
       display: flex;
       align-items: center;
       font-size: calc(#{$responsive-unit} * 12);
-      color: $color-warning;
+      color: $theme-highlight;
       margin-bottom: calc(#{$responsive-unit} * 5);
 
       @include portrait {
@@ -106,7 +106,7 @@
           display: flex;
           align-items: center;
           font-size: calc(#{$responsive-unit} * 8);
-          color: $color-warning;
+          color: $theme-highlight;
           margin-bottom: calc(#{$responsive-unit} * 3);
 
           @include portrait {

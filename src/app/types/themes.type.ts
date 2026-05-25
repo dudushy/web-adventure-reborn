@@ -3,5 +3,6 @@ export type ThemesType = {
   nameKey: string;
   background: string;
   color: string;
+  highlight: string;
   isDefault?: boolean;
 };

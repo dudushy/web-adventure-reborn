@@ -67,10 +67,10 @@ shy-select {
   --shySelectBackground: #{$theme-background};
   --shySelectDropdownBackground: #{$theme-background};
   --shySelectColor: #{$theme-color};
-  --shySelectOptionHoverBackground: #{$color-warning};
+  --shySelectOptionHoverBackground: #{$theme-highlight};
   --shySelectOptionHoverColor: #{$theme-background};
   --shySelectOptionImgBorderRadius: 50%;
-  --shySelectSelectedColor: #{$color-warning};
+  --shySelectSelectedColor: #{$theme-highlight};
   --shySelectFontFamily: monospace;
   --shySelectFontSize: calc(#{$responsive-unit} * 6);
   --shySelectIconSize: calc(#{$responsive-unit} * 8);

@@ -23,5 +23,11 @@
 
       <input class="color-picker" type="color" [value]="customThemeColor" (input)="updateCustomThemeColor($event)" />
     </div>
+
+    <div class="preferences-wrapper">
+      <h2>{{ 'preferences.theme-custom.highlight' | translate }}</h2>
+
+      <input class="color-picker" type="color" [value]="customThemeHighlight" (input)="updateCustomThemeHighlight($event)" />
+    </div>
   }
 </div>

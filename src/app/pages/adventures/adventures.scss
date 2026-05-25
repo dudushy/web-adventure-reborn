@@ -105,7 +105,7 @@
 
       .slug {
         font-size: calc(#{$responsive-unit} * 8);
-        color: $color-warning;
+        color: $theme-highlight;
         font-weight: bold;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -121,7 +121,7 @@
         color: $theme-color;
         padding: calc(#{$responsive-unit} * 2);
         border-radius: calc(#{$responsive-unit} * 2);
-        border-color: $color-warning;
+        border-color: $theme-highlight;
         border-width: calc(#{$responsive-unit} * 1);
         border-style: solid;
 

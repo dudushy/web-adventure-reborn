@@ -29,7 +29,7 @@ export class Preferences implements OnInit, OnDestroy {
   selectedTheme: string | null = null;
   customThemeBackground: string = '';
   customThemeColor: string = '';
-
+  customThemeHighlight: string = '';
   private langChangeSub!: Subscription;
 
   constructor(
@@ -55,6 +55,7 @@ export class Preferences implements OnInit, OnDestroy {
 
     this.customThemeBackground = this.storageService.get('customThemeBackground') || '';
     this.customThemeColor = this.storageService.get('customThemeColor') || '';
+    this.customThemeHighlight = this.storageService.get('customThemeHighlight') || '';
 
     this.buildThemeArray();
     this.langChangeSub = this.translateService.onLangChange.subscribe(() => this.buildThemeArray());
@@ -108,5 +109,10 @@ export class Preferences implements OnInit, OnDestroy {
   updateCustomThemeColor(event: any): void {
     this.customThemeColor = event.target.value;
     this.themeService.setCustomThemeColor(this.customThemeColor);
+  }
+
+  updateCustomThemeHighlight(event: any): void {
+    this.customThemeHighlight = event.target.value;
+    this.themeService.setCustomThemeHighlight(this.customThemeHighlight);
   }
 }

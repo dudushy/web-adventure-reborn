@@ -41,6 +41,7 @@ $content-inset-padding: var(--content-inset-padding);
 
 $theme-background: var(--theme-background, $color-black);
 $theme-color: var(--theme-color, $color-white);
+$theme-highlight: var(--theme-highlight, $color-warning);
 
 $scrollbar-width: var(--scrollbar-width);
 $scrollbar-color-track: $theme-background;

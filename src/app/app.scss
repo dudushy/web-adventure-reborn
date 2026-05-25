@@ -3,6 +3,7 @@
 @use 'sass:color';
 
 $side-menu-animation-duration: 0.3s;
+$scale-transition-duration: 0.1s;
 
 header {
   height: $header-height;
@@ -18,21 +19,24 @@ header {
   #title {
     display: flex;
     align-items: center;
-    color: $color-warning;
+    color: $theme-highlight;
     font-weight: bolder;
     font-size: calc(#{$responsive-unit} * 20);
     margin-right: auto;
+    transition-property: transform;
+    transition-duration: $scale-transition-duration;
+    transition-timing-function: ease-in-out;
 
     @include portrait {
       font-size: calc(#{$responsive-unit} * 15);
     }
 
     &:hover {
-      color: color.adjust($color-warning, $lightness: 25%);
+      transform: scale(1.05);
     }
 
     &:active {
-      color: color.adjust($color-warning, $lightness: 50%);
+      transform: scale(0.95);
     }
 
     img {
@@ -57,7 +61,7 @@ header {
     }
 
     a {
-      background-color: $color-warning;
+      background-color: $theme-highlight;
       padding: calc(#{$responsive-unit} * 5);
       border-radius: calc(#{$responsive-unit} * 5);
       font-size: calc(#{$responsive-unit} * 8);
@@ -66,19 +70,22 @@ header {
       font-weight: bold;
       border-width: calc(#{$responsive-unit} * 1);
       border-style: solid;
-      border-color: $color-warning;
+      border-color: $theme-highlight;
+      transition-property: transform;
+      transition-duration: $scale-transition-duration;
+      transition-timing-function: ease-in-out;
 
       &:hover {
-        background-color: color.adjust($color-warning, $lightness: 25%);
+        transform: scale(1.05);
       }
 
       &:active {
-        background-color: color.adjust($color-warning, $lightness: -25%);
+        transform: scale(0.95);
       }
 
       &.active {
         background-color: $theme-background;
-        color: $color-warning;
+        color: $theme-highlight;
       }
     }
   }
@@ -87,21 +94,24 @@ header {
     --shyIconSize: calc(#{$responsive-unit} * 15);
 
     display: none;
-    background-color: $color-warning;
+    background-color: $theme-highlight;
     padding: calc(#{$responsive-unit} * 2);
     border-radius: calc(#{$responsive-unit} * 5);
     color: $theme-background;
     font-weight: bold;
     border-width: calc(#{$responsive-unit} * 1);
     border-style: solid;
-    border-color: $color-warning;
+    border-color: $theme-highlight;
+    transition-property: transform;
+    transition-duration: $scale-transition-duration;
+    transition-timing-function: ease-in-out;
 
     &:hover {
-      background-color: color.adjust($color-warning, $lightness: 25%);
+      transform: scale(1.05);
     }
 
     &:active {
-      background-color: color.adjust($color-warning, $lightness: -25%);
+      transform: scale(0.95);
     }
 
     @include portrait {
@@ -136,14 +146,17 @@ footer {
     }
 
     a {
-      color: $color-warning;
+      color: $theme-highlight;
+      transition-property: transform;
+      transition-duration: $scale-transition-duration;
+      transition-timing-function: ease-in-out;
 
       &:hover {
-        color: color.adjust($color-warning, $lightness: 25%);
+        transform: scale(1.05);
       }
 
       &:active {
-        color: color.adjust($color-warning, $lightness: 50%);
+        transform: scale(0.95);
       }
     }
   }
@@ -198,21 +211,24 @@ footer {
     shy-icon {
       --shyIconSize: calc(#{$responsive-unit} * 15);
 
-      background-color: $color-warning;
+      background-color: $theme-highlight;
       padding: calc(#{$responsive-unit} * 2);
       border-radius: calc(#{$responsive-unit} * 5);
       color: $theme-background;
       font-weight: bold;
       border-width: calc(#{$responsive-unit} * 1);
       border-style: solid;
-      border-color: $color-warning;
+      border-color: $theme-highlight;
+      transition-property: transform;
+      transition-duration: $scale-transition-duration;
+      transition-timing-function: ease-in-out;
 
       &:hover {
-        background-color: color.adjust($color-warning, $lightness: 25%);
+        transform: scale(1.05);
       }
 
       &:active {
-        background-color: color.adjust($color-warning, $lightness: -25%);
+        transform: scale(0.95);
       }
     }
 
@@ -223,7 +239,7 @@ footer {
     }
 
     a {
-      background-color: $color-warning;
+      background-color: $theme-highlight;
       padding: calc(#{$responsive-unit} * 5);
       border-radius: calc(#{$responsive-unit} * 5);
       font-size: calc(#{$responsive-unit} * 8);
@@ -233,20 +249,23 @@ footer {
       font-weight: bold;
       border-width: calc(#{$responsive-unit} * 1);
       border-style: solid;
-      border-color: $color-warning;
+      border-color: $theme-highlight;
       width: 100%;
+      transition-property: transform;
+      transition-duration: $scale-transition-duration;
+      transition-timing-function: ease-in-out;
 
       &:hover {
-        background-color: color.adjust($color-warning, $lightness: 25%);
+        transform: scale(1.05);
       }
 
       &:active {
-        background-color: color.adjust($color-warning, $lightness: -25%);
+        transform: scale(0.95);
       }
 
       &.active {
         background-color: $theme-background;
-        color: $color-warning;
+        color: $theme-highlight;
       }
     }
   }
