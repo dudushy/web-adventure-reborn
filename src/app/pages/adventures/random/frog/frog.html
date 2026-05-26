@@ -1,7 +1,9 @@
-<button (click)="toggleTongue()">{{ 'adventures.random.frog.toggle' | translate }}</button>
+<button (click)="catchFly()" [disabled]="frogState === 'catching' || frogState === 'caught'">
+  {{ (frogState === 'finished' ? 'adventures.random.frog.restart' : 'adventures.random.frog.toggle') | translate }}
+</button>
 
 <div class="canvas">
-  <div class="frog">
+  <div class="frog" [style.--frog-rotation]="frogRotation" [style.--frog-transition-duration]="frogTransitionDuration" [class.tongue]="frogTongue">
     <div class="head"></div>
 
     <div class="tongue">
@@ -91,11 +93,13 @@
     </div>
   </div>
 
-  <div class="fly">
+  <div class="fly" [style.--fly-vertical-position]="flyVerticalPosition" [style.--fly-horizontal-position]="flyHorizontalPosition" [style.--fly-transition-duration]="flyTransitionDuration">
     <div class="body"></div>
 
     <div class="wing left"></div>
 
     <div class="wing right"></div>
   </div>
+
+  <!-- <div class="debug" [style.--debug-position-x]="debugHorizontalPosition" [style.--debug-position-y]="debugVerticalPosition"></div> -->
 </div>

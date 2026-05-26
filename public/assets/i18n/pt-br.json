@@ -67,7 +67,8 @@
       },
       "frog": {
         "description": "Um sapo que pega a mosca com a língua.",
-        "toggle": "Pegar mosca"
+        "toggle": "Pegar mosca",
+        "restart": "Reiniciar"
       }
     }
   },
