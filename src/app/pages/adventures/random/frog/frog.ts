@@ -6,12 +6,12 @@ type Area = {
   x_axis: {
     min: number;
     max: number;
-  },
+  };
   y_axis: {
     min: number;
     max: number;
-  }
-}
+  };
+};
 
 type FrogState = 'idle' | 'catching' | 'caught' | 'finished';
 
@@ -33,13 +33,13 @@ export class Frog implements OnInit, OnDestroy {
   frogArea: Area = {
     x_axis: {
       min: 29,
-      max: 70
+      max: 70,
     },
     y_axis: {
       min: 30,
-      max: 66
-    }
-  }
+      max: 66,
+    },
+  };
 
   flyVerticalPosition: string = '0%';
   flyHorizontalPosition: string = '0%';
@@ -47,13 +47,13 @@ export class Frog implements OnInit, OnDestroy {
   flyArea: Area = {
     x_axis: {
       min: 5,
-      max: 95
+      max: 95,
     },
     y_axis: {
       min: 5,
-      max: 95
-    }
-  }
+      max: 95,
+    },
+  };
 
   private flyX: number = 10;
   private flyY: number = 10;
@@ -78,7 +78,10 @@ export class Frog implements OnInit, OnDestroy {
     return parseFloat(this.flyTransitionDuration) * 1000;
   }
 
-  constructor(private debugService: DebugService, private cdr: ChangeDetectorRef) {
+  constructor(
+    private debugService: DebugService,
+    private cdr: ChangeDetectorRef,
+  ) {
     this.debugService.log(this);
   }
 
@@ -153,10 +156,8 @@ export class Frog implements OnInit, OnDestroy {
     // Repulsão da área do sapo
     const frogCenterX = (this.frogArea.x_axis.min + this.frogArea.x_axis.max) / 2;
     const frogCenterY = (this.frogArea.y_axis.min + this.frogArea.y_axis.max) / 2;
-    const nearFrogX = this.flyX > this.frogArea.x_axis.min - this.flyFrogRepulsionDistance &&
-                      this.flyX < this.frogArea.x_axis.max + this.flyFrogRepulsionDistance;
-    const nearFrogY = this.flyY > this.frogArea.y_axis.min - this.flyFrogRepulsionDistance &&
-                      this.flyY < this.frogArea.y_axis.max + this.flyFrogRepulsionDistance;
+    const nearFrogX = this.flyX > this.frogArea.x_axis.min - this.flyFrogRepulsionDistance && this.flyX < this.frogArea.x_axis.max + this.flyFrogRepulsionDistance;
+    const nearFrogY = this.flyY > this.frogArea.y_axis.min - this.flyFrogRepulsionDistance && this.flyY < this.frogArea.y_axis.max + this.flyFrogRepulsionDistance;
 
     if (nearFrogX && nearFrogY) {
       this.flyVx += this.flyX < frogCenterX ? -1.2 : 1.2;
@@ -254,5 +255,4 @@ export class Frog implements OnInit, OnDestroy {
       this.cdr.detectChanges();
     }, this.tongueAnimationDuration);
   }
-
 }
