@@ -23,9 +23,11 @@ type FrogState = 'idle' | 'catching' | 'caught' | 'finished';
 })
 export class Frog implements OnInit, OnDestroy {
   private flyInterval: ReturnType<typeof setInterval> | null = null;
+  private currentRotationDeg: number = 0;
 
   frogState: FrogState = 'idle';
   readonly tongueAnimationDuration: number = 1200;
+  readonly flyCatchPauseDuration: number = 800;
 
   frogTongue: boolean = false;
   frogRotation: string = '0deg';
@@ -88,6 +90,9 @@ export class Frog implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.debugService.log(this);
 
+    this.flyX = this.flyArea.x_axis.min + Math.random() * (this.flyArea.x_axis.max - this.flyArea.x_axis.min);
+    this.flyY = this.flyArea.y_axis.min + Math.random() * (this.flyArea.y_axis.max - this.flyArea.y_axis.min);
+    this.clampFlyToCircle();
     this.flyVx = (Math.random() - 0.5) * this.flyMaxSpeed;
     this.flyVy = (Math.random() - 0.5) * this.flyMaxSpeed;
     this.flyHorizontalPosition = `${this.flyX}%`;
@@ -118,8 +123,11 @@ export class Frog implements OnInit, OnDestroy {
     } else if (this.frogState === 'finished') {
       this.frogState = 'idle';
       this.frogTongue = false;
-      this.flyX = 10;
-      this.flyY = 10;
+      this.currentRotationDeg = 0;
+      this.frogRotation = '0deg';
+      this.flyX = this.flyArea.x_axis.min + Math.random() * (this.flyArea.x_axis.max - this.flyArea.x_axis.min);
+      this.flyY = this.flyArea.y_axis.min + Math.random() * (this.flyArea.y_axis.max - this.flyArea.y_axis.min);
+      this.clampFlyToCircle();
       this.flyVx = (Math.random() - 0.5) * this.flyMaxSpeed;
       this.flyVy = (Math.random() - 0.5) * this.flyMaxSpeed;
       this.flyHorizontalPosition = `${this.flyX}%`;
@@ -178,6 +186,7 @@ export class Frog implements OnInit, OnDestroy {
     // Safety clamp dentro da flyArea
     this.flyX = Math.max(this.flyArea.x_axis.min, Math.min(this.flyArea.x_axis.max, this.flyX));
     this.flyY = Math.max(this.flyArea.y_axis.min, Math.min(this.flyArea.y_axis.max, this.flyY));
+    this.clampFlyToCircle();
 
     this.flyHorizontalPosition = `${this.flyX}%`;
     this.flyVerticalPosition = `${this.flyY}%`;
@@ -195,9 +204,15 @@ export class Frog implements OnInit, OnDestroy {
     const dx = flyX - 50;
     const dy = flyY - 50;
     const angleRad = Math.atan2(dx, -dy);
-    const angleDeg = angleRad * (180 / Math.PI);
+    const targetDeg = angleRad * (180 / Math.PI);
 
-    this.frogRotation = `${angleDeg}deg`;
+    const normalizedCurrent = ((this.currentRotationDeg % 360) + 360) % 360;
+    let diff = targetDeg - normalizedCurrent;
+    if (diff > 180) diff -= 360;
+    if (diff < -180) diff += 360;
+    this.currentRotationDeg += diff;
+
+    this.frogRotation = `${this.currentRotationDeg}deg`;
     this.debugService.log(this, 'this.frogRotation', this.frogRotation);
   }
 
@@ -244,15 +259,39 @@ export class Frog implements OnInit, OnDestroy {
     this.flyVerticalPosition = `${targetY}%`;
 
     this.frogState = 'caught';
-    this.frogTongue = true;
     this.rotateFrogTowardFly(targetX, targetY);
     this.cdr.detectChanges();
 
     this.debugService.log(this, 'mosca capturada em', `x=${targetX} y=${targetY}`);
 
     setTimeout(() => {
-      this.frogState = 'finished';
+      this.frogTongue = true;
       this.cdr.detectChanges();
-    }, this.tongueAnimationDuration);
+
+      setTimeout(() => {
+        this.frogState = 'finished';
+        this.cdr.detectChanges();
+      }, this.tongueAnimationDuration);
+    }, this.flyTransitionDurationInMs + this.flyCatchPauseDuration);
+  }
+
+  private clampFlyToCircle(): void {
+    const centerX = 50;
+    const centerY = 50;
+    const maxRadius = 44;
+
+    const dx = this.flyX - centerX;
+    const dy = this.flyY - centerY;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+
+    if (dist > maxRadius) {
+      this.flyX = centerX + (dx / dist) * maxRadius;
+      this.flyY = centerY + (dy / dist) * maxRadius;
+      const dotProduct = this.flyVx * (dx / dist) + this.flyVy * (dy / dist);
+      if (dotProduct > 0) {
+        this.flyVx -= dotProduct * (dx / dist);
+        this.flyVy -= dotProduct * (dy / dist);
+      }
+    }
   }
 }

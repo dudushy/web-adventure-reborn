@@ -78,6 +78,8 @@ button {
     transition-timing-function: ease-in-out;
 
     &.tongue {
+      z-index: 4;
+
       .tongue {
         top: -40%;
       }
@@ -354,7 +356,8 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition-property: top, left;
+    transform: rotate(var(--fly-rotation));
+    transition-property: top, left, transform;
     transition-duration: var(--fly-transition-duration);
     transition-timing-function: ease-in-out;
     z-index: 3;
