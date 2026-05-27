@@ -22,4 +22,11 @@ export const ADVENTURES: AdventuresType[] = [
     descriptionKey: 'adventures.random.frog.description',
     path: '/adventures/random/frog',
   },
+  {
+    slug: 'spotify-player',
+    category: 'clones',
+    status: 'wip',
+    descriptionKey: 'adventures.clones.spotify-player.description',
+    path: '/adventures/clones/spotify-player',
+  },
 ];

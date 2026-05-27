@@ -50,7 +50,11 @@
   },
   "adventures": {
     "title": "Adventures",
-    "clones": {},
+    "clones": {
+      "spotify-player": {
+        "description": "A clone of Spotify's mobile player, recreating its main interface and interactions."
+      }
+    },
     "components": {},
     "forms": {},
     "games": {},
