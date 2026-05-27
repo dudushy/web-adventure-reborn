@@ -1,19 +1,7 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { DebugService } from '@shyland-dev/utils';
-
-type Area = {
-  x_axis: {
-    min: number;
-    max: number;
-  };
-  y_axis: {
-    min: number;
-    max: number;
-  };
-};
-
-type FrogState = 'idle' | 'catching' | 'caught' | 'finished';
+import { FrogAreaType, FrogStateType } from '../../../../types';
 
 @Component({
   selector: 'app-adventure-random-frog',
@@ -25,14 +13,14 @@ export class Frog implements OnInit, OnDestroy {
   private flyInterval: ReturnType<typeof setInterval> | null = null;
   private currentRotationDeg: number = 0;
 
-  frogState: FrogState = 'idle';
+  frogState: FrogStateType = 'idle';
   readonly tongueAnimationDuration: number = 1200;
   readonly flyCatchPauseDuration: number = 800;
 
   frogTongue: boolean = false;
   frogRotation: string = '0deg';
   frogTransitionDuration: string = '0.6s';
-  frogArea: Area = {
+  frogArea: FrogAreaType = {
     x_axis: {
       min: 29,
       max: 70,
@@ -46,7 +34,7 @@ export class Frog implements OnInit, OnDestroy {
   flyVerticalPosition: string = '0%';
   flyHorizontalPosition: string = '0%';
   flyTransitionDuration: string = '0.5s';
-  flyArea: Area = {
+  flyArea: FrogAreaType = {
     x_axis: {
       min: 5,
       max: 95,
