@@ -21,7 +21,6 @@ $fly-wing-animation-duration: 0.1s;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: $content-inset-height;
   padding: $content-inset-padding;
   border-radius: $content-inset-border-radius;
   border-color: $theme-color;
@@ -29,6 +28,9 @@ $fly-wing-animation-duration: 0.1s;
   border-style: solid;
   background-color: $theme-background;
   color: $theme-color;
+  overflow: hidden;
+
+  @include fixedHeight($content-inset-height);
 }
 
 button {

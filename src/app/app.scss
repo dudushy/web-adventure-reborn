@@ -121,10 +121,11 @@ header {
 }
 
 main {
-  height: $content-height;
+  @include fixedHeight($content-height);
   width: $dynamic-width;
   padding: $content-padding;
   background-color: $theme-background;
+  overflow: hidden;
 }
 
 footer {
