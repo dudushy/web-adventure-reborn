@@ -18,7 +18,7 @@ export const ADVENTURES: AdventuresType[] = [
   {
     slug: 'frog',
     category: 'random',
-    status: 'wip',
+    status: 'done',
     descriptionKey: 'adventures.random.frog.description',
     path: '/adventures/random/frog',
   },
