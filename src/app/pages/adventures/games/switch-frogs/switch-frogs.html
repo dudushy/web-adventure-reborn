@@ -1,0 +1,541 @@
+<button (click)="reset()">
+  {{ 'adventures.games.switch-frogs.reset' | translate }}
+</button>
+
+@if (isWon) {
+  <div class="won-message">
+    {{ 'adventures.games.switch-frogs.won' | translate }}
+  </div>
+}
+
+<div class="canvas">
+  <div class="frog frog-1 frog-group-1" [style.--frog-index]="frogPositions[0]" [class.jumping]="jumpingFrogIndex === 0">
+    <div class="head"></div>
+
+    <div class="eye left">
+      <div class="eye-ball">
+        <div class="eye-pupil"></div>
+      </div>
+    </div>
+
+    <div class="eye right">
+      <div class="eye-ball">
+        <div class="eye-pupil"></div>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="arm left">
+        <div class="section">
+          <div class="finger finger-1">
+            <div class="finger-tip"></div>
+          </div>
+
+          <div class="finger finger-2">
+            <div class="finger-tip"></div>
+          </div>
+
+          <div class="finger finger-3">
+            <div class="finger-tip"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="arm right">
+        <div class="section">
+          <div class="finger finger-1">
+            <div class="finger-tip"></div>
+          </div>
+
+          <div class="finger finger-2">
+            <div class="finger-tip"></div>
+          </div>
+
+          <div class="finger finger-3">
+            <div class="finger-tip"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="leg left">
+        <div class="section section-1">
+          <div class="section section-2">
+            <div class="finger finger-1">
+              <div class="finger-tip"></div>
+            </div>
+
+            <div class="finger finger-2">
+              <div class="finger-tip"></div>
+            </div>
+
+            <div class="finger finger-3">
+              <div class="finger-tip"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="leg right">
+        <div class="section section-1">
+          <div class="section section-2">
+            <div class="finger finger-1">
+              <div class="finger-tip"></div>
+            </div>
+
+            <div class="finger finger-2">
+              <div class="finger-tip"></div>
+            </div>
+
+            <div class="finger finger-3">
+              <div class="finger-tip"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="frog frog-2 frog-group-1" [style.--frog-index]="frogPositions[1]" [class.jumping]="jumpingFrogIndex === 1">
+    <div class="head"></div>
+
+    <div class="eye left">
+      <div class="eye-ball">
+        <div class="eye-pupil"></div>
+      </div>
+    </div>
+
+    <div class="eye right">
+      <div class="eye-ball">
+        <div class="eye-pupil"></div>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="arm left">
+        <div class="section">
+          <div class="finger finger-1">
+            <div class="finger-tip"></div>
+          </div>
+
+          <div class="finger finger-2">
+            <div class="finger-tip"></div>
+          </div>
+
+          <div class="finger finger-3">
+            <div class="finger-tip"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="arm right">
+        <div class="section">
+          <div class="finger finger-1">
+            <div class="finger-tip"></div>
+          </div>
+
+          <div class="finger finger-2">
+            <div class="finger-tip"></div>
+          </div>
+
+          <div class="finger finger-3">
+            <div class="finger-tip"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="leg left">
+        <div class="section section-1">
+          <div class="section section-2">
+            <div class="finger finger-1">
+              <div class="finger-tip"></div>
+            </div>
+
+            <div class="finger finger-2">
+              <div class="finger-tip"></div>
+            </div>
+
+            <div class="finger finger-3">
+              <div class="finger-tip"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="leg right">
+        <div class="section section-1">
+          <div class="section section-2">
+            <div class="finger finger-1">
+              <div class="finger-tip"></div>
+            </div>
+
+            <div class="finger finger-2">
+              <div class="finger-tip"></div>
+            </div>
+
+            <div class="finger finger-3">
+              <div class="finger-tip"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="frog frog-3 frog-group-1" [style.--frog-index]="frogPositions[2]" [class.jumping]="jumpingFrogIndex === 2">
+    <div class="head"></div>
+
+    <div class="eye left">
+      <div class="eye-ball">
+        <div class="eye-pupil"></div>
+      </div>
+    </div>
+
+    <div class="eye right">
+      <div class="eye-ball">
+        <div class="eye-pupil"></div>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="arm left">
+        <div class="section">
+          <div class="finger finger-1">
+            <div class="finger-tip"></div>
+          </div>
+
+          <div class="finger finger-2">
+            <div class="finger-tip"></div>
+          </div>
+
+          <div class="finger finger-3">
+            <div class="finger-tip"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="arm right">
+        <div class="section">
+          <div class="finger finger-1">
+            <div class="finger-tip"></div>
+          </div>
+
+          <div class="finger finger-2">
+            <div class="finger-tip"></div>
+          </div>
+
+          <div class="finger finger-3">
+            <div class="finger-tip"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="leg left">
+        <div class="section section-1">
+          <div class="section section-2">
+            <div class="finger finger-1">
+              <div class="finger-tip"></div>
+            </div>
+
+            <div class="finger finger-2">
+              <div class="finger-tip"></div>
+            </div>
+
+            <div class="finger finger-3">
+              <div class="finger-tip"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="leg right">
+        <div class="section section-1">
+          <div class="section section-2">
+            <div class="finger finger-1">
+              <div class="finger-tip"></div>
+            </div>
+
+            <div class="finger finger-2">
+              <div class="finger-tip"></div>
+            </div>
+
+            <div class="finger finger-3">
+              <div class="finger-tip"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="frog frog-4 frog-group-2" [style.--frog-index]="frogPositions[3]" [class.jumping]="jumpingFrogIndex === 3">
+    <div class="head"></div>
+
+    <div class="eye left">
+      <div class="eye-ball">
+        <div class="eye-pupil"></div>
+      </div>
+    </div>
+
+    <div class="eye right">
+      <div class="eye-ball">
+        <div class="eye-pupil"></div>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="arm left">
+        <div class="section">
+          <div class="finger finger-1">
+            <div class="finger-tip"></div>
+          </div>
+
+          <div class="finger finger-2">
+            <div class="finger-tip"></div>
+          </div>
+
+          <div class="finger finger-3">
+            <div class="finger-tip"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="arm right">
+        <div class="section">
+          <div class="finger finger-1">
+            <div class="finger-tip"></div>
+          </div>
+
+          <div class="finger finger-2">
+            <div class="finger-tip"></div>
+          </div>
+
+          <div class="finger finger-3">
+            <div class="finger-tip"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="leg left">
+        <div class="section section-1">
+          <div class="section section-2">
+            <div class="finger finger-1">
+              <div class="finger-tip"></div>
+            </div>
+
+            <div class="finger finger-2">
+              <div class="finger-tip"></div>
+            </div>
+
+            <div class="finger finger-3">
+              <div class="finger-tip"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="leg right">
+        <div class="section section-1">
+          <div class="section section-2">
+            <div class="finger finger-1">
+              <div class="finger-tip"></div>
+            </div>
+
+            <div class="finger finger-2">
+              <div class="finger-tip"></div>
+            </div>
+
+            <div class="finger finger-3">
+              <div class="finger-tip"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="frog frog-5 frog-group-2" [style.--frog-index]="frogPositions[4]" [class.jumping]="jumpingFrogIndex === 4">
+    <div class="head"></div>
+
+    <div class="eye left">
+      <div class="eye-ball">
+        <div class="eye-pupil"></div>
+      </div>
+    </div>
+
+    <div class="eye right">
+      <div class="eye-ball">
+        <div class="eye-pupil"></div>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="arm left">
+        <div class="section">
+          <div class="finger finger-1">
+            <div class="finger-tip"></div>
+          </div>
+
+          <div class="finger finger-2">
+            <div class="finger-tip"></div>
+          </div>
+
+          <div class="finger finger-3">
+            <div class="finger-tip"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="arm right">
+        <div class="section">
+          <div class="finger finger-1">
+            <div class="finger-tip"></div>
+          </div>
+
+          <div class="finger finger-2">
+            <div class="finger-tip"></div>
+          </div>
+
+          <div class="finger finger-3">
+            <div class="finger-tip"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="leg left">
+        <div class="section section-1">
+          <div class="section section-2">
+            <div class="finger finger-1">
+              <div class="finger-tip"></div>
+            </div>
+
+            <div class="finger finger-2">
+              <div class="finger-tip"></div>
+            </div>
+
+            <div class="finger finger-3">
+              <div class="finger-tip"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="leg right">
+        <div class="section section-1">
+          <div class="section section-2">
+            <div class="finger finger-1">
+              <div class="finger-tip"></div>
+            </div>
+
+            <div class="finger finger-2">
+              <div class="finger-tip"></div>
+            </div>
+
+            <div class="finger finger-3">
+              <div class="finger-tip"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="frog frog-6 frog-group-2" [style.--frog-index]="frogPositions[5]" [class.jumping]="jumpingFrogIndex === 5">
+    <div class="head"></div>
+
+    <div class="eye left">
+      <div class="eye-ball">
+        <div class="eye-pupil"></div>
+      </div>
+    </div>
+
+    <div class="eye right">
+      <div class="eye-ball">
+        <div class="eye-pupil"></div>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="arm left">
+        <div class="section">
+          <div class="finger finger-1">
+            <div class="finger-tip"></div>
+          </div>
+
+          <div class="finger finger-2">
+            <div class="finger-tip"></div>
+          </div>
+
+          <div class="finger finger-3">
+            <div class="finger-tip"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="arm right">
+        <div class="section">
+          <div class="finger finger-1">
+            <div class="finger-tip"></div>
+          </div>
+
+          <div class="finger finger-2">
+            <div class="finger-tip"></div>
+          </div>
+
+          <div class="finger finger-3">
+            <div class="finger-tip"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="leg left">
+        <div class="section section-1">
+          <div class="section section-2">
+            <div class="finger finger-1">
+              <div class="finger-tip"></div>
+            </div>
+
+            <div class="finger finger-2">
+              <div class="finger-tip"></div>
+            </div>
+
+            <div class="finger finger-3">
+              <div class="finger-tip"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="leg right">
+        <div class="section section-1">
+          <div class="section section-2">
+            <div class="finger finger-1">
+              <div class="finger-tip"></div>
+            </div>
+
+            <div class="finger finger-2">
+              <div class="finger-tip"></div>
+            </div>
+
+            <div class="finger finger-3">
+              <div class="finger-tip"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rock rock-1" (click)="processPlayOnRock(1)"></div>
+
+  <div class="rock rock-2" (click)="processPlayOnRock(2)"></div>
+
+  <div class="rock rock-3" (click)="processPlayOnRock(3)"></div>
+
+  <div class="rock rock-4" (click)="processPlayOnRock(4)"></div>
+
+  <div class="rock rock-5" (click)="processPlayOnRock(5)"></div>
+
+  <div class="rock rock-6" (click)="processPlayOnRock(6)"></div>
+
+  <div class="rock rock-7" (click)="processPlayOnRock(7)"></div>
+</div>

@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 
 export default [
-  // { path: '', redirectTo: 'temp', pathMatch: 'full' },
-  // { path: 'temp', loadComponent: () => import('./temp/temp').then((m) => m.Temp) },
+  { path: '', redirectTo: 'switch-frogs', pathMatch: 'full' },
+  { path: 'switch-frogs', loadComponent: () => import('./switch-frogs/switch-frogs').then((m) => m.SwitchFrogs) },
 ] satisfies Routes;

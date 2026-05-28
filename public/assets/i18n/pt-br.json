@@ -57,7 +57,13 @@
     },
     "components": {},
     "forms": {},
-    "games": {},
+    "games": {
+      "switch-frogs": {
+        "description": "Um jogo de lógica onde o objetivo é trocar as posições de dois grupos de sapos.",
+        "reset": "Reiniciar",
+        "won": "Você venceu!"
+      }
+    },
     "interactive": {},
     "loaders": {
       "startup": {

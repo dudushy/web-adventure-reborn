@@ -57,7 +57,13 @@
     },
     "components": {},
     "forms": {},
-    "games": {},
+    "games": {
+      "switch-frogs": {
+        "description": "A logic game where the goal is to swap the positions of two groups of frogs.",
+        "reset": "Reset",
+        "won": "You won!"
+      }
+    },
     "interactive": {},
     "loaders": {
       "startup": {
