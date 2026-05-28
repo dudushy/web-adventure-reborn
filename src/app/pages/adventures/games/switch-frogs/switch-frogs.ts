@@ -59,10 +59,7 @@ export class SwitchFrogs implements OnInit, OnDestroy {
 
     if (step1 >= 0 && step1 <= 6 && this.board[step1] === 0) {
       destination = step1;
-    } else if (
-      step1 >= 0 && step1 <= 6 && this.board[step1] !== 0 &&
-      step2 >= 0 && step2 <= 6 && this.board[step2] === 0
-    ) {
+    } else if (step1 >= 0 && step1 <= 6 && this.board[step1] !== 0 && step2 >= 0 && step2 <= 6 && this.board[step2] === 0) {
       destination = step2;
     }
 
@@ -73,7 +70,7 @@ export class SwitchFrogs implements OnInit, OnDestroy {
 
     const frogIndex = this.frogPositions.indexOf(pos);
     if (frogIndex !== -1) {
-      this.frogPositions = this.frogPositions.map((p, i) => i === frogIndex ? destination : p);
+      this.frogPositions = this.frogPositions.map((p, i) => (i === frogIndex ? destination : p));
       this.jumpingFrogIndex = frogIndex;
       setTimeout(() => {
         this.jumpingFrogIndex = null;
@@ -85,8 +82,8 @@ export class SwitchFrogs implements OnInit, OnDestroy {
   }
 
   private checkWin(): void {
-    const leftSide = this.board.slice(0, 3).every(v => v === 2);
-    const rightSide = this.board.slice(4, 7).every(v => v === 1);
+    const leftSide = this.board.slice(0, 3).every((v) => v === 2);
+    const rightSide = this.board.slice(4, 7).every((v) => v === 1);
     this.isWon = leftSide && rightSide;
     if (this.isWon) this.debugService.log(this, 'WIN!');
   }
