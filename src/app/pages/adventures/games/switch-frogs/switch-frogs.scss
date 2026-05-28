@@ -2,6 +2,7 @@
 @use '../../../../../styles.scss' as *;
 
 $canvas-size: calc(#{$responsive-unit} * 180);
+$canvas-color: #0059ff;
 $art-size: calc(#{$responsive-unit} * 70);
 
 $frog-size: calc(#{$art-size} * 0.3);
@@ -13,8 +14,9 @@ $frog-group-2-eye-skin-color: #9600dc;
 $frog-eye-ball-color: #ffffff;
 $frog-eye-pupil-color: #000000;
 
-$rock-size: calc(#{$art-size} * 0.36);
-$rock-color: #888888;
+$lily-pad-size: calc(#{$art-size} * 0.36);
+$lily-pad-primary-color: #034600;
+$lily-pad-secondary-color: #097204;
 
 :host {
   display: flex;
@@ -72,6 +74,7 @@ button {
   border-width: $content-inset-border-width;
   border-style: solid;
   margin: calc(#{$responsive-unit} * 10);
+  background-color: $canvas-color;
   overflow: hidden;
 
   .frog {
@@ -351,46 +354,83 @@ button {
     }
   }
 
-  .rock {
-    --rock-index: 0;
-    --rock-left: calc(100% / 7 * var(--rock-index));
+  .lily-pad {
+    --lily-pad-index: 0;
+    --lily-pad-left: calc(100% / 7 * var(--lily-pad-index));
 
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    @include square($rock-size);
+    @include square($lily-pad-size);
     border-radius: 50%;
-    background-color: $rock-color;
-    left: var(--rock-left);
+    background-color: $lily-pad-primary-color;
+    border-color: $lily-pad-secondary-color;
+    border-width: calc(#{$lily-pad-size} * 0.05);
+    border-style: solid;
+    left: var(--lily-pad-left);
     cursor: pointer;
 
-    &.rock-1 {
-      --rock-index: 0;
+    &.lily-pad-1 {
+      --lily-pad-index: 0;
     }
 
-    &.rock-2 {
-      --rock-index: 1;
+    &.lily-pad-2 {
+      --lily-pad-index: 1;
     }
 
-    &.rock-3 {
-      --rock-index: 2;
+    &.lily-pad-3 {
+      --lily-pad-index: 2;
     }
 
-    &.rock-4 {
-      --rock-index: 3;
+    &.lily-pad-4 {
+      --lily-pad-index: 3;
     }
 
-    &.rock-5 {
-      --rock-index: 4;
+    &.lily-pad-5 {
+      --lily-pad-index: 4;
     }
 
-    &.rock-6 {
-      --rock-index: 5;
+    &.lily-pad-6 {
+      --lily-pad-index: 5;
     }
 
-    &.rock-7 {
-      --rock-index: 6;
+    &.lily-pad-7 {
+      --lily-pad-index: 6;
+    }
+
+    .detail {
+      position: absolute;
+      height: 100%;
+      width: 1%;
+      background-color: $lily-pad-secondary-color;
+
+      &.detail-1 {
+        transform: rotate(45deg);
+      }
+
+      &.detail-2 {
+        transform: rotate(90deg);
+      }
+
+      &.detail-3 {
+        transform: rotate(135deg);
+      }
+
+      &.detail-4 {
+        transform: rotate(180deg);
+      }
+    }
+
+    .cut {
+      position: absolute;
+      top: -5%;
+      height: 30%;
+      width: 30%;
+      background-color: $canvas-color;
+      transform: rotate(180deg);
+      border-radius: 50%;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     }
   }
 }

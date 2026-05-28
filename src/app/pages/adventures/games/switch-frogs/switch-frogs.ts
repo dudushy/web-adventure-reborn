@@ -41,12 +41,12 @@ export class SwitchFrogs implements OnInit, OnDestroy {
     this.jumpingFrogIndex = null;
   }
 
-  processPlayOnRock(rockNumber: number): void {
-    this.debugService.log(this, 'rockNumber', rockNumber);
+  processPlayOnLilyPad(lilyPadNumber: number): void {
+    this.debugService.log(this, 'lilyPadNumber', lilyPadNumber);
 
     if (this.isWon) return;
 
-    const pos = rockNumber - 1;
+    const pos = lilyPadNumber - 1;
     const group = this.board[pos];
 
     if (group === 0) return;
