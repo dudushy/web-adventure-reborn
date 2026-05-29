@@ -1,5 +1,5 @@
 ---
-description: 'Instruções de workspace para o Copilot: permitir apenas commits em pt-BR com Conventional Commits, resumo objetivo das alterações e manutenção do README quando necessário.'
+description: 'Instruções de workspace para o Copilot: fluxo obrigatório de planejamento com aprovação prévia, proibição estrita de commits, resumo objetivo das alterações e manutenção do README quando necessário.'
 applyTo: '**'
 ---
 
@@ -7,25 +7,49 @@ applyTo: '**'
 
 ## Commits
 
-- É proibido gerar, sugerir, aceitar ou executar mensagens de commit em inglês ou em qualquer idioma diferente de português do Brasil.
-- Sempre que o usuário pedir para criar, sugerir, revisar ou executar um commit, produza a mensagem somente em `pt-BR`.
-- Se o conteúdo de origem estiver em inglês, traduza e normalize para português do Brasil antes de propor a mensagem final.
-- Se houver qualquer ambiguidade sobre o idioma da mensagem, interrompa e corrija para `pt-BR` antes de seguir.
-- Sempre que for solicitado, confirme a ação antes de criar commit; escreva a mensagem somente em português do Brasil.
-- Use o padrão Conventional Commits com tipos populares como `fix`, `feat`, `chore`, `docs`, `refactor`, `test`, `build`, `ci`, `perf` e `style`, sempre seguidos de descrição em português do Brasil.
-- A estrutura preferencial é `tipo: descrição objetiva em português do Brasil`.
-- A mensagem de commit deve resumir com clareza e objetividade o que foi alterado no código.
-- Prefira mensagens curtas, diretas e orientadas ao resultado entregue.
-- Quando apropriado, use um título curto e uma descrição complementar objetiva explicando o impacto da alteração no corpo do commit.
-- Evite mensagens vagas como "ajustes", "mudanças" ou descrições genéricas sem contexto.
-- O título e o corpo do commit, quando existirem, devem estar integralmente em português do Brasil.
+- Regra estrita: o Copilot nunca deve criar, sugerir, revisar, aceitar, executar ou simular commits neste projeto.
+- Regra estrita: o Copilot nunca deve executar comandos de commit (incluindo `git commit`, `git commit --amend`, squash de commits ou qualquer automação equivalente).
+- Mesmo quando solicitado, o Copilot deve recusar a ação de commit e limitar-se a orientar o usuário sobre as alterações realizadas no código.
 
-Exemplos de boas mensagens:
+## Fluxo obrigatório de planejamento e aprovação
 
-- `fix: corrigir validação do formulário de login`
-- `docs: atualizar guia de execução com Docker Compose`
-- `chore: ajustar configuração do nginx para fallback da SPA`
-- `refactor: simplificar carregamento da tela1 com tratamento de erro`
+- Antes de implementar qualquer alteração em código, o Copilot deve criar um plano de implementação e aguardar aprovação explícita do usuário.
+- O plano deve ser construído com base em:
+    - análise do código já existente no repositório
+    - pesquisa de referências e boas práticas em implementações existentes na internet, quando aplicável
+    - avaliação de impacto técnico (arquivos afetados, riscos e estratégia de validação)
+- Sem aprovação explícita do usuário, nenhuma alteração de implementação deve ser aplicada em arquivos de código.
+- Após aprovação, o Copilot deve executar somente o que foi aprovado no plano. Se surgir desvio relevante, deve pausar, atualizar o plano e pedir nova aprovação.
+- O plano deve conter, no mínimo:
+    - objetivo e contexto
+    - diagnóstico do estado atual
+    - proposta técnica por etapas
+    - riscos e mitigação
+    - estratégia de testes/validação
+    - critérios de conclusão
+
+## Protocolo de conformidade (planejar antes de codar)
+
+- Este projeto adota o modo estrito: "Planejamento Primeiro".
+- Antes de qualquer implementação, o Copilot deve finalizar o plano e encerrar com pedido explícito de aprovação.
+- A implementação só pode começar após confirmação clara do usuário. Frase preferencial de aprovação: "Aprovado, pode implementar".
+- Se o usuário pedir alteração direta no código sem aprovação prévia do plano, o Copilot deve recusar a implementação imediata e responder com plano primeiro.
+- Antes de editar arquivos de código, o Copilot deve validar internamente este checklist:
+    - plano apresentado
+    - aprovação explícita recebida
+    - escopo aprovado sem desvios
+- Se qualquer item do checklist falhar, a implementação deve ser bloqueada.
+
+Modelo recomendado de plano:
+
+1. Objetivo
+2. Diagnóstico do código atual
+3. Referências externas e decisão técnica
+4. Passos de implementação
+5. Riscos e mitigação
+6. Validação/testes
+7. Critérios de aceite
+8. Solicitação explícita de aprovação do usuário
 
 ## Resumo das alterações
 
@@ -40,7 +64,7 @@ Exemplos de boas mensagens:
 - O `./README.md` deve priorizar orientações úteis para devs, com passo a passo direto e fácil de seguir.
 - Sempre que possível, inclua seções com:
     - objetivo da funcionalidade ou do ajuste
-    - pre-requisitos
+    - pré-requisitos
     - comandos necessários
     - passo a passo de execução
     - exemplos de uso
