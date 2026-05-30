@@ -29,18 +29,11 @@
   color: var(--war-select-color);
 }
 
-:host(.icon) {
-  --war-select-icon-size: var(--shyIconSize, 1rem);
-}
-
-:host(.option-icon) {
-  --war-select-option-icon-size: var(--shyIconSize, 1rem);
-}
-
 :host(.disabled) {
   --war-select-border-color: var(--war-select-disabled-border-color);
   --war-select-color: var(--war-select-disabled-color);
   --war-select-background: var(--war-select-disabled-background);
+
   cursor: not-allowed;
 }
 
@@ -87,12 +80,11 @@
 }
 
 .icon {
-  font-size: var(--war-select-icon-size);
-  line-height: 1;
+  --shyIconSize: var(--war-select-icon-size);
 }
 
 .option-icon {
-  font-size: var(--war-select-option-icon-size);
+  --shyIconSize: var(--war-select-option-icon-size);
 }
 
 .options {

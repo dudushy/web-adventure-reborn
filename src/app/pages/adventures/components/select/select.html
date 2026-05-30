@@ -1,25 +1,25 @@
 <section class="showcase">
-  <h2>war-select</h2>
-  <p class="subtitle">Componente de select customizavel com HTML e CSS puro, usando variaveis CSS.</p>
-
   <div class="controls">
     <button type="button" class="toggle-button" (click)="toggleDisabled()">
-      {{ isDisabled ? 'Habilitar select' : 'Desabilitar select' }}
+      {{ isDisabled ? ('adventures.components.select.enable' | translate) : ('adventures.components.select.disable' | translate) }}
     </button>
+
     <p class="selected">
-      Valor selecionado: <strong>{{ selectedOption || 'nenhum' }}</strong>
+      {{ 'adventures.components.select.value' | translate }} <strong>{{ selectedOption || ('adventures.components.select.none' | translate) }}</strong>
     </p>
   </div>
 
   <div class="examples">
-    <article class="example-card">
-      <h3>Padrao</h3>
-      <war-select [selectOptions]="optionArray" (selectionChange)="updateOption($event)" [selectIcon]="'check'" [dropdownIcon]="'chevron-down'" [(ngModel)]="selectedOption" [disabled]="isDisabled" />
-    </article>
+    <div class="example">
+      <h3>{{ 'adventures.components.select.example' | translate }} 1</h3>
 
-    <article class="example-card">
-      <h3>Customizado por variaveis</h3>
-      <war-select class="custom-skin icon option-icon" [selectOptions]="optionArray" [selectIcon]="'ok'" [dropdownIcon]="'v'" (selectionChange)="updateOption($event)" [(ngModel)]="selectedOption" [disabled]="isDisabled" />
-    </article>
+      <war-select [(ngModel)]="selectedOption" (selectionChange)="updateOption($event)" [selectOptions]="optionArray" [selectIcon]="'check'" [dropdownIcon]="'chevron-down'" [disabled]="isDisabled" />
+    </div>
+
+    <div class="example">
+      <h3>{{ 'adventures.components.select.example' | translate }} 2</h3>
+
+      <war-select class="example-2" [(ngModel)]="selectedOption" (selectionChange)="updateOption($event)" [selectOptions]="optionArray" [selectIcon]="'check-circle-fill'" [dropdownIcon]="'arrow-down-circle-fill'" [disabled]="isDisabled" />
+    </div>
   </div>
 </section>

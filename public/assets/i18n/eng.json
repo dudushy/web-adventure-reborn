@@ -57,7 +57,12 @@
     },
     "components": {
       "select": {
-        "description": "A customizable select component, inspired by modern designs and focused on accessibility."
+        "description": "A customizable select component, inspired by modern designs and focused on accessibility.",
+        "disable": "Disable",
+        "enable": "Enable",
+        "value": "Selected value:",
+        "none": "None",
+        "example": "Example"
       }
     },
     "forms": {},

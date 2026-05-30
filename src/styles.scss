@@ -77,7 +77,6 @@ app-root {
   width: $dynamic-width;
   border: 0;
   overscroll-behavior: none;
-  font-family: monospace;
   background-color: $theme-background;
   color: $theme-color;
   overflow: hidden;
@@ -89,4 +88,5 @@ app-root {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: monospace;
 }

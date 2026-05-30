@@ -57,7 +57,12 @@
     },
     "components": {
       "select": {
-        "description": "Um componente de seleção customizável, inspirado em designs modernos e focado em acessibilidade."
+        "description": "Um componente de seleção customizável, inspirado em designs modernos e focado em acessibilidade.",
+        "disable": "Desabilitar",
+        "enable": "Habilitar",
+        "value": "Valor selecionado:",
+        "none": "Nenhum",
+        "example": "Exemplo"
       }
     },
     "forms": {},

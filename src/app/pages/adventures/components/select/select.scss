@@ -16,68 +16,96 @@
 }
 
 .showcase {
-  width: min(100%, 60rem);
-  margin: 0 auto;
+  width: 100%;
   display: grid;
-  gap: 1.5rem;
+  gap: calc(#{$responsive-unit} * 5);
+
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: calc(#{$responsive-unit} * 1);
+
+    .toggle-button {
+      border-width: calc(#{$responsive-unit} * 0.1);
+      border-style: solid;
+      border-color: currentColor;
+      border-radius: calc(#{$responsive-unit} * 3);
+      background: transparent;
+      color: inherit;
+      padding-block: calc(#{$responsive-unit} * 2);
+      padding-inline: calc(#{$responsive-unit} * 4);
+      font-size: calc(#{$responsive-unit} * 7);
+      cursor: pointer;
+    }
+
+    .selected {
+      font-size: calc(#{$responsive-unit} * 6.5);
+      margin-left: calc(#{$responsive-unit} * 3);
+    }
+  }
+
+  .examples {
+    display: flex;
+    flex-wrap: wrap;
+    padding: calc(#{$responsive-unit} * 1);
+    width: 100%;
+
+    @include portrait {
+      padding: calc(#{$responsive-unit} * 0.5);
+    }
+
+    .example {
+      --example-per-row: 5;
+      --example-margin-inline: calc(#{$responsive-unit} * 5);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-width: calc(#{$responsive-unit} * 0.1);
+      border-style: solid;
+      border-color: color-mix(in srgb, currentColor 35%, transparent);
+      border-radius: calc(#{$responsive-unit} * 2);
+      padding: calc(#{$responsive-unit} * 1);
+      background-color: color-mix(in srgb, $theme-background 92%, $theme-color 8%);
+      padding: calc(#{$responsive-unit} * 5);
+      margin-inline: var(--example-margin-inline);
+      width: calc(100% / var(--example-per-row) - var(--example-margin-inline) * 2);
+      margin-bottom: calc(#{$responsive-unit} * 8);
+
+      @include portrait {
+        --example-per-row: 2;
+        --example-margin-inline: calc(#{$responsive-unit} * 2);
+      }
+
+      h3 {
+        font-size: calc(#{$responsive-unit} * 7);
+        margin-bottom: calc(#{$responsive-unit} * 2);
+      }
+    }
+  }
 }
 
-.subtitle {
-  margin: 0;
-}
-
-.controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  align-items: center;
-}
-
-.toggle-button {
-  border: 0.12rem solid currentColor;
-  background: transparent;
-  color: inherit;
-  padding: 0.5rem 0.9rem;
-  border-radius: 0.65rem;
-  cursor: pointer;
-}
-
-.examples {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-  gap: 1rem;
-}
-
-.example-card {
-  border: 0.1rem solid color-mix(in srgb, currentColor 35%, transparent);
-  border-radius: 0.9rem;
-  padding: 1rem;
-  display: grid;
-  gap: 0.8rem;
-  background: color-mix(in srgb, $theme-background 92%, $theme-color 8%);
-}
-
-.example-card h3 {
-  margin: 0;
-}
-
-war-select.custom-skin {
-  --war-select-height: 3rem;
-  --war-select-width: 100%;
-  --war-select-color: #f8fafc;
-  --war-select-background: #0f172a;
-  --war-select-border-width: 0.14rem;
+war-select.example-2 {
+  --war-select-height: calc(#{$responsive-unit} * 2.75);
+  --war-select-width: calc(#{$responsive-unit} * 22);
+  --war-select-color: #0f172a;
+  --war-select-background: #ffffff;
+  --war-select-border-width: calc(#{$responsive-unit} * 0.125);
   --war-select-border-style: solid;
-  --war-select-border-color: #38bdf8;
-  --war-select-border-radius: 1.05rem;
-  --war-select-padding-right: 1rem;
-  --war-select-padding-left: 1rem;
-  --war-select-padding-top: 0.6rem;
-  --war-select-padding-bottom: 0.6rem;
+  --war-select-border-color: #1e293b;
+  --war-select-border-radius: calc(#{$responsive-unit} * 0.75);
+  --war-select-padding-right: calc(#{$responsive-unit} * 0.9);
+  --war-select-padding-left: calc(#{$responsive-unit} * 0.9);
+  --war-select-padding-top: calc(#{$responsive-unit} * 0.5);
+  --war-select-padding-bottom: calc(#{$responsive-unit} * 0.5);
+  --war-select-shadow: 0 calc(#{$responsive-unit} * 0.5) calc(#{$responsive-unit} * 1.2) rgba(15, 23, 42, 0.12);
   --war-select-option-color: #0f172a;
-  --war-select-option-background: #e2e8f0;
-  --war-select-selected-option-color: #f8fafc;
-  --war-select-selected-option-background: #0ea5e9;
-  --war-select-disabled-border-color: #ef4444;
-  --shyIconSize: 1.1rem;
+  --war-select-option-background: #ffffff;
+  --war-select-selected-option-color: #0f172a;
+  --war-select-selected-option-background: #e2e8f0;
+  --war-select-disabled-border-color: #94a3b8;
+  --war-select-disabled-color: #64748b;
+  --war-select-disabled-background: #f1f5f9;
+  --war-select-icon-size: calc(#{$responsive-unit} * 0.95);
+  --war-select-option-icon-size: calc(#{$responsive-unit} * 0.9);
 }

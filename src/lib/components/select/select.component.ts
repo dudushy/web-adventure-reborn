@@ -2,10 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, ElementRef, computed, forwardRef, inject, input, output, signal } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { SelectOption, SelectionChangeEvent } from '@web-adventure-reborn';
+import { IconComponent } from '@shyland-dev/ui'
 
 @Component({
   selector: 'war-select',
-  imports: [CommonModule],
+  imports: [CommonModule, IconComponent],
   templateUrl: './select.component.html',
   styleUrl: './select.component.scss',
   host: {

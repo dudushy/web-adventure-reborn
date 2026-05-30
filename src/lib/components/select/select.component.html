@@ -2,7 +2,7 @@
   <button class="trigger" type="button" [disabled]="isDisabled()" [attr.aria-expanded]="isOpen()" aria-haspopup="listbox" (click)="toggleDropdown()" (keydown)="onTriggerKeydown($event)" (blur)="onTriggerBlur()">
     <span class="trigger-label">{{ triggerLabel() }}</span>
 
-    <span class="icon option-icon" aria-hidden="true">{{ dropdownIcon() }}</span>
+    <shy-icon class="icon option-icon" aria-hidden="true">{{ dropdownIcon() }}</shy-icon>
   </button>
 
   @if (isOpen()) {
@@ -13,7 +13,7 @@
             <span class="option-label">{{ option.label }}</span>
 
             @if (selectedOption()?.value === option.value) {
-              <span class="icon" aria-hidden="true">{{ selectIcon() }}</span>
+              <shy-icon class="icon" aria-hidden="true">{{ selectIcon() }}</shy-icon>
             }
           </button>
         </li>
