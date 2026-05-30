@@ -2,8 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DebugService } from '@shyland-dev/utils';
 import { IconComponent } from '@shyland-dev/ui';
 import { TranslateModule } from '@ngx-translate/core';
-import { TOPICS } from '../../consts';
-import { TitleService } from '../../services';
+import { TOPICS, TitleService } from '@web-adventure-reborn';
 
 @Component({
   selector: 'app-home',

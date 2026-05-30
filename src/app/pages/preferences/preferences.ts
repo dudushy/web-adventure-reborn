@@ -1,12 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { DebugService } from '@shyland-dev/utils';
-import { LANGUAGES, THEMES } from '../../consts';
+import { LANGUAGES, THEMES, StorageService, ThemeService, TitleService } from '@web-adventure-reborn';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { StorageService, ThemeService } from '../../services';
 import { SelectComponent, SelectOption, SelectionChangeEvent } from '@shyland-dev/ui';
-import { TitleService } from '../../services';
 
 @Component({
   selector: 'app-preferences',

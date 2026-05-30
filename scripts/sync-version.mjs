@@ -7,7 +7,7 @@ const paths = {
   packageJson: join(rootDir, 'package.json'),
   packageLockJson: join(rootDir, 'package-lock.json'),
   versionJson: join(rootDir, 'public', 'assets', 'version.json'),
-  versionTs: join(rootDir, 'src', 'app', 'environments', 'version.ts'),
+  versionTs: join(rootDir, 'src', 'lib', 'environments', 'version.ts'),
 };
 
 async function readJson(filePath) {

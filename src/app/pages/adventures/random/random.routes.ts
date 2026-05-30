@@ -5,4 +5,6 @@ export default [
 
   { path: 'tongue', loadComponent: () => import('./tongue/tongue').then((m) => m.Tongue) },
   { path: 'frog', loadComponent: () => import('./frog/frog').then((m) => m.Frog) },
+
+  { path: '**', redirectTo: '/adventures' },
 ] satisfies Routes;

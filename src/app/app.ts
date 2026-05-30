@@ -3,9 +3,8 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { DebugService } from '@shyland-dev/utils';
 import { routes } from './app.routes';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { StorageService, ThemeService } from './services';
+import { StorageService, ThemeService, APP_VERSION } from '@web-adventure-reborn';
 import { IconComponent } from '@shyland-dev/ui';
-import { APP_VERSION } from './environments';
 
 @Component({
   selector: 'app-root',

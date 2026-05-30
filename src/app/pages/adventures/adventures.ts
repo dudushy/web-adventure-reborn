@@ -1,11 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { DebugService } from '@shyland-dev/utils';
-import { ADVENTURES } from '../../consts';
 import { TranslateModule } from '@ngx-translate/core';
 import { IconComponent } from '@shyland-dev/ui';
-import { AdventuresStatusType } from '../../types';
-import { TitleService } from '../../services';
+import { AdventuresStatusType, TitleService, ADVENTURES } from '@web-adventure-reborn';
 import { NgClass } from '@angular/common';
 
 @Component({

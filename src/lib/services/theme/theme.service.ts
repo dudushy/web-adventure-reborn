@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DebugService } from '@shyland-dev/utils';
 import { THEMES } from '../../consts';
-import { StorageService } from '../../services';
+import { StorageService } from '..';
 
 @Injectable({ providedIn: 'root' })
 export class ThemeService {
