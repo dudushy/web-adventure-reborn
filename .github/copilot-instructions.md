@@ -1,5 +1,5 @@
 ---
-description: 'Instruções de workspace para o Copilot: fluxo obrigatório de planejamento com aprovação prévia, proibição estrita de commits, resumo objetivo das alterações e manutenção do README quando necessário.'
+description: 'Instruções de workspace para o Copilot: fluxo obrigatório de planejamento com aprovação prévia, proibição estrita de commits e resumo objetivo das alterações.'
 applyTo: '**'
 ---
 
@@ -56,20 +56,6 @@ Modelo recomendado de plano:
 - Ao finalizar uma tarefa, apresente um resumo claro e objetivo do que foi feito nos códigos.
 - Destaque os arquivos principais alterados e o efeito prático da mudança.
 - Evite textos longos, repetitivos ou genéricos.
-
-## Atualização do README
-
-- Sempre que uma alteração impactar instalação, execução, build, deploy, configuração, variáveis de ambiente, Docker, scripts, fluxo de desenvolvimento ou uso da aplicação, atualize o `./README.md` no mesmo trabalho.
-- Sempre atualize o `./README.md` quando isso for necessário para manter a documentação alinhada com o comportamento real do projeto.
-- O `./README.md` deve priorizar orientações úteis para devs, com passo a passo direto e fácil de seguir.
-- Sempre que possível, inclua seções com:
-    - objetivo da funcionalidade ou do ajuste
-    - pré-requisitos
-    - comandos necessários
-    - passo a passo de execução
-    - exemplos de uso
-    - observações importantes e problemas comuns
-- Se uma mudança não exigir atualização do `./README.md`, informe isso explicitamente na resposta final.
 
 ## Estilo esperado para documentação
 
