@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { DebugService } from '@shyland-dev/utils';
-import { FrogAreaType, FrogStateType } from '@web-adventure-reborn/types';
+import { FrogAreaType, FrogStateType } from '@web-adventure-reborn';
 
 @Component({
   selector: 'app-adventure-random-frog',
