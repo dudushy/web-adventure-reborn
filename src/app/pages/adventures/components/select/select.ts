@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { DebugService } from '@shyland-dev/utils';
 import { FormsModule } from '@angular/forms';
-import { SelectComponent, SelectOption, SelectionChangeEvent } from '../../../../../lib/components/select/select.component';
+import { SelectComponent, SelectOption, SelectionChangeEvent } from '@web-adventure-reborn';
 
 @Component({
   selector: 'app-adventure-components-select',
