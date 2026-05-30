@@ -4,3 +4,4 @@ export * from './languages.type';
 export * from './topics.type';
 export * from './adventures.type';
 export * from './adventures';
+export * from './components';

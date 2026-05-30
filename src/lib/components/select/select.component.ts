@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, computed, forwardRef, inject, input, output, signal } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { SelectOption, SelectionChangeEvent } from '@web-adventure-reborn';
 
 @Component({
   selector: 'war-select',
@@ -212,14 +213,3 @@ export class SelectComponent implements ControlValueAccessor {
     this.focusedOptionIndex.set(previousIndex < 0 ? options.length - 1 : previousIndex);
   }
 }
-
-export type SelectOption = {
-  id?: number | string;
-  label: string;
-  value: string;
-  icon?: string;
-};
-
-export type SelectionChangeEvent = {
-  selectedOption: SelectOption;
-};
