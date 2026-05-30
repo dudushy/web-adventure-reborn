@@ -1,15 +1,17 @@
 {
   "name": "web-adventure-reborn",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "engines": {
     "node": "24.14.1"
   },
   "scripts": {
-    "postinstall": "npm run format",
+    "postinstall": "npm run sync:version && npm run format",
     "ng": "ng",
-    "prestart": "npm run format",
+    "prebuild": "npm run sync:version && npm run format",
+    "prestart": "npm run sync:version && npm run format",
     "start": "ng serve",
     "build": "ng build",
+    "sync:version": "node scripts/sync-version.mjs",
     "format": "prettier --write ."
   },
   "private": true,

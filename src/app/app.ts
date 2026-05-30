@@ -5,6 +5,7 @@ import { routes } from './app.routes';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { StorageService, ThemeService } from './services';
 import { IconComponent } from '@shyland-dev/ui';
+import { APP_VERSION } from './environments';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ import { IconComponent } from '@shyland-dev/ui';
 })
 export class App implements OnInit, OnDestroy {
   readonly navRoutes = routes.filter((r) => r.path && r.path !== '**');
+  readonly version = APP_VERSION;
 
   isOpenSideMenu = false;
 

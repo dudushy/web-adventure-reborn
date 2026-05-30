@@ -129,11 +129,20 @@ main {
 }
 
 footer {
+  position: relative;
   height: $footer-height;
   width: $dynamic-width;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  #version {
+    position: absolute;
+    left: $content-padding;
+    font-size: calc(#{$responsive-unit} * 5);
+    color: $theme-highlight;
+    font-weight: bold;
+  }
 
   h2 {
     font-size: calc(#{$responsive-unit} * 9);
