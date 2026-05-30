@@ -36,4 +36,11 @@ export const ADVENTURES: AdventuresType[] = [
     descriptionKey: 'adventures.games.switch-frogs.description',
     path: '/adventures/games/switch-frogs',
   },
+  {
+    slug: 'select',
+    category: 'components',
+    status: 'wip',
+    descriptionKey: 'adventures.components.select.description',
+    path: '/adventures/components/select',
+  },
 ];

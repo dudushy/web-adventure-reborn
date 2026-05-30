@@ -1,0 +1,146 @@
+:host {
+  --war-select-height: 2.75rem;
+  --war-select-width: min(100%, 22rem);
+  --war-select-color: #0f172a;
+  --war-select-background: #ffffff;
+  --war-select-border-width: 0.125rem;
+  --war-select-border-style: solid;
+  --war-select-border-color: #1e293b;
+  --war-select-border-radius: 0.75rem;
+  --war-select-padding-right: 0.9rem;
+  --war-select-padding-left: 0.9rem;
+  --war-select-padding-top: 0.5rem;
+  --war-select-padding-bottom: 0.5rem;
+  --war-select-shadow: 0 0.5rem 1.2rem rgba(15, 23, 42, 0.12);
+  --war-select-option-color: #0f172a;
+  --war-select-option-background: #ffffff;
+  --war-select-selected-option-color: #0f172a;
+  --war-select-selected-option-background: #e2e8f0;
+  --war-select-disabled-border-color: #94a3b8;
+  --war-select-disabled-color: #64748b;
+  --war-select-disabled-background: #f1f5f9;
+  --war-select-icon-size: 0.95rem;
+  --war-select-option-icon-size: 0.9rem;
+
+  position: relative;
+  display: inline-flex;
+  width: var(--war-select-width);
+  min-height: var(--war-select-height);
+  color: var(--war-select-color);
+}
+
+:host(.icon) {
+  --war-select-icon-size: var(--shyIconSize, 1rem);
+}
+
+:host(.option-icon) {
+  --war-select-option-icon-size: var(--shyIconSize, 1rem);
+}
+
+:host(.disabled) {
+  --war-select-border-color: var(--war-select-disabled-border-color);
+  --war-select-color: var(--war-select-disabled-color);
+  --war-select-background: var(--war-select-disabled-background);
+  cursor: not-allowed;
+}
+
+.select-shell {
+  position: relative;
+  width: 100%;
+}
+
+.trigger {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: var(--war-select-height);
+  padding-right: var(--war-select-padding-right);
+  padding-left: var(--war-select-padding-left);
+  padding-top: var(--war-select-padding-top);
+  padding-bottom: var(--war-select-padding-bottom);
+  border-width: var(--war-select-border-width);
+  border-style: var(--war-select-border-style);
+  border-color: var(--war-select-border-color);
+  border-radius: var(--war-select-border-radius);
+  background: var(--war-select-background);
+  color: var(--war-select-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.trigger:disabled {
+  cursor: not-allowed;
+}
+
+.trigger:focus-visible {
+  outline: 0.16rem solid currentColor;
+  outline-offset: 0.12rem;
+}
+
+.trigger-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.icon {
+  font-size: var(--war-select-icon-size);
+  line-height: 1;
+}
+
+.option-icon {
+  font-size: var(--war-select-option-icon-size);
+}
+
+.options {
+  list-style: none;
+  margin: 0.35rem 0 0;
+  padding: 0.35rem;
+  position: absolute;
+  z-index: 5;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  border-width: var(--war-select-border-width);
+  border-style: var(--war-select-border-style);
+  border-color: var(--war-select-border-color);
+  border-radius: var(--war-select-border-radius);
+  background: var(--war-select-background);
+  box-shadow: var(--war-select-shadow);
+  max-height: 14rem;
+  overflow: auto;
+}
+
+.option {
+  width: 100%;
+  border: 0;
+  border-radius: calc(var(--war-select-border-radius) * 0.65);
+  background: var(--war-select-option-background);
+  color: var(--war-select-option-color);
+  padding: 0.55rem 0.7rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  text-align: left;
+}
+
+.option:hover,
+.option.focused {
+  filter: brightness(0.95);
+}
+
+.option:focus-visible {
+  outline: 0.12rem solid currentColor;
+  outline-offset: 0.08rem;
+}
+
+.selected-option {
+  color: var(--war-select-selected-option-color);
+  background: var(--war-select-selected-option-background);
+}

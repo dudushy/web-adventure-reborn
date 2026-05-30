@@ -55,7 +55,11 @@
         "description": "A clone of Spotify's mobile player, recreating its main interface and interactions."
       }
     },
-    "components": {},
+    "components": {
+      "select": {
+        "description": "A customizable select component, inspired by modern designs and focused on accessibility."
+      }
+    },
     "forms": {},
     "games": {
       "switch-frogs": {

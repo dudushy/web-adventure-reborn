@@ -1,0 +1,23 @@
+<div class="select-shell" (focusout)="onContainerFocusOut($event)">
+  <button class="trigger" type="button" [disabled]="isDisabled()" [attr.aria-expanded]="isOpen()" aria-haspopup="listbox" (click)="toggleDropdown()" (keydown)="onTriggerKeydown($event)" (blur)="onTriggerBlur()">
+    <span class="trigger-label">{{ triggerLabel() }}</span>
+
+    <span class="icon option-icon" aria-hidden="true">{{ dropdownIcon() }}</span>
+  </button>
+
+  @if (isOpen()) {
+    <ul class="options" role="listbox" [attr.aria-disabled]="isDisabled()">
+      @for (option of selectOptions(); track trackByOptionId($index, option)) {
+        <li>
+          <button class="option" type="button" role="option" [class.selected-option]="selectedOption()?.value === option.value" [class.focused]="$index === focusedOptionIndex()" [attr.aria-selected]="selectedOption()?.value === option.value" (click)="selectOption(option)" (mouseenter)="onOptionMouseEnter($index)">
+            <span class="option-label">{{ option.label }}</span>
+
+            @if (selectedOption()?.value === option.value) {
+              <span class="icon" aria-hidden="true">{{ selectIcon() }}</span>
+            }
+          </button>
+        </li>
+      }
+    </ul>
+  }
+</div>

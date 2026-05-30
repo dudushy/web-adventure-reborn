@@ -1,0 +1,83 @@
+@use '@shyland-dev/ui/styles' as *;
+@use '../../../../../styles.scss' as *;
+
+:host {
+  display: block;
+  padding: $content-inset-padding;
+  border-radius: $content-inset-border-radius;
+  border-color: $theme-color;
+  border-width: $content-inset-border-width;
+  border-style: solid;
+  background-color: $theme-background;
+  color: $theme-color;
+  overflow: hidden;
+
+  @include fixedHeight($content-inset-height);
+}
+
+.showcase {
+  width: min(100%, 60rem);
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.subtitle {
+  margin: 0;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.toggle-button {
+  border: 0.12rem solid currentColor;
+  background: transparent;
+  color: inherit;
+  padding: 0.5rem 0.9rem;
+  border-radius: 0.65rem;
+  cursor: pointer;
+}
+
+.examples {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1rem;
+}
+
+.example-card {
+  border: 0.1rem solid color-mix(in srgb, currentColor 35%, transparent);
+  border-radius: 0.9rem;
+  padding: 1rem;
+  display: grid;
+  gap: 0.8rem;
+  background: color-mix(in srgb, $theme-background 92%, $theme-color 8%);
+}
+
+.example-card h3 {
+  margin: 0;
+}
+
+war-select.custom-skin {
+  --war-select-height: 3rem;
+  --war-select-width: 100%;
+  --war-select-color: #f8fafc;
+  --war-select-background: #0f172a;
+  --war-select-border-width: 0.14rem;
+  --war-select-border-style: solid;
+  --war-select-border-color: #38bdf8;
+  --war-select-border-radius: 1.05rem;
+  --war-select-padding-right: 1rem;
+  --war-select-padding-left: 1rem;
+  --war-select-padding-top: 0.6rem;
+  --war-select-padding-bottom: 0.6rem;
+  --war-select-option-color: #0f172a;
+  --war-select-option-background: #e2e8f0;
+  --war-select-selected-option-color: #f8fafc;
+  --war-select-selected-option-background: #0ea5e9;
+  --war-select-disabled-border-color: #ef4444;
+  --shyIconSize: 1.1rem;
+}
