@@ -1,23 +1,23 @@
 <div class="select-shell" (focusout)="onContainerFocusOut($event)">
-  <button class="trigger" type="button" [disabled]="isDisabled()" [attr.aria-expanded]="isOpen()" aria-haspopup="listbox" (click)="toggleDropdown()" (keydown)="onTriggerKeydown($event)" (blur)="onTriggerBlur()">
+  <div class="trigger" role="button" [class.is-disabled]="isDisabled()" [attr.tabindex]="isDisabled() ? -1 : 0" [attr.aria-disabled]="isDisabled() || null" [attr.aria-expanded]="isOpen()" aria-haspopup="listbox" (click)="toggleDropdown()" (keydown)="onTriggerKeydown($event)" (blur)="onTriggerBlur()">
     <span class="trigger-label">{{ triggerLabel() }}</span>
 
-    <shy-icon class="icon option-icon" aria-hidden="true">{{ dropdownIcon() }}</shy-icon>
-  </button>
+    <shy-icon class="trigger-icon" aria-hidden="true">{{ dropdownIcon() }}</shy-icon>
+  </div>
 
   @if (isOpen()) {
-    <ul class="options" role="listbox" [attr.aria-disabled]="isDisabled()">
-      @for (option of selectOptions(); track trackByOptionId($index, option)) {
-        <li>
-          <button class="option" type="button" role="option" [class.selected-option]="selectedOption()?.value === option.value" [class.focused]="$index === focusedOptionIndex()" [attr.aria-selected]="selectedOption()?.value === option.value" (click)="selectOption(option)" (mouseenter)="onOptionMouseEnter($index)">
-            <span class="option-label">{{ option.label }}</span>
+  <ul class="options" role="listbox">
+    @for (option of selectOptions(); track trackByOptionId($index, option)) {
+    <li>
+      <button class="option" type="button" role="option" [class.is-selected]="selectedOption()?.value === option.value" [class.is-focused]="$index === focusedOptionIndex()" [attr.aria-selected]="selectedOption()?.value === option.value" (click)="selectOption(option)" (mouseenter)="onOptionMouseEnter($index)">
+        <span class="option-label">{{ option.label }}</span>
 
-            @if (selectedOption()?.value === option.value) {
-              <shy-icon class="icon" aria-hidden="true">{{ selectIcon() }}</shy-icon>
-            }
-          </button>
-        </li>
-      }
-    </ul>
+        @if (selectedOption()?.value === option.value) {
+        <shy-icon class="option-icon" aria-hidden="true">{{ selectIcon() }}</shy-icon>
+        }
+      </button>
+    </li>
+    }
+  </ul>
   }
 </div>

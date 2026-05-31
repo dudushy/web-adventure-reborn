@@ -86,26 +86,46 @@
 }
 
 war-select.example-2 {
-  --war-select-height: calc(#{$responsive-unit} * 2.75);
-  --war-select-width: calc(#{$responsive-unit} * 22);
-  --war-select-color: #0f172a;
-  --war-select-background: #ffffff;
-  --war-select-border-width: calc(#{$responsive-unit} * 0.125);
+  --war-select-height: calc(#{$responsive-unit} * 20);
+  --war-select-width: calc(#{$responsive-unit} * 140);
+  --war-select-font-size: calc(#{$responsive-unit} * 10);
+  --war-select-color: #91b2ff;
+  --war-select-background: #0077ff;
+  --war-select-border-width: calc(#{$responsive-unit} * 5);
   --war-select-border-style: solid;
-  --war-select-border-color: #1e293b;
-  --war-select-border-radius: calc(#{$responsive-unit} * 0.75);
-  --war-select-padding-right: calc(#{$responsive-unit} * 0.9);
-  --war-select-padding-left: calc(#{$responsive-unit} * 0.9);
-  --war-select-padding-top: calc(#{$responsive-unit} * 0.5);
-  --war-select-padding-bottom: calc(#{$responsive-unit} * 0.5);
-  --war-select-shadow: 0 calc(#{$responsive-unit} * 0.5) calc(#{$responsive-unit} * 1.2) rgba(15, 23, 42, 0.12);
-  --war-select-option-color: #0f172a;
-  --war-select-option-background: #ffffff;
-  --war-select-selected-option-color: #0f172a;
-  --war-select-selected-option-background: #e2e8f0;
-  --war-select-disabled-border-color: #94a3b8;
-  --war-select-disabled-color: #64748b;
-  --war-select-disabled-background: #f1f5f9;
-  --war-select-icon-size: calc(#{$responsive-unit} * 0.95);
-  --war-select-option-icon-size: calc(#{$responsive-unit} * 0.9);
+  --war-select-border-color: #3e79d6;
+  --war-select-border-radius: calc(#{$responsive-unit} * 15);
+  --war-select-padding-right: calc(#{$responsive-unit} * 7);
+  --war-select-padding-left: calc(#{$responsive-unit} * 7);
+  --war-select-padding-top: calc(#{$responsive-unit} * 7);
+  --war-select-padding-bottom: calc(#{$responsive-unit} * 7);
+  --war-select-shadow: 0 0 calc(#{$responsive-unit} * 1) calc(#{$responsive-unit} * 1) #750b961f;
+  --war-select-option-color: #91e9ff;
+  --war-select-option-background: #00aeff;
+  --war-select-option-hover-color: #002488;
+  --war-select-option-hover-background: #54e5ff;
+  --war-select-selected-option-color: #00aeff;
+  --war-select-selected-option-background: #91e9ff;
+  --war-select-selected-option-hover-color: #2f00ff;
+  --war-select-selected-option-hover-background: #9c91ff;
+  --war-select-disabled-border-color: #b89494;
+  --war-select-disabled-color: #4e0202;
+  --war-select-disabled-background: #ff3232;
+  --war-select-icon-size: calc(#{$responsive-unit} * 10);
+  --war-select-option-icon-size: calc(#{$responsive-unit} * 10);
+  --war-select-options-min-height: 0;
+  --war-select-options-max-height: calc(#{$responsive-unit} * 40);
+  --war-select-scrollbar-width: calc(#{$responsive-unit} * 2);
+  --war-select-scrollbar-track-background: #0077ff;
+  --war-select-scrollbar-thumb-background: color-mix(in srgb, #91b2ff 45%, transparent);
+  --war-select-scrollbar-thumb-hover-background: #91b2ff;
+  --war-select-scrollbar-border-radius: calc(#{$responsive-unit} * 2);
+
+  @include portrait {
+    --war-select-height: calc(#{$responsive-unit} * 10);
+    --war-select-width: calc(#{$responsive-unit} * 80);
+    --war-select-font-size: calc(#{$responsive-unit} * 6);
+    --war-select-icon-size: calc(#{$responsive-unit} * 6);
+    --war-select-option-icon-size: calc(#{$responsive-unit} * 6);
+  }
 }

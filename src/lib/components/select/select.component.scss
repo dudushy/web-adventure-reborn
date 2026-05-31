@@ -1,6 +1,7 @@
 :host {
   --war-select-height: 2.75rem;
   --war-select-width: min(100%, 22rem);
+  --war-select-font-size: 1rem;
   --war-select-color: #0f172a;
   --war-select-background: #ffffff;
   --war-select-border-width: 0.125rem;
@@ -12,13 +13,24 @@
   --war-select-padding-top: 0.5rem;
   --war-select-padding-bottom: 0.5rem;
   --war-select-shadow: 0 0.5rem 1.2rem rgba(15, 23, 42, 0.12);
-  --war-select-option-color: #0f172a;
-  --war-select-option-background: #ffffff;
-  --war-select-selected-option-color: #0f172a;
-  --war-select-selected-option-background: #e2e8f0;
-  --war-select-disabled-border-color: #94a3b8;
   --war-select-disabled-color: #64748b;
   --war-select-disabled-background: #f1f5f9;
+  --war-select-disabled-border-color: #94a3b8;
+  --war-select-option-color: #0f172a;
+  --war-select-option-background: #ffffff;
+  --war-select-option-hover-color: var(--war-select-option-color);
+  --war-select-option-hover-background: color-mix(in srgb, var(--war-select-option-background) 88%, black 12%);
+  --war-select-selected-option-color: #0f172a;
+  --war-select-selected-option-background: #e2e8f0;
+  --war-select-selected-option-hover-color: var(--war-select-selected-option-color);
+  --war-select-selected-option-hover-background: color-mix(in srgb, var(--war-select-selected-option-background) 88%, black 12%);
+  --war-select-options-min-height: 0px;
+  --war-select-options-max-height: 14rem;
+  --war-select-scrollbar-width: 0.3rem;
+  --war-select-scrollbar-track-background: transparent;
+  --war-select-scrollbar-thumb-background: color-mix(in srgb, currentColor 30%, transparent);
+  --war-select-scrollbar-thumb-hover-background: color-mix(in srgb, currentColor 55%, transparent);
+  --war-select-scrollbar-border-radius: 100vw;
   --war-select-icon-size: 0.95rem;
   --war-select-option-icon-size: 0.9rem;
 
@@ -26,15 +38,7 @@
   display: inline-flex;
   width: var(--war-select-width);
   min-height: var(--war-select-height);
-  color: var(--war-select-color);
-}
-
-:host(.disabled) {
-  --war-select-border-color: var(--war-select-disabled-border-color);
-  --war-select-color: var(--war-select-disabled-color);
-  --war-select-background: var(--war-select-disabled-background);
-
-  cursor: not-allowed;
+  font-size: var(--wa-select-font-size, var(--war-select-font-size));
 }
 
 .select-shell {
@@ -46,13 +50,12 @@
   box-sizing: border-box;
   width: 100%;
   min-height: var(--war-select-height);
-  padding-right: var(--war-select-padding-right);
-  padding-left: var(--war-select-padding-left);
+  font: inherit;
   padding-top: var(--war-select-padding-top);
   padding-bottom: var(--war-select-padding-bottom);
-  border-width: var(--war-select-border-width);
-  border-style: var(--war-select-border-style);
-  border-color: var(--war-select-border-color);
+  padding-right: var(--war-select-padding-right);
+  padding-left: var(--war-select-padding-left);
+  border: var(--war-select-border-width) var(--war-select-border-style) var(--war-select-border-color);
   border-radius: var(--war-select-border-radius);
   background: var(--war-select-background);
   color: var(--war-select-color);
@@ -62,29 +65,32 @@
   gap: 0.75rem;
   text-align: left;
   cursor: pointer;
-}
+  box-shadow: var(--war-select-shadow);
 
-.trigger:disabled {
-  cursor: not-allowed;
-}
+  &.is-disabled {
+    background: var(--war-select-disabled-background);
+    color: var(--war-select-disabled-color);
+    border-color: var(--war-select-disabled-border-color);
+    cursor: not-allowed;
+    user-select: none;
+  }
 
-.trigger:focus-visible {
-  outline: 0.16rem solid currentColor;
-  outline-offset: 0.12rem;
+  &:focus-visible {
+    outline: 0.16rem solid currentColor;
+    outline-offset: 0.12rem;
+  }
 }
 
 .trigger-label {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  flex: 1;
 }
 
-.icon {
+.trigger-icon {
   --shyIconSize: var(--war-select-icon-size);
-}
-
-.option-icon {
-  --shyIconSize: var(--war-select-option-icon-size);
+  flex-shrink: 0;
 }
 
 .options {
@@ -97,20 +103,40 @@
   left: 0;
   width: 100%;
   box-sizing: border-box;
-  border-width: var(--war-select-border-width);
-  border-style: var(--war-select-border-style);
-  border-color: var(--war-select-border-color);
+  border: var(--war-select-border-width) var(--war-select-border-style) var(--war-select-border-color);
   border-radius: var(--war-select-border-radius);
   background: var(--war-select-background);
   box-shadow: var(--war-select-shadow);
-  max-height: 14rem;
-  overflow: auto;
+  min-height: var(--war-select-options-min-height);
+  max-height: var(--war-select-options-max-height);
+  overflow-y: auto;
+  scrollbar-width: var(--war-select-scrollbar-width);
+  scrollbar-color: var(--war-select-scrollbar-thumb-background) var(--war-select-scrollbar-track-background);
+
+  &::-webkit-scrollbar {
+    width: var(--war-select-scrollbar-width);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--war-select-scrollbar-track-background);
+    border-radius: var(--war-select-scrollbar-border-radius);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--war-select-scrollbar-thumb-background);
+    border-radius: var(--war-select-scrollbar-border-radius);
+
+    &:hover {
+      background: var(--war-select-scrollbar-thumb-hover-background);
+    }
+  }
 }
 
 .option {
   width: 100%;
-  border: 0;
+  border: none;
   border-radius: calc(var(--war-select-border-radius) * 0.65);
+  font: inherit;
   background: var(--war-select-option-background);
   color: var(--war-select-option-color);
   padding: 0.55rem 0.7rem;
@@ -120,19 +146,38 @@
   justify-content: space-between;
   gap: 0.75rem;
   text-align: left;
+
+  &:hover,
+  &.is-focused {
+    color: var(--war-select-option-hover-color);
+    background: var(--war-select-option-hover-background);
+  }
+
+  &.is-selected {
+    color: var(--war-select-selected-option-color);
+    background: var(--war-select-selected-option-background);
+
+    &:hover,
+    &.is-focused {
+      color: var(--war-select-selected-option-hover-color);
+      background: var(--war-select-selected-option-hover-background);
+    }
+  }
+
+  &:focus-visible {
+    outline: 0.12rem solid currentColor;
+    outline-offset: 0.08rem;
+  }
 }
 
-.option:hover,
-.option.focused {
-  filter: brightness(0.95);
+.option-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
 }
 
-.option:focus-visible {
-  outline: 0.12rem solid currentColor;
-  outline-offset: 0.08rem;
-}
-
-.selected-option {
-  color: var(--war-select-selected-option-color);
-  background: var(--war-select-selected-option-background);
+.option-icon {
+  --shyIconSize: var(--war-select-option-icon-size);
+  flex-shrink: 0;
 }
