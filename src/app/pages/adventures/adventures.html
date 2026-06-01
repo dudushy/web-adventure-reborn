@@ -13,7 +13,7 @@
         </div>
 
         <div class="status-and-category">
-          <shy-icon class="status" [ngClass]="adventure.status">{{ getStatusIcon(adventure.status) }}</shy-icon>
+          <shy-icon class="status" [ngClass]="adventure.status" [title]="adventure.statusKey | translate">{{ getStatusIcon(adventure.status) }}</shy-icon>
 
           <span class="category">{{ adventure.category }}</span>
         </div>

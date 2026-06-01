@@ -50,6 +50,12 @@
   },
   "adventures": {
     "title": "Adventures",
+    "status": {
+      "done": "Completed",
+      "wip": "In progress",
+      "planned": "Planned",
+      "rework": "Needs review"
+    },
     "clones": {
       "spotify-player": {
         "description": "A clone of Spotify's mobile player, recreating its main interface and interactions."

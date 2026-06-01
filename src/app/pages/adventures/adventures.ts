@@ -35,14 +35,16 @@ export class Adventures implements OnInit, OnDestroy {
 
   getStatusIcon(status: AdventuresStatusType): string {
     switch (status) {
+      case 'planned':
+        return 'clock-fill';
       case 'wip':
-        return 'hourglass';
+        return 'exclamation-triangle-fill';
       case 'done':
-        return 'check';
+        return 'check-circle-fill';
       case 'rework':
-        return 'wrench';
+        return 'wrench-adjustable';
       default:
-        return '';
+        return 'question-circle-fill';
     }
   }
 }

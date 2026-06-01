@@ -43,7 +43,7 @@
     flex-direction: column;
     justify-content: space-between;
     border-width: calc(#{$responsive-unit} * 1);
-    border-color: var(--adventure-category-color, $theme-color);
+    border-color: var(--adventure-category-color);
     border-style: solid;
     border-radius: calc(#{$responsive-unit} * 4);
     padding: calc(#{$responsive-unit} * 5);
@@ -164,28 +164,34 @@
       .status {
         --shyIconSize: calc(#{$responsive-unit} * 10);
 
-        color: $theme-background;
         padding: calc(#{$responsive-unit} * 2);
         border-radius: calc(#{$responsive-unit} * 2);
-        background-color: $theme-color;
+        border-color: $theme-highlight;
+        border-width: calc(#{$responsive-unit} * 1);
+        border-style: solid;
+        border-radius: calc(#{$responsive-unit} * 4);
 
         @include portrait {
-          --shyIconSize: calc(#{$responsive-unit} * 8);
+          --shyIconSize: calc(#{$responsive-unit} * 7.5);
 
           padding: calc(#{$responsive-unit} * 1);
           border-radius: calc(#{$responsive-unit} * 1);
         }
 
         &.wip {
-          background-color: $color-danger;
+          color: $color-danger;
         }
 
         &.rework {
-          background-color: $color-primary;
+          color: $color-primary;
         }
 
         &.done {
-          background-color: $color-success;
+          color: $color-success;
+        }
+
+        &.planned {
+          color: $color-warning;
         }
       }
 
@@ -194,7 +200,7 @@
         color: $theme-background;
         padding: calc(#{$responsive-unit} * 2);
         border-radius: calc(#{$responsive-unit} * 2);
-        background-color: var(--adventure-category-color, $theme-color);
+        background-color: var(--adventure-category-color);
         font-weight: bolder;
 
         @include portrait {
