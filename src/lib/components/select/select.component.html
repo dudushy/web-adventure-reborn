@@ -6,18 +6,18 @@
   </div>
 
   @if (isOpen()) {
-  <ul class="options" role="listbox">
-    @for (option of selectOptions(); track trackByOptionId($index, option)) {
-    <li>
-      <button class="option" type="button" role="option" [class.is-selected]="selectedOption()?.value === option.value" [class.is-focused]="$index === focusedOptionIndex()" [attr.aria-selected]="selectedOption()?.value === option.value" (click)="selectOption(option)" (mouseenter)="onOptionMouseEnter($index)">
-        <span class="option-label">{{ option.label }}</span>
+    <ul class="options" role="listbox">
+      @for (option of selectOptions(); track trackByOptionId($index, option)) {
+        <li>
+          <button class="option" type="button" role="option" [class.is-selected]="selectedOption()?.value === option.value" [class.is-focused]="$index === focusedOptionIndex()" [attr.aria-selected]="selectedOption()?.value === option.value" (click)="selectOption(option)" (mouseenter)="onOptionMouseEnter($index)">
+            <span class="option-label">{{ option.label }}</span>
 
-        @if (selectedOption()?.value === option.value) {
-        <shy-icon class="option-icon" aria-hidden="true">{{ selectIcon() }}</shy-icon>
-        }
-      </button>
-    </li>
-    }
-  </ul>
+            @if (selectedOption()?.value === option.value) {
+              <shy-icon class="option-icon" aria-hidden="true">{{ selectIcon() }}</shy-icon>
+            }
+          </button>
+        </li>
+      }
+    </ul>
   }
 </div>
