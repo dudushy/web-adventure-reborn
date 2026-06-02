@@ -49,4 +49,12 @@ export const ADVENTURES: AdventuresType[] = [
     descriptionKey: 'adventures.components.select.description',
     path: '/adventures/components/select',
   },
+  {
+    slug: 'hover-buttons',
+    category: 'interactive',
+    status: 'done',
+    statusKey: 'adventures.status.done',
+    descriptionKey: 'adventures.interactive.hover-buttons.description',
+    path: '/adventures/interactive/hover-buttons',
+  },
 ];

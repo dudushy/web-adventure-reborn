@@ -79,7 +79,17 @@
         "won": "You won!"
       }
     },
-    "interactive": {},
+    "interactive": {
+      "hover-buttons": {
+        "description": "Buttons that react to hover, showing a background that follows the mouse movement.",
+        "hover-text1": "Hover here",
+        "hover-text2": "Here too",
+        "hover-text3": "Don't forget to hover here",
+        "hover-text4": "And here",
+        "hover-text5": "Here",
+        "hover-text6": "It's also important to hover here"
+      }
+    },
     "loaders": {
       "startup": {
         "description": "The initial loader, simple and elegant."

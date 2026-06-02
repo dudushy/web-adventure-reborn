@@ -1,0 +1,15 @@
+<div class="buttons-wrapper">
+  <div class="hover" [style.opacity]="hoverOpacity" [style.width]="hoverWidth" [style.height]="hoverHeight" [style.left]="hoverLeft"></div>
+
+  <button (mouseover)="getData($event)" (mouseout)="hoverOpacity = 0">{{ 'adventures.interactive.hover-buttons.hover-text1' | translate }}</button>
+
+  <button (mouseover)="getData($event)" (mouseout)="hoverOpacity = 0">{{ 'adventures.interactive.hover-buttons.hover-text2' | translate }}</button>
+
+  <button (mouseover)="getData($event)" (mouseout)="hoverOpacity = 0">{{ 'adventures.interactive.hover-buttons.hover-text3' | translate }}</button>
+
+  <button (mouseover)="getData($event)" (mouseout)="hoverOpacity = 0">{{ 'adventures.interactive.hover-buttons.hover-text4' | translate }}</button>
+
+  <button (mouseover)="getData($event)" (mouseout)="hoverOpacity = 0">{{ 'adventures.interactive.hover-buttons.hover-text5' | translate }}</button>
+
+  <button (mouseover)="getData($event)" (mouseout)="hoverOpacity = 0">{{ 'adventures.interactive.hover-buttons.hover-text6' | translate }}</button>
+</div>

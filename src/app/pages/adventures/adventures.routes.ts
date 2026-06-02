@@ -7,7 +7,7 @@ export default [
   { path: 'components', loadChildren: () => import('./components/components.routes') },
   { path: 'forms', loadChildren: () => import('./forms/forms.routes') },
   { path: 'games', loadChildren: () => import('./games/games.routes') },
-  { path: 'interactives', loadChildren: () => import('./interactives/interactives.routes') },
+  { path: 'interactive', loadChildren: () => import('./interactive/interactive.routes') },
   { path: 'loaders', loadChildren: () => import('./loaders/loaders.routes') },
   { path: 'random', loadChildren: () => import('./random/random.routes') },
 

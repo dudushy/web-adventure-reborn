@@ -79,7 +79,17 @@
         "won": "Você venceu!"
       }
     },
-    "interactive": {},
+    "interactive": {
+      "hover-buttons": {
+        "description": "Botões que reagem ao hover, mostrando um fundo que acompanha o movimento do mouse.",
+        "hover-text1": "Passe o mouse aqui",
+        "hover-text2": "Aqui também",
+        "hover-text3": "Não esqueça de passar o mouse aqui",
+        "hover-text4": "E aqui",
+        "hover-text5": "Aqui",
+        "hover-text6": "Aqui também é importante passar o mouse"
+      }
+    },
     "loaders": {
       "startup": {
         "description": "O loader inicial, simples e elegante."
