@@ -7,7 +7,7 @@ import { StorageService, ThemeService, APP_VERSION } from '@web-adventure-reborn
 import { IconComponent } from '@shyland-dev/ui';
 
 @Component({
-  selector: 'app-root',
+  selector: 'war-root',
   imports: [RouterOutlet, RouterLink, RouterLinkActive, TranslateModule, IconComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss',

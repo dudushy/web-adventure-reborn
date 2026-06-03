@@ -7,7 +7,7 @@ import { AdventuresStatusType, TitleService, ADVENTURES } from '@web-adventure-r
 import { NgClass } from '@angular/common';
 
 @Component({
-  selector: 'app-adventures',
+  selector: 'war-adventures',
   imports: [RouterLink, TranslateModule, IconComponent, NgClass],
   templateUrl: './adventures.html',
   styleUrl: './adventures.scss',

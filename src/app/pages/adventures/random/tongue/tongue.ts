@@ -3,7 +3,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { DebugService } from '@shyland-dev/utils';
 
 @Component({
-  selector: 'app-adventure-random-tongue',
+  selector: 'war-adventure-random-tongue',
   imports: [TranslateModule],
   templateUrl: './tongue.html',
   styleUrl: './tongue.scss',

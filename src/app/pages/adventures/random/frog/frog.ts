@@ -4,7 +4,7 @@ import { DebugService } from '@shyland-dev/utils';
 import { FrogAreaType, FrogStateType } from '@web-adventure-reborn';
 
 @Component({
-  selector: 'app-adventure-random-frog',
+  selector: 'war-adventure-random-frog',
   imports: [TranslateModule],
   templateUrl: './frog.html',
   styleUrl: './frog.scss',

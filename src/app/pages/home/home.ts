@@ -5,7 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { TOPICS, TitleService } from '@web-adventure-reborn';
 
 @Component({
-  selector: 'app-home',
+  selector: 'war-home',
   imports: [IconComponent, TranslateModule],
   templateUrl: './home.html',
   styleUrl: './home.scss',

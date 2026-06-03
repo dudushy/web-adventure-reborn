@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { SelectComponent, SelectOption, SelectionChangeEvent } from '@web-adventure-reborn';
 
 @Component({
-  selector: 'app-adventure-components-select',
+  selector: 'war-adventure-components-select',
   imports: [TranslateModule, FormsModule, SelectComponent],
   templateUrl: './select.html',
   styleUrl: './select.scss',

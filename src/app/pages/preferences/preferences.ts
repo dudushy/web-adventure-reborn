@@ -7,7 +7,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { SelectComponent, SelectOption, SelectionChangeEvent } from '@shyland-dev/ui';
 
 @Component({
-  selector: 'app-preferences',
+  selector: 'war-preferences',
   imports: [FormsModule, TranslateModule, SelectComponent, TranslateModule],
   templateUrl: './preferences.html',
   styleUrl: './preferences.scss',

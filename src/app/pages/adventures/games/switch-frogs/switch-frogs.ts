@@ -7,7 +7,7 @@ const INITIAL_FROG_POSITIONS: number[] = [0, 1, 2, 4, 5, 6];
 const FROG_TRANSITION_MS = 500;
 
 @Component({
-  selector: 'app-adventure-games-switch-frogs',
+  selector: 'war-adventure-games-switch-frogs',
   imports: [TranslateModule],
   templateUrl: './switch-frogs.html',
   styleUrl: './switch-frogs.scss',

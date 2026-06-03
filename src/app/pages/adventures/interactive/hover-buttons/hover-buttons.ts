@@ -3,7 +3,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { DebugService } from '@shyland-dev/utils';
 
 @Component({
-  selector: 'app-adventure-interactive-hover-buttons',
+  selector: 'war-adventure-interactive-hover-buttons',
   imports: [TranslateModule],
   templateUrl: './hover-buttons.html',
   styleUrl: './hover-buttons.scss',

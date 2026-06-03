@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DebugService } from '@shyland-dev/utils';
 
 @Component({
-  selector: 'app-adventure-loaders-startup',
+  selector: 'war-adventure-loaders-startup',
   imports: [],
   templateUrl: './startup.html',
   styleUrl: './startup.scss',

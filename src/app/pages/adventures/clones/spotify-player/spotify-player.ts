@@ -3,7 +3,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { DebugService } from '@shyland-dev/utils';
 
 @Component({
-  selector: 'app-adventure-clones-spotify-player',
+  selector: 'war-adventure-clones-spotify-player',
   imports: [TranslateModule],
   templateUrl: './spotify-player.html',
   styleUrl: './spotify-player.scss',
