@@ -93,6 +93,9 @@
     "loaders": {
       "startup": {
         "description": "The initial loader, simple and elegant."
+      },
+      "lava-lamp": {
+        "description": "A lava lamp-shaped loader, with smooth and colorful animations."
       }
     },
     "random": {

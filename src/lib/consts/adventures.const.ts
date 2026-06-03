@@ -57,4 +57,12 @@ export const ADVENTURES: AdventuresType[] = [
     descriptionKey: 'adventures.interactive.hover-buttons.description',
     path: '/adventures/interactive/hover-buttons',
   },
+  {
+    slug: 'lava-lamp',
+    category: 'loaders',
+    status: 'wip',
+    statusKey: 'adventures.status.wip',
+    descriptionKey: 'adventures.loaders.lava-lamp.description',
+    path: '/adventures/loaders/lava-lamp',
+  },
 ];
