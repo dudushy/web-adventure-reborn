@@ -60,8 +60,8 @@ export const ADVENTURES: AdventuresType[] = [
   {
     slug: 'lava-lamp',
     category: 'loaders',
-    status: 'wip',
-    statusKey: 'adventures.status.wip',
+    status: 'done',
+    statusKey: 'adventures.status.done',
     descriptionKey: 'adventures.loaders.lava-lamp.description',
     path: '/adventures/loaders/lava-lamp',
   },

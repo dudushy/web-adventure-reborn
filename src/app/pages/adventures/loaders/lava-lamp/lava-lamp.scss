@@ -5,7 +5,6 @@ $lamp-size: calc(#{$responsive-unit} * 200);
 $support-size: calc(#{$lamp-size} * 0.4);
 $lava-height: calc(#{$lamp-size} * 0.9);
 $lava-width: calc(#{$lamp-size} * 1);
-$blob-size: calc(#{$lamp-size} * 0.3);
 
 :host {
   display: flex;
@@ -47,58 +46,8 @@ $blob-size: calc(#{$lamp-size} * 0.3);
 
     .blob {
       position: absolute;
-      width: $blob-size;
-      height: $blob-size;
       background-color: color-mix(in srgb, $theme-color 70%, $theme-background 30%);
       border-radius: 50%;
-
-      &.blob-1 {
-        animation: blobMove1 60s ease-in-out infinite;
-        // background-color: red;
-      }
-
-      &.blob-2 {
-        animation: blobMove2 60s ease-in-out infinite;
-        // background-color: green;
-      }
-
-      &.blob-3 {
-        animation: blobMove3 60s ease-in-out infinite;
-        // background-color: blue;
-      }
-
-      &.blob-4 {
-        animation: blobMove4 60s ease-in-out infinite;
-        // background-color: yellow;
-      }
     }
   }
-}
-
-@keyframes blobMove1 {
-  0%, 100% { transform: translate(200%, 200%); }
-  25% { transform: translate(90%, -40%); }
-  50% { transform: translate(-90%, -90%); }
-  75% { transform: translate(10%, 90%); }
-}
-
-@keyframes blobMove2 {
-  0%, 100% { transform: translate(200%, 200%); }
-  25% { transform: translate(-90%, -90%); }
-  50% { transform: translate(40%, 10%); }
-  75% { transform: translate(-10%, -40%); }
-}
-
-@keyframes blobMove3 {
-  0%, 100% { transform: translate(200%, 200%); }
-  25% { transform: translate(10%, 90%); }
-  50% { transform: translate(-40%, -10%); }
-  75% { transform: translate(90%, -90%); }
-}
-
-@keyframes blobMove4 {
-  0%, 100% { transform: translate(200%, 200%); }
-  25% { transform: translate(-10%, -40%); }
-  50% { transform: translate(90%, -20%); }
-  75% { transform: translate(-20%, 10%); }
 }
