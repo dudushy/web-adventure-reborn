@@ -23,6 +23,5 @@ npm start
 ## Formatting and linting
 
 ```bash
-npm run format
-npm run lint
+npm run format-n-lint
 ```
