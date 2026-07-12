@@ -22,7 +22,7 @@ async function writeJson(filePath, data) {
 
 function assertVersion(version) {
   if (typeof version !== 'string' || version.trim() === '') {
-    throw new Error('A propriedade "version" de package.json esta ausente ou invalida.');
+    throw new Error('The "version" property in package.json is missing or invalid.');
   }
 }
 
@@ -86,11 +86,11 @@ async function main() {
   await syncVersionFiles(version);
 
   const lifecycle = process.env.npm_lifecycle_event ?? 'manual';
-  console.log(`[sync-version] (${lifecycle}) versao sincronizada: ${version}`);
+  console.log(`[sync-version] (${lifecycle}) version synchronized: ${version}`);
 }
 
 main().catch((error) => {
-  console.error('[sync-version] Falha ao sincronizar versao.');
+  console.error('[sync-version] Failed to synchronize version.');
   console.error(error instanceof Error ? error.message : error);
   process.exit(1);
 });

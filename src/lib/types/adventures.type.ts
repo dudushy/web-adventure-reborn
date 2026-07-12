@@ -1,12 +1,19 @@
-export type AdventuresType = {
+export interface AdventuresType {
   slug: string;
   category: AdventuresCategoriesType;
   status: AdventuresStatusType;
   statusKey: string;
   descriptionKey: string;
   path: string;
-};
+}
 
-export type AdventuresCategoriesType = 'clones' | 'components' | 'forms' | 'games' | 'interactive' | 'loaders' | 'random';
+export type AdventuresCategoriesType =
+  | 'clones'
+  | 'components'
+  | 'forms'
+  | 'games'
+  | 'interactive'
+  | 'loaders'
+  | 'random';
 
 export type AdventuresStatusType = 'wip' | 'done' | 'rework' | 'planned';

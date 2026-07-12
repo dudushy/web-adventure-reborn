@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { DebugService } from '@shyland-dev/utils';
 import { FrogAreaType, FrogStateType } from '@web-adventure-reborn';
@@ -10,16 +10,19 @@ import { FrogAreaType, FrogStateType } from '@web-adventure-reborn';
   styleUrl: './frog.scss',
 })
 export class Frog implements OnInit, OnDestroy {
+  private debugService = inject(DebugService);
+  private cdr = inject(ChangeDetectorRef);
+
   private flyInterval: ReturnType<typeof setInterval> | null = null;
-  private currentRotationDeg: number = 0;
+  private currentRotationDeg = 0;
 
   frogState: FrogStateType = 'idle';
   readonly tongueAnimationDuration: number = 1200;
   readonly flyCatchPauseDuration: number = 800;
 
-  frogTongue: boolean = false;
-  frogRotation: string = '0deg';
-  frogTransitionDuration: string = '0.6s';
+  frogTongue = false;
+  frogRotation = '0deg';
+  frogTransitionDuration = '0.6s';
   frogArea: FrogAreaType = {
     x_axis: {
       min: 29,
@@ -31,9 +34,9 @@ export class Frog implements OnInit, OnDestroy {
     },
   };
 
-  flyVerticalPosition: string = '0%';
-  flyHorizontalPosition: string = '0%';
-  flyTransitionDuration: string = '0.5s';
+  flyVerticalPosition = '0%';
+  flyHorizontalPosition = '0%';
+  flyTransitionDuration = '0.5s';
   flyArea: FrogAreaType = {
     x_axis: {
       min: 5,
@@ -45,20 +48,20 @@ export class Frog implements OnInit, OnDestroy {
     },
   };
 
-  private flyX: number = 10;
-  private flyY: number = 10;
-  private flyVx: number = 0;
-  private flyVy: number = 0;
+  private flyX = 10;
+  private flyY = 10;
+  private flyVx = 0;
+  private flyVy = 0;
   readonly flyMaxSpeed: number = 2;
   readonly flySteerStrength: number = 0.6;
   readonly flyWallRepulsionDistance: number = 15;
   readonly flyFrogRepulsionDistance: number = 8;
 
-  flyCatchVerticalPosition: string = '15%';
-  flyCatchHorizontalPosition: string = '50%';
+  flyCatchVerticalPosition = '15%';
+  flyCatchHorizontalPosition = '50%';
 
-  debugVerticalPosition: string = '50%';
-  debugHorizontalPosition: string = '50%';
+  debugVerticalPosition = '50%';
+  debugHorizontalPosition = '50%';
 
   get frogTransitionDurationInMs(): number {
     return parseFloat(this.frogTransitionDuration) * 1000;
@@ -68,10 +71,7 @@ export class Frog implements OnInit, OnDestroy {
     return parseFloat(this.flyTransitionDuration) * 1000;
   }
 
-  constructor(
-    private debugService: DebugService,
-    private cdr: ChangeDetectorRef,
-  ) {
+  constructor() {
     this.debugService.log(this);
   }
 
@@ -107,7 +107,7 @@ export class Frog implements OnInit, OnDestroy {
 
     if (this.frogState === 'idle') {
       this.frogState = 'catching';
-      this.debugService.log(this, 'iniciando sequência de captura');
+      this.debugService.log(this, 'starting catch sequence');
     } else if (this.frogState === 'finished') {
       this.frogState = 'idle';
       this.frogTongue = false;
@@ -121,7 +121,7 @@ export class Frog implements OnInit, OnDestroy {
       this.flyHorizontalPosition = `${this.flyX}%`;
       this.flyVerticalPosition = `${this.flyY}%`;
       this.flyInterval = setInterval(() => this.stepFly(), 100);
-      this.debugService.log(this, 'reiniciando');
+      this.debugService.log(this, 'restarting');
       this.cdr.detectChanges();
     }
   }
@@ -134,11 +134,11 @@ export class Frog implements OnInit, OnDestroy {
 
     if (this.frogState !== 'idle') return;
 
-    // Steering aleatório — muda a direção gradualmente
+    // Random steering gradually changes the direction.
     this.flyVx += (Math.random() - 0.5) * this.flySteerStrength;
     this.flyVy += (Math.random() - 0.5) * this.flySteerStrength;
 
-    // Repulsão proporcional das bordas da flyArea
+    // Repulsion proportional to the flyArea boundaries.
     const distLeft = this.flyX - this.flyArea.x_axis.min;
     const distRight = this.flyArea.x_axis.max - this.flyX;
     const distTop = this.flyY - this.flyArea.y_axis.min;
@@ -147,31 +147,36 @@ export class Frog implements OnInit, OnDestroy {
     if (distLeft < this.flyWallRepulsionDistance) this.flyVx += (1 - distLeft / this.flyWallRepulsionDistance) * 0.8;
     if (distRight < this.flyWallRepulsionDistance) this.flyVx -= (1 - distRight / this.flyWallRepulsionDistance) * 0.8;
     if (distTop < this.flyWallRepulsionDistance) this.flyVy += (1 - distTop / this.flyWallRepulsionDistance) * 0.8;
-    if (distBottom < this.flyWallRepulsionDistance) this.flyVy -= (1 - distBottom / this.flyWallRepulsionDistance) * 0.8;
+    if (distBottom < this.flyWallRepulsionDistance)
+      this.flyVy -= (1 - distBottom / this.flyWallRepulsionDistance) * 0.8;
 
-    // Repulsão da área do sapo
+    // Repulsion from the frog area.
     const frogCenterX = (this.frogArea.x_axis.min + this.frogArea.x_axis.max) / 2;
     const frogCenterY = (this.frogArea.y_axis.min + this.frogArea.y_axis.max) / 2;
-    const nearFrogX = this.flyX > this.frogArea.x_axis.min - this.flyFrogRepulsionDistance && this.flyX < this.frogArea.x_axis.max + this.flyFrogRepulsionDistance;
-    const nearFrogY = this.flyY > this.frogArea.y_axis.min - this.flyFrogRepulsionDistance && this.flyY < this.frogArea.y_axis.max + this.flyFrogRepulsionDistance;
+    const nearFrogX =
+      this.flyX > this.frogArea.x_axis.min - this.flyFrogRepulsionDistance &&
+      this.flyX < this.frogArea.x_axis.max + this.flyFrogRepulsionDistance;
+    const nearFrogY =
+      this.flyY > this.frogArea.y_axis.min - this.flyFrogRepulsionDistance &&
+      this.flyY < this.frogArea.y_axis.max + this.flyFrogRepulsionDistance;
 
     if (nearFrogX && nearFrogY) {
       this.flyVx += this.flyX < frogCenterX ? -1.2 : 1.2;
       this.flyVy += this.flyY < frogCenterY ? -1.2 : 1.2;
     }
 
-    // Clampar velocidade ao máximo
+    // Clamp speed to the maximum.
     const speed = Math.sqrt(this.flyVx * this.flyVx + this.flyVy * this.flyVy);
     if (speed > this.flyMaxSpeed) {
       this.flyVx = (this.flyVx / speed) * this.flyMaxSpeed;
       this.flyVy = (this.flyVy / speed) * this.flyMaxSpeed;
     }
 
-    // Aplicar velocidade
+    // Apply velocity.
     this.flyX += this.flyVx;
     this.flyY += this.flyVy;
 
-    // Safety clamp dentro da flyArea
+    // Keep the fly within the flyArea bounds.
     this.flyX = Math.max(this.flyArea.x_axis.min, Math.min(this.flyArea.x_axis.max, this.flyX));
     this.flyY = Math.max(this.flyArea.y_axis.min, Math.min(this.flyArea.y_axis.max, this.flyY));
     this.clampFlyToCircle();
@@ -179,7 +184,11 @@ export class Frog implements OnInit, OnDestroy {
     this.flyHorizontalPosition = `${this.flyX}%`;
     this.flyVerticalPosition = `${this.flyY}%`;
 
-    this.debugService.log(this, 'fly pos', `x=${this.flyX.toFixed(1)} y=${this.flyY.toFixed(1)} vx=${this.flyVx.toFixed(2)} vy=${this.flyVy.toFixed(2)}`);
+    this.debugService.log(
+      this,
+      'fly pos',
+      `x=${this.flyX.toFixed(1)} y=${this.flyY.toFixed(1)} vx=${this.flyVx.toFixed(2)} vy=${this.flyVy.toFixed(2)}`,
+    );
 
     this.rotateFrogTowardFly(this.flyX, this.flyY);
     this.cdr.detectChanges();
@@ -227,7 +236,11 @@ export class Frog implements OnInit, OnDestroy {
     this.flyHorizontalPosition = `${this.flyX}%`;
     this.flyVerticalPosition = `${this.flyY}%`;
 
-    this.debugService.log(this, 'guiding fly', `x=${this.flyX.toFixed(1)} y=${this.flyY.toFixed(1)} dist=${dist.toFixed(1)}`);
+    this.debugService.log(
+      this,
+      'guiding fly',
+      `x=${this.flyX.toFixed(1)} y=${this.flyY.toFixed(1)} dist=${dist.toFixed(1)}`,
+    );
 
     this.rotateFrogTowardFly(this.flyX, this.flyY);
     this.cdr.detectChanges();
@@ -250,7 +263,7 @@ export class Frog implements OnInit, OnDestroy {
     this.rotateFrogTowardFly(targetX, targetY);
     this.cdr.detectChanges();
 
-    this.debugService.log(this, 'mosca capturada em', `x=${targetX} y=${targetY}`);
+    this.debugService.log(this, 'fly caught at', `x=${targetX} y=${targetY}`);
 
     setTimeout(() => {
       this.frogTongue = true;

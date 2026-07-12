@@ -1,4 +1,13 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, QueryList, ViewChildren } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnDestroy,
+  OnInit,
+  QueryList,
+  ViewChildren,
+  inject,
+} from '@angular/core';
 import { DebugService } from '@shyland-dev/utils';
 import { BlobArrayType } from '@web-adventure-reborn';
 
@@ -9,6 +18,8 @@ import { BlobArrayType } from '@web-adventure-reborn';
   styleUrl: './lava-lamp.scss',
 })
 export class LavaLamp implements OnInit, AfterViewInit, OnDestroy {
+  private debugService = inject(DebugService);
+
   @ViewChildren('blobEl') blobElements!: QueryList<ElementRef<HTMLDivElement>>;
 
   blobArray: BlobArrayType[] = [];
@@ -23,7 +34,7 @@ export class LavaLamp implements OnInit, AfterViewInit, OnDestroy {
 
   private animations: Animation[] = [];
 
-  constructor(private debugService: DebugService) {
+  constructor() {
     this.debugService.log(this);
   }
 
@@ -35,7 +46,7 @@ export class LavaLamp implements OnInit, AfterViewInit, OnDestroy {
   ngAfterViewInit(): void {
     this.blobElements.forEach((ref, index) => {
       const blob = this.blobArray[index];
-      const anim = ref.nativeElement.animate(this.generateKeyframes(blob), {
+      const anim = ref.nativeElement.animate(this.generateKeyframes(), {
         duration: blob.duration,
         delay: blob.delay,
         iterations: Infinity,
@@ -68,9 +79,9 @@ export class LavaLamp implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-  private generateKeyframes(blob: BlobArrayType): Keyframe[] {
+  private generateKeyframes(): Keyframe[] {
     const steps = Math.floor(Math.random() * 5) + 8; // 8–12 waypoints
-    const maxTotal = this.moveRange * 4; // limite de deriva acumulada
+    const maxTotal = this.moveRange * 4; // accumulated drift limit
     const keyframes: Keyframe[] = [];
 
     let tx = 0;
@@ -80,10 +91,10 @@ export class LavaLamp implements OnInit, AfterViewInit, OnDestroy {
       const progress = i / steps;
 
       if (i > 0) {
-        // Random walk: pequeno passo a partir da posição anterior
+        // Random walk: small step from the previous position.
         tx += Math.round((Math.random() * 2 - 1) * this.moveRange);
         ty += Math.round((Math.random() * 2 - 1) * this.moveRange);
-        // Mantém deriva dentro do limite para não sair demais
+        // Keep drift within bounds.
         tx = Math.max(-maxTotal, Math.min(maxTotal, tx));
         ty = Math.max(-maxTotal, Math.min(maxTotal, ty));
       }

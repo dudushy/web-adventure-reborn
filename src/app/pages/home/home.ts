@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { DebugService } from '@shyland-dev/utils';
 import { IconComponent } from '@shyland-dev/ui';
 import { TranslateModule } from '@ngx-translate/core';
@@ -11,13 +11,13 @@ import { TOPICS, TitleService } from '@web-adventure-reborn';
   styleUrl: './home.scss',
 })
 export class Home implements OnInit, OnDestroy {
+  private debugService = inject(DebugService);
+  private titleService = inject(TitleService);
+
   readonly title = 'Home';
   readonly topics = TOPICS;
 
-  constructor(
-    private debugService: DebugService,
-    private titleService: TitleService,
-  ) {
+  constructor() {
     this.debugService.log(this);
   }
 

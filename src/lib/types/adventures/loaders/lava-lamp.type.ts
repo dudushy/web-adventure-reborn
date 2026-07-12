@@ -1,8 +1,8 @@
-export type BlobArrayType = {
+export interface BlobArrayType {
   id: number;
   size: number;
   x: number;
   y: number;
   duration: number;
   delay: number;
-};
+}

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { DebugService } from '@shyland-dev/utils';
 
@@ -9,9 +9,11 @@ import { DebugService } from '@shyland-dev/utils';
   styleUrl: './tongue.scss',
 })
 export class Tongue implements OnInit, OnDestroy {
+  private debugService = inject(DebugService);
+
   isOpen: boolean | null = null;
 
-  constructor(private debugService: DebugService) {
+  constructor() {
     this.debugService.log(this);
   }
 

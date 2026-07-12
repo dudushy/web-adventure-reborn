@@ -1,10 +1,12 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { DebugService } from '@shyland-dev/utils';
 import { TITLE_PREFIX } from '../../consts';
 
 @Injectable({ providedIn: 'root' })
 export class TitleService {
-  constructor(private debugService: DebugService) {
+  private debugService = inject(DebugService);
+
+  constructor() {
     this.debugService.log(this);
   }
 

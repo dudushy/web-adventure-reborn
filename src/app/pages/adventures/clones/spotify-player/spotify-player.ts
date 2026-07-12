@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { DebugService } from '@shyland-dev/utils';
 
@@ -9,7 +9,9 @@ import { DebugService } from '@shyland-dev/utils';
   styleUrl: './spotify-player.scss',
 })
 export class SpotifyPlayer implements OnInit, OnDestroy {
-  constructor(private debugService: DebugService) {
+  private debugService = inject(DebugService);
+
+  constructor() {
     this.debugService.log(this);
   }
 

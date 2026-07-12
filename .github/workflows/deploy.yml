@@ -20,7 +20,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout do código
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Setup Node
@@ -28,14 +28,17 @@ jobs:
         with:
           node-version-file: '.nvmrc'
 
-      - name: Instalar dependências
+      - name: Install dependencies
         run: npm ci
 
-      - name: Build da showcase (PR - apenas validação)
+      - name: Validate ESLint
+        run: npm run lint
+
+      - name: Build showcase (PR - validation only)
         if: github.event_name == 'pull_request'
         run: npm run build
 
-      - name: Build da showcase (push/manual - com base href para gh-pages)
+      - name: Build showcase (push/manual - with base href for gh-pages)
         if: github.event_name != 'pull_request'
         run: npm run build -- --base-href /${{ github.event.repository.name }}/
 
@@ -43,7 +46,7 @@ jobs:
         if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v5
 
-      - name: Copiar index.html como 404.html (SPA fallback)
+      - name: Copy index.html as 404.html (SPA fallback)
         if: github.event_name != 'pull_request'
         run: cp ./dist/${{ github.event.repository.name }}/browser/index.html ./dist/${{ github.event.repository.name }}/browser/404.html
 
@@ -61,6 +64,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy no GitHub Pages
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { DebugService } from '@shyland-dev/utils';
 import { FormsModule } from '@angular/forms';
@@ -11,6 +11,8 @@ import { SelectComponent, SelectOption, SelectionChangeEvent } from '@web-advent
   styleUrl: './select.scss',
 })
 export class Select implements OnInit, OnDestroy {
+  private debugService = inject(DebugService);
+
   optionArray: SelectOption[] = [
     { id: 1, label: 'Cachoeira da Lua', value: 'cachoeira-da-lua', icon: 'moon' },
     { id: 2, label: 'Bosque de Jade', value: 'bosque-de-jade', icon: 'leaf' },
@@ -20,7 +22,7 @@ export class Select implements OnInit, OnDestroy {
   selectedOption: string | null = this.optionArray[0]?.value ?? null;
   isDisabled = false;
 
-  constructor(private debugService: DebugService) {
+  constructor() {
     this.debugService.log(this);
   }
 

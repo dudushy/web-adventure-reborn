@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { DebugService } from '@shyland-dev/utils';
 import { LANGUAGES, THEMES, StorageService, ThemeService, TitleService } from '@web-adventure-reborn';
@@ -13,6 +13,12 @@ import { SelectComponent, SelectOption, SelectionChangeEvent } from '@shyland-de
   styleUrl: './preferences.scss',
 })
 export class Preferences implements OnInit, OnDestroy {
+  private debugService = inject(DebugService);
+  private translateService = inject(TranslateService);
+  private storageService = inject(StorageService);
+  private themeService = inject(ThemeService);
+  private titleService = inject(TitleService);
+
   readonly title = 'Preferences';
 
   languageArray: SelectOption[] = LANGUAGES.map((language, index) => ({
@@ -25,18 +31,12 @@ export class Preferences implements OnInit, OnDestroy {
 
   themeArray: SelectOption[] = [];
   selectedTheme: string | null = null;
-  customThemeBackground: string = '';
-  customThemeColor: string = '';
-  customThemeHighlight: string = '';
+  customThemeBackground = '';
+  customThemeColor = '';
+  customThemeHighlight = '';
   private langChangeSub!: Subscription;
 
-  constructor(
-    private debugService: DebugService,
-    private translateService: TranslateService,
-    private storageService: StorageService,
-    private themeService: ThemeService,
-    private titleService: TitleService,
-  ) {
+  constructor() {
     this.debugService.log(this);
   }
 
@@ -99,18 +99,26 @@ export class Preferences implements OnInit, OnDestroy {
     }
   }
 
-  updateCustomThemeBackground(event: any): void {
-    this.customThemeBackground = event.target.value;
+  updateCustomThemeBackground(event: Event): void {
+    this.customThemeBackground = this.getColorPickerValue(event);
     this.themeService.setCustomThemeBackground(this.customThemeBackground);
   }
 
-  updateCustomThemeColor(event: any): void {
-    this.customThemeColor = event.target.value;
+  updateCustomThemeColor(event: Event): void {
+    this.customThemeColor = this.getColorPickerValue(event);
     this.themeService.setCustomThemeColor(this.customThemeColor);
   }
 
-  updateCustomThemeHighlight(event: any): void {
-    this.customThemeHighlight = event.target.value;
+  updateCustomThemeHighlight(event: Event): void {
+    this.customThemeHighlight = this.getColorPickerValue(event);
     this.themeService.setCustomThemeHighlight(this.customThemeHighlight);
+  }
+
+  private getColorPickerValue(event: Event): string {
+    if (!(event.target instanceof HTMLInputElement)) {
+      throw new TypeError('Color picker event target must be an HTMLInputElement.');
+    }
+
+    return event.target.value;
   }
 }

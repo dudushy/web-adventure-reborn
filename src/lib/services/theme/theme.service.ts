@@ -1,14 +1,14 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { DebugService } from '@shyland-dev/utils';
 import { THEMES } from '../../consts';
 import { StorageService } from '..';
 
 @Injectable({ providedIn: 'root' })
 export class ThemeService {
-  constructor(
-    private debugService: DebugService,
-    private storageService: StorageService,
-  ) {
+  private debugService = inject(DebugService);
+  private storageService = inject(StorageService);
+
+  constructor() {
     this.debugService.log(this);
   }
 

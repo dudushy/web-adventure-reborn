@@ -9,7 +9,11 @@
 }
 
 <div class="canvas">
-  <div class="frog frog-1 frog-group-1" [style.--frog-index]="frogPositions[0]" [class.jumping]="jumpingFrogIndex === 0">
+  <div
+    class="frog frog-1 frog-group-1"
+    [style.--frog-index]="frogPositions[0]"
+    [class.jumping]="jumpingFrogIndex === 0"
+  >
     <div class="head"></div>
 
     <div class="eye left">
@@ -95,7 +99,11 @@
     </div>
   </div>
 
-  <div class="frog frog-2 frog-group-1" [style.--frog-index]="frogPositions[1]" [class.jumping]="jumpingFrogIndex === 1">
+  <div
+    class="frog frog-2 frog-group-1"
+    [style.--frog-index]="frogPositions[1]"
+    [class.jumping]="jumpingFrogIndex === 1"
+  >
     <div class="head"></div>
 
     <div class="eye left">
@@ -181,7 +189,11 @@
     </div>
   </div>
 
-  <div class="frog frog-3 frog-group-1" [style.--frog-index]="frogPositions[2]" [class.jumping]="jumpingFrogIndex === 2">
+  <div
+    class="frog frog-3 frog-group-1"
+    [style.--frog-index]="frogPositions[2]"
+    [class.jumping]="jumpingFrogIndex === 2"
+  >
     <div class="head"></div>
 
     <div class="eye left">
@@ -267,7 +279,11 @@
     </div>
   </div>
 
-  <div class="frog frog-4 frog-group-2" [style.--frog-index]="frogPositions[3]" [class.jumping]="jumpingFrogIndex === 3">
+  <div
+    class="frog frog-4 frog-group-2"
+    [style.--frog-index]="frogPositions[3]"
+    [class.jumping]="jumpingFrogIndex === 3"
+  >
     <div class="head"></div>
 
     <div class="eye left">
@@ -353,7 +369,11 @@
     </div>
   </div>
 
-  <div class="frog frog-5 frog-group-2" [style.--frog-index]="frogPositions[4]" [class.jumping]="jumpingFrogIndex === 4">
+  <div
+    class="frog frog-5 frog-group-2"
+    [style.--frog-index]="frogPositions[4]"
+    [class.jumping]="jumpingFrogIndex === 4"
+  >
     <div class="head"></div>
 
     <div class="eye left">
@@ -439,7 +459,11 @@
     </div>
   </div>
 
-  <div class="frog frog-6 frog-group-2" [style.--frog-index]="frogPositions[5]" [class.jumping]="jumpingFrogIndex === 5">
+  <div
+    class="frog frog-6 frog-group-2"
+    [style.--frog-index]="frogPositions[5]"
+    [class.jumping]="jumpingFrogIndex === 5"
+  >
     <div class="head"></div>
 
     <div class="eye left">
@@ -525,7 +549,14 @@
     </div>
   </div>
 
-  <div class="lily-pad lily-pad-1" (click)="processPlayOnLilyPad(1)">
+  <div
+    class="lily-pad lily-pad-1"
+    role="button"
+    tabindex="0"
+    (click)="processPlayOnLilyPad(1)"
+    (keydown.enter)="processPlayOnLilyPad(1)"
+    (keydown.space)="processPlayOnLilyPad(1)"
+  >
     <div class="detail detail-1"></div>
 
     <div class="detail detail-2"></div>
@@ -537,7 +568,14 @@
     <div class="cut"></div>
   </div>
 
-  <div class="lily-pad lily-pad-2" (click)="processPlayOnLilyPad(2)">
+  <div
+    class="lily-pad lily-pad-2"
+    role="button"
+    tabindex="0"
+    (click)="processPlayOnLilyPad(2)"
+    (keydown.enter)="processPlayOnLilyPad(2)"
+    (keydown.space)="processPlayOnLilyPad(2)"
+  >
     <div class="detail detail-1"></div>
 
     <div class="detail detail-2"></div>
@@ -549,7 +587,14 @@
     <div class="cut"></div>
   </div>
 
-  <div class="lily-pad lily-pad-3" (click)="processPlayOnLilyPad(3)">
+  <div
+    class="lily-pad lily-pad-3"
+    role="button"
+    tabindex="0"
+    (click)="processPlayOnLilyPad(3)"
+    (keydown.enter)="processPlayOnLilyPad(3)"
+    (keydown.space)="processPlayOnLilyPad(3)"
+  >
     <div class="detail detail-1"></div>
 
     <div class="detail detail-2"></div>
@@ -561,7 +606,14 @@
     <div class="cut"></div>
   </div>
 
-  <div class="lily-pad lily-pad-4" (click)="processPlayOnLilyPad(4)">
+  <div
+    class="lily-pad lily-pad-4"
+    role="button"
+    tabindex="0"
+    (click)="processPlayOnLilyPad(4)"
+    (keydown.enter)="processPlayOnLilyPad(4)"
+    (keydown.space)="processPlayOnLilyPad(4)"
+  >
     <div class="detail detail-1"></div>
 
     <div class="detail detail-2"></div>
@@ -573,7 +625,14 @@
     <div class="cut"></div>
   </div>
 
-  <div class="lily-pad lily-pad-5" (click)="processPlayOnLilyPad(5)">
+  <div
+    class="lily-pad lily-pad-5"
+    role="button"
+    tabindex="0"
+    (click)="processPlayOnLilyPad(5)"
+    (keydown.enter)="processPlayOnLilyPad(5)"
+    (keydown.space)="processPlayOnLilyPad(5)"
+  >
     <div class="detail detail-1"></div>
 
     <div class="detail detail-2"></div>
@@ -585,7 +644,14 @@
     <div class="cut"></div>
   </div>
 
-  <div class="lily-pad lily-pad-6" (click)="processPlayOnLilyPad(6)">
+  <div
+    class="lily-pad lily-pad-6"
+    role="button"
+    tabindex="0"
+    (click)="processPlayOnLilyPad(6)"
+    (keydown.enter)="processPlayOnLilyPad(6)"
+    (keydown.space)="processPlayOnLilyPad(6)"
+  >
     <div class="detail detail-1"></div>
 
     <div class="detail detail-2"></div>
@@ -597,7 +663,14 @@
     <div class="cut"></div>
   </div>
 
-  <div class="lily-pad lily-pad-7" (click)="processPlayOnLilyPad(7)">
+  <div
+    class="lily-pad lily-pad-7"
+    role="button"
+    tabindex="0"
+    (click)="processPlayOnLilyPad(7)"
+    (keydown.enter)="processPlayOnLilyPad(7)"
+    (keydown.space)="processPlayOnLilyPad(7)"
+  >
     <div class="detail detail-1"></div>
 
     <div class="detail detail-2"></div>

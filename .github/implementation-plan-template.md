@@ -1,53 +1,53 @@
-# Template de Plano de Implementação (Obrigatório Antes de Codar)
+# Implementation Plan Template (Mandatory Before Coding)
 
-Este documento define o formato padrão para propor mudanças neste projeto.
-Nenhuma implementação deve começar sem aprovação explícita do usuário.
+This document defines the standard format for proposing changes in this project.
+No implementation may begin without explicit user approval.
 
-## 1. Objetivo
+## 1. Objective
 
-- Descreva o problema e o resultado esperado.
+- Describe the problem and expected outcome.
 
-## 2. Diagnóstico do Estado Atual
+## 2. Current State Diagnosis
 
-- Quais arquivos ou componentes atuais foram analisados.
-- Como o comportamento atual funciona.
-- Lacunas encontradas.
+- Which current files or components were analyzed.
+- How the current behavior works.
+- Identified gaps.
 
-## 3. Referências Externas
+## 3. External References
 
-- Quais referências de implementações existentes na internet foram consideradas.
-- Quais práticas foram adotadas e por quê.
+- Which references to existing internet implementations were considered.
+- Which practices were adopted and why.
 
-## 4. Proposta Técnica
+## 4. Technical Proposal
 
-- Lista de mudanças por etapa.
-- Arquivos que serão alterados.
-- Impacto esperado em comportamento, performance e manutenção.
+- List of changes by step.
+- Files that will be modified.
+- Expected impact on behavior, performance, and maintenance.
 
-## 5. Riscos e Mitigação
+## 5. Risks and Mitigation
 
-- Riscos técnicos, de regressão e de compatibilidade.
-- Mitigações para cada risco relevante.
+- Technical, regression, and compatibility risks.
+- Mitigations for each relevant risk.
 
-## 6. Estratégia de Validação
+## 6. Validation Strategy
 
-- Testes manuais e/ou automatizados.
-- Itens críticos a validar após a implementação.
-- Evidências esperadas para considerar a mudança válida.
+- Manual and/or automated tests.
+- Critical items to validate after implementation.
+- Expected evidence to consider the change valid.
 
-## 7. Critérios de Conclusão
+## 7. Completion Criteria
 
-- Condições objetivas para considerar a tarefa concluída.
+- Objective conditions for considering the task complete.
 
-## 8. Aprovação do Usuário
+## 8. User Approval
 
-Use a pergunta abaixo ao final de todo plano:
+Use the question below at the end of every plan:
 
-"Posso implementar exatamente este plano?"
+"Can I implement this exact plan?"
 
-Sem a resposta afirmativa do usuário, nenhuma alteração de implementação deve ser aplicada.
+No implementation change may be applied without an affirmative response from the user.
 
-## 9. Regra Estrita de Commit
+## 9. Strict Commit Rule
 
-- O Copilot nunca deve criar ou executar commit neste projeto.
-- Caso seja solicitado, informar a impossibilidade e orientar apenas os próximos passos, sem commitar.
+- Copilot must never create or execute a commit in this project.
+- If requested, state the impossibility and provide guidance only about the next steps, without committing.

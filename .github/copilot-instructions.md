@@ -1,66 +1,66 @@
 ---
-description: 'Instruções de workspace para o Copilot: fluxo obrigatório de planejamento com aprovação prévia, proibição estrita de commits e resumo objetivo das alterações.'
+description: 'Workspace instructions for Copilot: mandatory planning workflow with prior approval, strict prohibition on commits, and concise summary of changes.'
 applyTo: '**'
 ---
 
-# Instruções do GitHub Copilot
+# GitHub Copilot Instructions
 
 ## Commits
 
-- Regra estrita: o Copilot nunca deve criar, sugerir, revisar, aceitar, executar ou simular commits neste projeto.
-- Regra estrita: o Copilot nunca deve executar comandos de commit (incluindo `git commit`, `git commit --amend`, squash de commits ou qualquer automação equivalente).
-- Mesmo quando solicitado, o Copilot deve recusar a ação de commit e limitar-se a orientar o usuário sobre as alterações realizadas no código.
+- Strict rule: Copilot must never create, suggest, review, accept, execute, or simulate commits in this project.
+- Strict rule: Copilot must never execute commit commands, including `git commit`, `git commit --amend`, commit squashing, or equivalent automation.
+- Even when requested, Copilot must refuse the action and limit itself to guiding the user about changes made to the code.
 
-## Fluxo obrigatório de planejamento e aprovação
+## Mandatory planning and approval workflow
 
-- Antes de implementar qualquer alteração em código, o Copilot deve criar um plano de implementação e aguardar aprovação explícita do usuário.
-- O plano deve ser construído com base em:
-    - análise do código já existente no repositório
-    - pesquisa de referências e boas práticas em implementações existentes na internet, quando aplicável
-    - avaliação de impacto técnico (arquivos afetados, riscos e estratégia de validação)
-- Sem aprovação explícita do usuário, nenhuma alteração de implementação deve ser aplicada em arquivos de código.
-- Após aprovação, o Copilot deve executar somente o que foi aprovado no plano. Se surgir desvio relevante, deve pausar, atualizar o plano e pedir nova aprovação.
-- O plano deve conter, no mínimo:
-    - objetivo e contexto
-    - diagnóstico do estado atual
-    - proposta técnica por etapas
-    - riscos e mitigação
-    - estratégia de testes/validação
-    - critérios de conclusão
+- Before implementing any code change, Copilot must create an implementation plan and wait for explicit user approval.
+- The plan must be based on:
+    - analysis of the existing repository code
+    - research into references and best practices from existing internet implementations, when applicable
+    - technical impact assessment, including affected files, risks, and validation strategy
+- No implementation change may be applied to code files without explicit user approval.
+- After approval, Copilot must perform only the work approved in the plan. If a relevant deviation arises, it must pause, update the plan, and request new approval.
+- The plan must contain at least:
+    - objective and context
+    - diagnosis of the current state
+    - step-by-step technical proposal
+    - risks and mitigations
+    - test and validation strategy
+    - completion criteria
 
-## Protocolo de conformidade (planejar antes de codar)
+## Compliance protocol (plan before coding)
 
-- Este projeto adota o modo estrito: "Planejamento Primeiro".
-- Antes de qualquer implementação, o Copilot deve finalizar o plano e encerrar com pedido explícito de aprovação.
-- A implementação só pode começar após confirmação clara do usuário. Frase preferencial de aprovação: "Aprovado, pode implementar".
-- Se o usuário pedir alteração direta no código sem aprovação prévia do plano, o Copilot deve recusar a implementação imediata e responder com plano primeiro.
-- Antes de editar arquivos de código, o Copilot deve validar internamente este checklist:
-    - plano apresentado
-    - aprovação explícita recebida
-    - escopo aprovado sem desvios
-- Se qualquer item do checklist falhar, a implementação deve ser bloqueada.
+- This project uses the strict "Planning First" mode.
+- Before any implementation, Copilot must complete the plan and end by explicitly requesting approval.
+- Implementation may begin only after clear user confirmation. The preferred approval phrase is: "Approved, you can implement."
+- If the user requests a direct code change without prior plan approval, Copilot must refuse immediate implementation and provide the plan first.
+- Before editing code files, Copilot must internally validate this checklist:
+    - plan presented
+    - explicit approval received
+    - approved scope without deviations
+- If any checklist item fails, implementation must be blocked.
 
-Modelo recomendado de plano:
+Recommended plan template:
 
-1. Objetivo
-2. Diagnóstico do código atual
-3. Referências externas e decisão técnica
-4. Passos de implementação
-5. Riscos e mitigação
-6. Validação/testes
-7. Critérios de aceite
-8. Solicitação explícita de aprovação do usuário
+1. Objective
+2. Diagnosis of the current code
+3. External references and technical decision
+4. Implementation steps
+5. Risks and mitigations
+6. Validation and testing
+7. Acceptance criteria
+8. Explicit user approval request
 
-## Resumo das alterações
+## Change summary
 
-- Ao finalizar uma tarefa, apresente um resumo claro e objetivo do que foi feito nos códigos.
-- Destaque os arquivos principais alterados e o efeito prático da mudança.
-- Evite textos longos, repetitivos ou genéricos.
+- When completing a task, provide a clear and concise summary of the code changes.
+- Highlight the main modified files and the practical effect of the change.
+- Avoid long, repetitive, or generic text.
 
-## Estilo esperado para documentação
+## Expected documentation style
 
-- Escreva em português do Brasil.
-- Use linguagem técnica simples, clara e objetiva.
-- Organize o conteúdo em seções curtas e escaneáveis.
-- Prefira listas e exemplos práticos quando ajudarem o entendimento.
-- Mantenha a documentação alinhada com a estrutura real do projeto e com os comandos realmente usados no repositório.
+- Write in English.
+- Use simple, clear, and objective technical language.
+- Organize content into short, scannable sections.
+- Prefer lists and practical examples when they improve understanding.
+- Keep documentation aligned with the actual project structure and commands used in the repository.

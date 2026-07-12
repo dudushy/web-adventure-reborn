@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { DebugService } from '@shyland-dev/utils';
 
 @Component({
@@ -8,7 +8,9 @@ import { DebugService } from '@shyland-dev/utils';
   styleUrl: './startup.scss',
 })
 export class Startup implements OnInit, OnDestroy {
-  constructor(private debugService: DebugService) {
+  private debugService = inject(DebugService);
+
+  constructor() {
     this.debugService.log(this);
   }
 

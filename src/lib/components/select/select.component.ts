@@ -24,7 +24,7 @@ export class SelectComponent implements ControlValueAccessor {
   readonly selectIcon = input('check');
   readonly dropdownIcon = input('chevron-down');
   readonly placeholder = input('Select an option');
-  readonly disabledInput = input(false, { alias: 'disabled' });
+  readonly disabled = input(false);
   readonly selectionChange = output<SelectionChangeEvent>();
 
   readonly isOpen = signal(false);
@@ -33,10 +33,10 @@ export class SelectComponent implements ControlValueAccessor {
   private readonly selectedValue = signal<string | null>(null);
   private readonly internalDisabled = signal(false);
   private readonly elementRef = inject(ElementRef<HTMLElement>);
-  private onChangeFn: (value: string | null) => void = () => {};
-  private onTouchedFn: () => void = () => {};
+  private onChangeFn: (value: string | null) => void = () => undefined;
+  private onTouchedFn: () => void = () => undefined;
 
-  readonly isDisabled = computed(() => this.disabledInput() || this.internalDisabled());
+  readonly isDisabled = computed(() => this.disabled() || this.internalDisabled());
 
   readonly selectedOption = computed(() => {
     const value = this.selectedValue();
@@ -48,7 +48,11 @@ export class SelectComponent implements ControlValueAccessor {
 
   toggleDropdown(): void {
     if (this.isDisabled()) return;
-    this.isOpen() ? this.closeDropdown() : this.openDropdown();
+    if (this.isOpen()) {
+      this.closeDropdown();
+    } else {
+      this.openDropdown();
+    }
   }
 
   openDropdown(): void {
@@ -82,11 +86,19 @@ export class SelectComponent implements ControlValueAccessor {
     switch (event.key) {
       case 'ArrowDown':
         event.preventDefault();
-        this.isOpen() ? this.moveFocus(1) : this.openDropdown();
+        if (this.isOpen()) {
+          this.moveFocus(1);
+        } else {
+          this.openDropdown();
+        }
         break;
       case 'ArrowUp':
         event.preventDefault();
-        this.isOpen() ? this.moveFocus(-1) : this.openDropdown();
+        if (this.isOpen()) {
+          this.moveFocus(-1);
+        } else {
+          this.openDropdown();
+        }
         break;
       case 'Enter':
       case ' ':

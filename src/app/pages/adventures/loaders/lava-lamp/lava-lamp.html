@@ -1,7 +1,14 @@
 <div class="lamp">
   <div class="lava">
     @for (blob of blobArray; track $index) {
-      <div #blobEl class="blob" [style.width.px]="blob.size" [style.height.px]="blob.size" [style.left.%]="blob.x" [style.top.%]="blob.y"></div>
+      <div
+        #blobEl
+        class="blob"
+        [style.width.px]="blob.size"
+        [style.height.px]="blob.size"
+        [style.left.%]="blob.x"
+        [style.top.%]="blob.y"
+      ></div>
     }
   </div>
 </div>

@@ -23,7 +23,11 @@
   --war-select-selected-option-color: #0f172a;
   --war-select-selected-option-background: #e2e8f0;
   --war-select-selected-option-hover-color: var(--war-select-selected-option-color);
-  --war-select-selected-option-hover-background: color-mix(in srgb, var(--war-select-selected-option-background) 88%, black 12%);
+  --war-select-selected-option-hover-background: color-mix(
+    in srgb,
+    var(--war-select-selected-option-background) 88%,
+    black 12%
+  );
   --war-select-options-min-height: 0px;
   --war-select-options-max-height: 14rem;
   --war-select-scrollbar-width: 0.3rem;

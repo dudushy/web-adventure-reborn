@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { DebugService } from '@shyland-dev/utils';
 import { routes } from './app.routes';
@@ -13,17 +13,17 @@ import { IconComponent } from '@shyland-dev/ui';
   styleUrl: './app.scss',
 })
 export class App implements OnInit, OnDestroy {
+  private debugService = inject(DebugService);
+  private storageService = inject(StorageService);
+  private translateService = inject(TranslateService);
+  private themeService = inject(ThemeService);
+
   readonly navRoutes = routes.filter((r) => r.path && r.path !== '**');
   readonly version = APP_VERSION;
 
   isOpenSideMenu = false;
 
-  constructor(
-    private debugService: DebugService,
-    private storageService: StorageService,
-    private translateService: TranslateService,
-    private themeService: ThemeService,
-  ) {
+  constructor() {
     this.debugService.log(this);
   }
 
@@ -48,5 +48,11 @@ export class App implements OnInit, OnDestroy {
     this.debugService.log(this, 'open', open);
 
     this.isOpenSideMenu = open;
+  }
+
+  onSideMenuBackdropClick(event: MouseEvent): void {
+    if (event.target === event.currentTarget) {
+      this.setSideMenu(false);
+    }
   }
 }

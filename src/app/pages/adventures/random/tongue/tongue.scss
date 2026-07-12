@@ -119,7 +119,8 @@ $animation-delay-ratio: 0.65;
     background-color: $point-color;
     border-radius: 50%;
     @include square($point-size);
-    transform: translateY(calc(#{$tongue-length} * 1 - #{$point-size} * 0.9)) translateX(calc(#{$tongue-length} * 2 - #{$point-size} * 0.9));
+    transform: translateY(calc(#{$tongue-length} * 1 - #{$point-size} * 0.9))
+      translateX(calc(#{$tongue-length} * 2 - #{$point-size} * 0.9));
   }
 }
 

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { DebugService } from '@shyland-dev/utils';
 import { TranslateModule } from '@ngx-translate/core';
@@ -13,13 +13,13 @@ import { NgClass } from '@angular/common';
   styleUrl: './adventures.scss',
 })
 export class Adventures implements OnInit, OnDestroy {
+  private debugService = inject(DebugService);
+  private titleService = inject(TitleService);
+
   readonly title = 'Adventures';
   readonly adventures = ADVENTURES;
 
-  constructor(
-    private debugService: DebugService,
-    private titleService: TitleService,
-  ) {
+  constructor() {
     this.debugService.log(this);
   }
 

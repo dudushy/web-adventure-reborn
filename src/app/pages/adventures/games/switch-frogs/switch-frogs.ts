@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { DebugService } from '@shyland-dev/utils';
 
@@ -13,15 +13,15 @@ const FROG_TRANSITION_MS = 500;
   styleUrl: './switch-frogs.scss',
 })
 export class SwitchFrogs implements OnInit, OnDestroy {
+  private debugService = inject(DebugService);
+  private cdr = inject(ChangeDetectorRef);
+
   board: (0 | 1 | 2)[] = [...INITIAL_BOARD];
   frogPositions: number[] = [...INITIAL_FROG_POSITIONS];
-  isWon: boolean = false;
+  isWon = false;
   jumpingFrogIndex: number | null = null;
 
-  constructor(
-    private debugService: DebugService,
-    private cdr: ChangeDetectorRef,
-  ) {
+  constructor() {
     this.debugService.log(this);
   }
 
@@ -59,7 +59,14 @@ export class SwitchFrogs implements OnInit, OnDestroy {
 
     if (step1 >= 0 && step1 <= 6 && this.board[step1] === 0) {
       destination = step1;
-    } else if (step1 >= 0 && step1 <= 6 && this.board[step1] !== 0 && step2 >= 0 && step2 <= 6 && this.board[step2] === 0) {
+    } else if (
+      step1 >= 0 &&
+      step1 <= 6 &&
+      this.board[step1] !== 0 &&
+      step2 >= 0 &&
+      step2 <= 6 &&
+      this.board[step2] === 0
+    ) {
       destination = step2;
     }
 

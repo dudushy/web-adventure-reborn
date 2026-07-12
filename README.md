@@ -19,3 +19,10 @@ npm ci
 ```bash
 npm start
 ```
+
+## Formatting and linting
+
+```bash
+npm run format
+npm run lint
+```

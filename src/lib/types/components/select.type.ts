@@ -1,10 +1,10 @@
-export type SelectOption = {
+export interface SelectOption {
   id?: number | string;
   label: string;
   value: string;
   icon?: string;
-};
+}
 
-export type SelectionChangeEvent = {
+export interface SelectionChangeEvent {
   selectedOption: SelectOption;
-};
+}

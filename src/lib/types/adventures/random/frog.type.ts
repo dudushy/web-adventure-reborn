@@ -1,4 +1,4 @@
-export type FrogAreaType = {
+export interface FrogAreaType {
   x_axis: {
     min: number;
     max: number;
@@ -7,6 +7,6 @@ export type FrogAreaType = {
     min: number;
     max: number;
   };
-};
+}
 
 export type FrogStateType = 'idle' | 'catching' | 'caught' | 'finished';
