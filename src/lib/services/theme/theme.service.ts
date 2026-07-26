@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { DebugService } from '@shyland-dev/utils';
-import { THEMES } from '../../consts';
+import { THEMES } from '../../constants';
 import { StorageService } from '..';
 
 @Injectable({ providedIn: 'root' })

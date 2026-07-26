@@ -77,6 +77,11 @@
         "description": "Um jogo de lógica onde o objetivo é trocar as posições de dois grupos de sapos.",
         "reset": "Reiniciar",
         "won": "Você venceu!"
+      },
+      "ultimate-tic-tac-toe": {
+        "description": "Uma versão avançada do jogo da velha, jogada em uma grade 3x3 de tabuleiros menores.",
+        "reset": "Reiniciar",
+        "won": "Você venceu!"
       }
     },
     "interactive": {

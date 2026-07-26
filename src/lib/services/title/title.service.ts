@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { DebugService } from '@shyland-dev/utils';
-import { TITLE_PREFIX } from '../../consts';
+import { TITLE_PREFIX } from '../../constants';
 
 @Injectable({ providedIn: 'root' })
 export class TitleService {

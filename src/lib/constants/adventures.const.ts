@@ -60,9 +60,17 @@ export const ADVENTURES: AdventuresType[] = [
   {
     slug: 'lava-lamp',
     category: 'loaders',
-    status: 'done',
-    statusKey: 'adventures.status.done',
+    status: 'rework',
+    statusKey: 'adventures.status.rework',
     descriptionKey: 'adventures.loaders.lava-lamp.description',
     path: '/adventures/loaders/lava-lamp',
+  },
+  {
+    slug: 'ultimate-tic-tac-toe',
+    category: 'games',
+    status: 'wip',
+    statusKey: 'adventures.status.wip',
+    descriptionKey: 'adventures.games.ultimate-tic-tac-toe.description',
+    path: '/adventures/games/ultimate-tic-tac-toe',
   },
 ];

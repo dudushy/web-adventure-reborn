@@ -77,6 +77,11 @@
         "description": "A logic game where the goal is to swap the positions of two groups of frogs.",
         "reset": "Reset",
         "won": "You won!"
+      },
+      "ultimate-tic-tac-toe": {
+        "description": "An advanced version of tic-tac-toe played on a 3x3 grid of smaller tic-tac-toe boards.",
+        "reset": "Reset",
+        "won": "You won!"
       }
     },
     "interactive": {
