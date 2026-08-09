@@ -1,0 +1,402 @@
+{
+  ".vscode/extensions.json": {
+    "mtime": 1783886148.951382,
+    "ast_hash": "c3ed92f6851a3970573b4d58c6821653",
+    "semantic_hash": "c3ed92f6851a3970573b4d58c6821653"
+  },
+  ".vscode/mcp.json": {
+    "mtime": 1783885566.2755787,
+    "ast_hash": "3d86968a075ddbb3ae7bcd32a7292351",
+    "semantic_hash": "3d86968a075ddbb3ae7bcd32a7292351"
+  },
+  ".vscode/settings.json": {
+    "mtime": 1783885556.577746,
+    "ast_hash": "f31c0f625e980aeccd405ba63029ac64",
+    "semantic_hash": "f31c0f625e980aeccd405ba63029ac64"
+  },
+  "angular.json": {
+    "mtime": 1783887631.3708918,
+    "ast_hash": "22f0809b4429606daaf2c4a3449108f0",
+    "semantic_hash": "22f0809b4429606daaf2c4a3449108f0"
+  },
+  "eslint.config.js": {
+    "mtime": 1783885624.9816284,
+    "ast_hash": "760e29133673bccdd1035d2274027979",
+    "semantic_hash": "760e29133673bccdd1035d2274027979"
+  },
+  "package.json": {
+    "mtime": 1783887970.3907905,
+    "ast_hash": "a7b0c541a20c03902833f96114d42647",
+    "semantic_hash": "a7b0c541a20c03902833f96114d42647"
+  },
+  "public/assets/i18n/eng.json": {
+    "mtime": 1785103308.3307216,
+    "ast_hash": "e8d04a1bae9c827674e5bc45adfdbf9c",
+    "semantic_hash": "e8d04a1bae9c827674e5bc45adfdbf9c"
+  },
+  "public/assets/i18n/pt-br.json": {
+    "mtime": 1785103308.3307216,
+    "ast_hash": "bd616d2c4c341adab28d0ce41e6f873a",
+    "semantic_hash": "bd616d2c4c341adab28d0ce41e6f873a"
+  },
+  "public/assets/version.json": {
+    "mtime": 1785102816.090961,
+    "ast_hash": "9374da3c05a4b0422f1d28a8f0a5378e",
+    "semantic_hash": "9374da3c05a4b0422f1d28a8f0a5378e"
+  },
+  "scripts/sync-version.mjs": {
+    "mtime": 1783888527.268736,
+    "ast_hash": "58f41b2ff789a4cbb73ed655f1b30f8a",
+    "semantic_hash": "58f41b2ff789a4cbb73ed655f1b30f8a"
+  },
+  "src/app/app.config.ts": {
+    "mtime": 1783882249.1588547,
+    "ast_hash": "024846906759d97e3f97acf53b34e42c",
+    "semantic_hash": "024846906759d97e3f97acf53b34e42c"
+  },
+  "src/app/app.routes.ts": {
+    "mtime": 1783882249.1589549,
+    "ast_hash": "1d95ed6abbe072328da4756f0d0b62cf",
+    "semantic_hash": "1d95ed6abbe072328da4756f0d0b62cf"
+  },
+  "src/app/app.ts": {
+    "mtime": 1783885761.235506,
+    "ast_hash": "1f4b13c1b3febb80e7eb208f8c7c09d1",
+    "semantic_hash": "1f4b13c1b3febb80e7eb208f8c7c09d1"
+  },
+  "src/app/pages/adventures/adventures.routes.ts": {
+    "mtime": 1783882249.1601074,
+    "ast_hash": "9f3c688902936b1a63e3397e64e8dbac",
+    "semantic_hash": "9f3c688902936b1a63e3397e64e8dbac"
+  },
+  "src/app/pages/adventures/adventures.ts": {
+    "mtime": 1783885761.231506,
+    "ast_hash": "e91b60e7c6a6ae6f9f9bbce8fa44f30d",
+    "semantic_hash": "e91b60e7c6a6ae6f9f9bbce8fa44f30d"
+  },
+  "src/app/pages/adventures/clones/clones.routes.ts": {
+    "mtime": 1783885567.253824,
+    "ast_hash": "d9a04a632182234cbda9446bb815fb95",
+    "semantic_hash": "d9a04a632182234cbda9446bb815fb95"
+  },
+  "src/app/pages/adventures/clones/spotify-player/spotify-player.ts": {
+    "mtime": 1783885761.231506,
+    "ast_hash": "7ff96e2be905284297ff7379a64ea064",
+    "semantic_hash": "7ff96e2be905284297ff7379a64ea064"
+  },
+  "src/app/pages/adventures/components/components.routes.ts": {
+    "mtime": 1783882249.1615553,
+    "ast_hash": "e2cdc098ab12028a909135aad623e4ff",
+    "semantic_hash": "e2cdc098ab12028a909135aad623e4ff"
+  },
+  "src/app/pages/adventures/components/select/select.ts": {
+    "mtime": 1783885761.231506,
+    "ast_hash": "a59ff50a44373f43bc07f61a019b9c97",
+    "semantic_hash": "a59ff50a44373f43bc07f61a019b9c97"
+  },
+  "src/app/pages/adventures/forms/forms.routes.ts": {
+    "mtime": 1783882249.1621122,
+    "ast_hash": "7a733bdba47ae10f76fa72dfb3d19fd5",
+    "semantic_hash": "7a733bdba47ae10f76fa72dfb3d19fd5"
+  },
+  "src/app/pages/adventures/games/games.routes.ts": {
+    "mtime": 1785105595.12368,
+    "ast_hash": "1f43a673b2c9b5afc92df21a862a46b4",
+    "semantic_hash": "1f43a673b2c9b5afc92df21a862a46b4"
+  },
+  "src/app/pages/adventures/games/switch-frogs/switch-frogs.ts": {
+    "mtime": 1783885761.235506,
+    "ast_hash": "6b4103063d4d00d4a5807537e866754a",
+    "semantic_hash": "6b4103063d4d00d4a5807537e866754a"
+  },
+  "src/app/pages/adventures/games/ultimate-tic-tac-toe/ultimate-tic-tac-toe.ts": {
+    "mtime": 1785104629.0438504,
+    "ast_hash": "4ceaac6a3e9f421a93ee2d0bcf1a50a2",
+    "semantic_hash": "4ceaac6a3e9f421a93ee2d0bcf1a50a2"
+  },
+  "src/app/pages/adventures/interactive/hover-buttons/hover-buttons.ts": {
+    "mtime": 1783885872.1434693,
+    "ast_hash": "8e5b85cddf59e4c9811bf2a8641bf434",
+    "semantic_hash": "8e5b85cddf59e4c9811bf2a8641bf434"
+  },
+  "src/app/pages/adventures/interactive/interactive.routes.ts": {
+    "mtime": 1783882249.1635485,
+    "ast_hash": "87c4f9122fce114e2614fb609ef4f260",
+    "semantic_hash": "87c4f9122fce114e2614fb609ef4f260"
+  },
+  "src/app/pages/adventures/loaders/lava-lamp/lava-lamp.ts": {
+    "mtime": 1783888527.3066099,
+    "ast_hash": "cea076ae5ad3d6446049a48b9ce06c9c",
+    "semantic_hash": "cea076ae5ad3d6446049a48b9ce06c9c"
+  },
+  "src/app/pages/adventures/loaders/loaders.routes.ts": {
+    "mtime": 1783882249.1649415,
+    "ast_hash": "0ca8555d7f26e7826a23fcae9d62ced8",
+    "semantic_hash": "0ca8555d7f26e7826a23fcae9d62ced8"
+  },
+  "src/app/pages/adventures/loaders/startup/startup.ts": {
+    "mtime": 1783885761.235506,
+    "ast_hash": "eed83a6cb23d709af550bb80e6af1cc1",
+    "semantic_hash": "eed83a6cb23d709af550bb80e6af1cc1"
+  },
+  "src/app/pages/adventures/random/frog/frog.ts": {
+    "mtime": 1783888527.30261,
+    "ast_hash": "fb8eb92a17c11a5a6d411246d0be3650",
+    "semantic_hash": "fb8eb92a17c11a5a6d411246d0be3650"
+  },
+  "src/app/pages/adventures/random/random.routes.ts": {
+    "mtime": 1783882249.166407,
+    "ast_hash": "74267456536d5731e529a5c1c1719f07",
+    "semantic_hash": "74267456536d5731e529a5c1c1719f07"
+  },
+  "src/app/pages/adventures/random/tongue/tongue.ts": {
+    "mtime": 1783885761.235506,
+    "ast_hash": "90bab7d22da9f3afc15e40716253dde9",
+    "semantic_hash": "90bab7d22da9f3afc15e40716253dde9"
+  },
+  "src/app/pages/home/home.ts": {
+    "mtime": 1783885761.231506,
+    "ast_hash": "041f8a42b7e91db609faa7f0e433dd74",
+    "semantic_hash": "041f8a42b7e91db609faa7f0e433dd74"
+  },
+  "src/app/pages/preferences/preferences.ts": {
+    "mtime": 1783885823.5725243,
+    "ast_hash": "c14d942810c10068f781aa91266dd417",
+    "semantic_hash": "c14d942810c10068f781aa91266dd417"
+  },
+  "src/lib/components/index.ts": {
+    "mtime": 1783882249.169498,
+    "ast_hash": "37089675bb1f5d5cbd848e62f351f00d",
+    "semantic_hash": "37089675bb1f5d5cbd848e62f351f00d"
+  },
+  "src/lib/components/select/select.component.ts": {
+    "mtime": 1783885823.575409,
+    "ast_hash": "850e4e2194479deac21dced06140a618",
+    "semantic_hash": "850e4e2194479deac21dced06140a618"
+  },
+  "src/lib/constants/adventures.const.ts": {
+    "mtime": 1785103234.5241919,
+    "ast_hash": "9b155acadbb244b4263c9967e71b5915",
+    "semantic_hash": "9b155acadbb244b4263c9967e71b5915"
+  },
+  "src/lib/constants/index.ts": {
+    "mtime": 1783882249.1705108,
+    "ast_hash": "7c898c8a21539d4696d49a25282e1fe1",
+    "semantic_hash": "7c898c8a21539d4696d49a25282e1fe1"
+  },
+  "src/lib/constants/languages.const.ts": {
+    "mtime": 1783882249.1705108,
+    "ast_hash": "d9d717e447bf2ccf46a2ade54e035bab",
+    "semantic_hash": "d9d717e447bf2ccf46a2ade54e035bab"
+  },
+  "src/lib/constants/themes.const.ts": {
+    "mtime": 1783885568.2755783,
+    "ast_hash": "07d938ce2e3a4c7e78c0516140e94684",
+    "semantic_hash": "07d938ce2e3a4c7e78c0516140e94684"
+  },
+  "src/lib/constants/title-prefix.const.ts": {
+    "mtime": 1783882249.1705108,
+    "ast_hash": "3433f5bb2786c4857a32c3ccad1c4d0a",
+    "semantic_hash": "3433f5bb2786c4857a32c3ccad1c4d0a"
+  },
+  "src/lib/constants/topics.const.ts": {
+    "mtime": 1783882249.1705108,
+    "ast_hash": "13f0b06add645985c0982653cf567e9d",
+    "semantic_hash": "13f0b06add645985c0982653cf567e9d"
+  },
+  "src/lib/environments/index.ts": {
+    "mtime": 1783882249.1705108,
+    "ast_hash": "8b187bfe189ef1715e2188c450dc5e3b",
+    "semantic_hash": "8b187bfe189ef1715e2188c450dc5e3b"
+  },
+  "src/lib/environments/version.ts": {
+    "mtime": 1785102816.0921285,
+    "ast_hash": "1514dcba304ad9015454edb1516d214e",
+    "semantic_hash": "1514dcba304ad9015454edb1516d214e"
+  },
+  "src/lib/index.ts": {
+    "mtime": 1785103063.860229,
+    "ast_hash": "2a863629b8d1a9f9502b3bd9a99cd69b",
+    "semantic_hash": "2a863629b8d1a9f9502b3bd9a99cd69b"
+  },
+  "src/lib/services/index.ts": {
+    "mtime": 1783882249.1710706,
+    "ast_hash": "9c6f9304dc3343922ca041ef644859c8",
+    "semantic_hash": "9c6f9304dc3343922ca041ef644859c8"
+  },
+  "src/lib/services/storage/storage.service.ts": {
+    "mtime": 1783885761.231506,
+    "ast_hash": "6765c5d3fc5cbe9c1023489fca7fb077",
+    "semantic_hash": "6765c5d3fc5cbe9c1023489fca7fb077"
+  },
+  "src/lib/services/theme/theme.service.ts": {
+    "mtime": 1785103082.8842268,
+    "ast_hash": "b2db94e6b30cb25cf6f0673ffcbccb24",
+    "semantic_hash": "b2db94e6b30cb25cf6f0673ffcbccb24"
+  },
+  "src/lib/services/title/title.service.ts": {
+    "mtime": 1785103093.0802243,
+    "ast_hash": "a4b71ac004dc538f0e9fe7f4eaf4345c",
+    "semantic_hash": "a4b71ac004dc538f0e9fe7f4eaf4345c"
+  },
+  "src/lib/types/adventures.type.ts": {
+    "mtime": 1783885686.783393,
+    "ast_hash": "0865b123eb04f8119afcc582c89614f0",
+    "semantic_hash": "0865b123eb04f8119afcc582c89614f0"
+  },
+  "src/lib/types/adventures/index.ts": {
+    "mtime": 1783882249.1726003,
+    "ast_hash": "aa4de227dc295b4e40fe622581775a9e",
+    "semantic_hash": "aa4de227dc295b4e40fe622581775a9e"
+  },
+  "src/lib/types/adventures/loaders/index.ts": {
+    "mtime": 1783882249.1728718,
+    "ast_hash": "1fb77fa90c5bfb705b3f7821383cb2cb",
+    "semantic_hash": "1fb77fa90c5bfb705b3f7821383cb2cb"
+  },
+  "src/lib/types/adventures/loaders/lava-lamp.type.ts": {
+    "mtime": 1783885686.783393,
+    "ast_hash": "40238864a59f3db15904ab87b4619ebf",
+    "semantic_hash": "40238864a59f3db15904ab87b4619ebf"
+  },
+  "src/lib/types/adventures/random/frog.type.ts": {
+    "mtime": 1783885686.783393,
+    "ast_hash": "42a932a1b8dc642141b3e7bf1a09bb74",
+    "semantic_hash": "42a932a1b8dc642141b3e7bf1a09bb74"
+  },
+  "src/lib/types/adventures/random/index.ts": {
+    "mtime": 1783882249.1733015,
+    "ast_hash": "d7cbc622d74ae1c042d9513ed27e0ad1",
+    "semantic_hash": "d7cbc622d74ae1c042d9513ed27e0ad1"
+  },
+  "src/lib/types/components/index.ts": {
+    "mtime": 1783882249.1733015,
+    "ast_hash": "ebe9df23e01c19189a9b3a6614018ffc",
+    "semantic_hash": "ebe9df23e01c19189a9b3a6614018ffc"
+  },
+  "src/lib/types/components/select.type.ts": {
+    "mtime": 1783885686.783393,
+    "ast_hash": "6c24ec05bd5a10771016178319cea680",
+    "semantic_hash": "6c24ec05bd5a10771016178319cea680"
+  },
+  "src/lib/types/index.ts": {
+    "mtime": 1783882249.1736581,
+    "ast_hash": "d998e71ef71454a2d350664b27012c87",
+    "semantic_hash": "d998e71ef71454a2d350664b27012c87"
+  },
+  "src/lib/types/languages.type.ts": {
+    "mtime": 1783885686.783393,
+    "ast_hash": "3bbe78b414dcf1be5470da7cab256b7e",
+    "semantic_hash": "3bbe78b414dcf1be5470da7cab256b7e"
+  },
+  "src/lib/types/storage.type.ts": {
+    "mtime": 1783882249.1736581,
+    "ast_hash": "82cb1b99ad27806715a67f979f5a57a5",
+    "semantic_hash": "82cb1b99ad27806715a67f979f5a57a5"
+  },
+  "src/lib/types/themes.type.ts": {
+    "mtime": 1783885686.783393,
+    "ast_hash": "cb020b59ed83f84a859cde8d38fd9fb1",
+    "semantic_hash": "cb020b59ed83f84a859cde8d38fd9fb1"
+  },
+  "src/lib/types/topics.type.ts": {
+    "mtime": 1783885686.783393,
+    "ast_hash": "3f3429c8f6a2d21a52b0f5cbc6cc7cb0",
+    "semantic_hash": "3f3429c8f6a2d21a52b0f5cbc6cc7cb0"
+  },
+  "src/main.ts": {
+    "mtime": 1783882249.1736581,
+    "ast_hash": "f3983daa46dc263bf3c8d0dd448a5a01",
+    "semantic_hash": "f3983daa46dc263bf3c8d0dd448a5a01"
+  },
+  "tsconfig.app.json": {
+    "mtime": 1783882249.1736581,
+    "ast_hash": "ee004e9e896705414e485e264967831a",
+    "semantic_hash": "ee004e9e896705414e485e264967831a"
+  },
+  "tsconfig.json": {
+    "mtime": 1783882249.1736581,
+    "ast_hash": "0467877ce24ec2678ce633d8fc92c1c0",
+    "semantic_hash": "0467877ce24ec2678ce633d8fc92c1c0"
+  },
+  ".github/copilot-instructions.md": {
+    "mtime": 1783888527.315878,
+    "ast_hash": "7032b0bea99c2b344d1dabcd92969bba",
+    "semantic_hash": "7032b0bea99c2b344d1dabcd92969bba"
+  },
+  ".github/implementation-plan-template.md": {
+    "mtime": 1783888527.3270297,
+    "ast_hash": "cb772d4f3b0bdc0b0eeb5f392692465d",
+    "semantic_hash": "cb772d4f3b0bdc0b0eeb5f392692465d"
+  },
+  ".github/workflows/deploy.yml": {
+    "mtime": 1783888527.2487373,
+    "ast_hash": "01ca11b03afa1ea65f45221735d0aed7",
+    "semantic_hash": "01ca11b03afa1ea65f45221735d0aed7"
+  },
+  "README.md": {
+    "mtime": 1785102070.4884477,
+    "ast_hash": "7373bb6dc7bdce789cea51316b170453",
+    "semantic_hash": "7373bb6dc7bdce789cea51316b170453"
+  },
+  "src/app/app.html": {
+    "mtime": 1783885734.6355152,
+    "ast_hash": "71f6141034d61c12173bdd77e4b5c1a0",
+    "semantic_hash": "71f6141034d61c12173bdd77e4b5c1a0"
+  },
+  "src/app/pages/adventures/adventures.html": {
+    "mtime": 1783885567.1837718,
+    "ast_hash": "d4aeeb178203b6564d2058af6c249e86",
+    "semantic_hash": "d4aeeb178203b6564d2058af6c249e86"
+  },
+  "src/app/pages/adventures/components/select/select.html": {
+    "mtime": 1783885567.3275785,
+    "ast_hash": "e8eb93abf3309356a22fda0a43ddd255",
+    "semantic_hash": "e8eb93abf3309356a22fda0a43ddd255"
+  },
+  "src/app/pages/adventures/games/switch-frogs/switch-frogs.html": {
+    "mtime": 1783885790.0554852,
+    "ast_hash": "2b31f460a0b147d516793d0f5c692941",
+    "semantic_hash": "2b31f460a0b147d516793d0f5c692941"
+  },
+  "src/app/pages/adventures/loaders/lava-lamp/lava-lamp.html": {
+    "mtime": 1783885567.7146304,
+    "ast_hash": "ff93f3da1b143c94ffd8a9aa32c34831",
+    "semantic_hash": "ff93f3da1b143c94ffd8a9aa32c34831"
+  },
+  "src/app/pages/adventures/random/frog/frog.html": {
+    "mtime": 1783885567.8504825,
+    "ast_hash": "23afcedf5eec184d34b98655dd1c8580",
+    "semantic_hash": "23afcedf5eec184d34b98655dd1c8580"
+  },
+  "src/app/pages/preferences/preferences.html": {
+    "mtime": 1783885734.6467016,
+    "ast_hash": "c61f7466a9a85fdc143f9eb68b1f921b",
+    "semantic_hash": "c61f7466a9a85fdc143f9eb68b1f921b"
+  },
+  "src/index.html": {
+    "mtime": 1783882249.1685507,
+    "ast_hash": "1ba1075a46d961aeb1021e3897cc176b",
+    "semantic_hash": "1ba1075a46d961aeb1021e3897cc176b"
+  },
+  "public/assets/imgs/flag-br.svg": {
+    "mtime": 1783882249.1528175,
+    "ast_hash": "7180693167421699d8f9c35b1d81e27f",
+    "semantic_hash": "7180693167421699d8f9c35b1d81e27f"
+  },
+  "public/assets/imgs/flag-us.svg": {
+    "mtime": 1783882249.153178,
+    "ast_hash": "7dbba93c48658227ab3cee51c82933b9",
+    "semantic_hash": "7dbba93c48658227ab3cee51c82933b9"
+  },
+  "public/assets/imgs/logo.svg": {
+    "mtime": 1783882249.153178,
+    "ast_hash": "6527dc66764cb1f4964f70763f4819b9",
+    "semantic_hash": "6527dc66764cb1f4964f70763f4819b9"
+  },
+  "public/assets/imgs/refs/spotify-player.png": {
+    "mtime": 1783882249.153178,
+    "ast_hash": "502964c05ceccced773a3fefecaacb74",
+    "semantic_hash": "502964c05ceccced773a3fefecaacb74"
+  }
+}
