@@ -5,3 +5,4 @@
 /public/assets/version.json
 /src/lib/environments/version.ts
 /package-lock.json
+/graphify-out/
